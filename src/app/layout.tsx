@@ -1,18 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+});
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "Ventoz Sails — Zeilen voor wedstrijd en recreatie",
+    default: "Ventoz Sails — Premium One Design Sails",
     template: "%s | Ventoz Sails",
   },
   description:
-    "Ventoz Sails: hoogwaardige zeilen voor Optimist, Laser/ILCA, Topaz, Hobie Cat en meer. Ontdek ons assortiment wedstrijd- en recreatiezeilen.",
+    "Ventoz Sails: hoogwaardige one design zeilen voor Optimist, Laser/ILCA, Topaz, Hobie Cat en meer. Europees zeilmerk uit Nederland.",
   metadataBase: new URL("https://ventoz.com"),
   openGraph: {
     type: "website",
@@ -27,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl" className={inter.className}>
-      <body className="bg-white text-slate-900 antialiased min-h-screen flex flex-col">
+    <html lang="nl" className={`${dmSans.variable} ${dmSerif.variable}`}>
+      <body className="font-[family-name:var(--font-sans)] bg-surface text-slate-900 antialiased min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

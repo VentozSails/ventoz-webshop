@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --color-navy: #1B2A4A;
+  --color-navy-dark: #0F1B33;
+  --color-gold: #C8A85C;
+  --color-surface: #F8FAFB;
+  --color-border-default: #E2E8F0;
+  --color-card-placeholder: #F0F4FF;
+  --color-icon-placeholder: #B0C4DE;
+}
