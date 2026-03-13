@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProductSlugs } from "@/lib/products";
@@ -12,6 +11,7 @@ import {
   prijsFormatted,
   categorieLabel,
 } from "@/lib/types";
+import ImageGallery from "@/components/ImageGallery";
 
 export const revalidate = 300;
 
@@ -127,46 +127,7 @@ export default async function ProductPage({
       <div className="max-w-[1200px] mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left column: Images */}
-          <div>
-            <div className="relative aspect-square bg-white rounded-xl overflow-hidden border border-border-default">
-              {mainImage ? (
-                <Image
-                  src={mainImage}
-                  alt={naam}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain p-8"
-                  priority
-                />
-              ) : (
-                <div className="flex items-center justify-center h-full bg-card-placeholder">
-                  <svg className="w-20 h-20 text-icon-placeholder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-              )}
-            </div>
-
-            {/* Thumbnails */}
-            {images.length > 1 && (
-              <div className="mt-3 grid grid-cols-5 gap-2">
-                {images.map((img, i) => (
-                  <div
-                    key={i}
-                    className={`relative aspect-square bg-white rounded-lg overflow-hidden border-2 ${i === 0 ? "border-navy" : "border-border-default"}`}
-                  >
-                    <Image
-                      src={img}
-                      alt={`${naam} ${i + 1}`}
-                      fill
-                      sizes="80px"
-                      className="object-contain p-2"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+          <ImageGallery images={images} alt={naam} />
 
           {/* Right column: Product info, specs, description */}
           <div>
