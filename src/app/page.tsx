@@ -1,29 +1,44 @@
-import Link from "next/link";
 import Image from "next/image";
-import { getFeaturedProducts, getCategories, getAboutTexts } from "@/lib/products";
-import { categorieLabel, displayNaam, displayAfbeelding, prijsFormatted, productSlug } from "@/lib/types";
-import ProductCard from "@/components/ProductCard";
+import Link from "next/link";
+import { getFeaturedProducts, getAboutTexts } from "@/lib/products";
+import {
+  displayNaam,
+  displayAfbeelding,
+  prijsFormatted,
+  productSlug,
+  categorieLabel,
+} from "@/lib/types";
+import ProductSlider from "@/components/ProductSlider";
 
 export const revalidate = 300;
 
 const ABOUT_FALLBACK =
   "Ventoz Sails is een modern Europees zeilmerk, uit Nederland. " +
-  "Wij brengen kwalitatief hoogwaardige \"one design\" zeilen " +
+  'Wij brengen kwalitatief hoogwaardige "one design" zeilen ' +
   "tegen een eerlijke prijs op de gehele Europese markt.";
 
 export default async function HomePage() {
-  const [featured, categories, aboutTexts] = await Promise.all([
+  const [featured, aboutTexts] = await Promise.all([
     getFeaturedProducts(),
-    getCategories(),
     getAboutTexts(),
   ]);
 
   const aboutText = aboutTexts["nl"] || aboutTexts["en"] || ABOUT_FALLBACK;
 
+  const sliderProducts = featured.map((p) => ({
+    slug: productSlug(p),
+    naam: displayNaam(p),
+    categorie: p.categorie,
+    categorieLabel: categorieLabel(p.categorie),
+    prijs: prijsFormatted(p),
+    image: displayAfbeelding(p),
+  }));
+
   return (
     <>
-      {/* Hero with background image */}
-      <section className="relative overflow-hidden">
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden" style={{ minHeight: 480 }}>
+        {/* Background image */}
         <div className="absolute inset-0">
           <Image
             src="/hero-bg.png"
@@ -35,123 +50,107 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#37474F]/65 via-[#37474F]/45 to-[#37474F]/25" />
         </div>
 
-        <div className="relative max-w-[1100px] mx-auto px-6 lg:px-16 py-16 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            {/* About card */}
-            <div className="bg-white/[0.12] backdrop-blur-sm border border-white/[0.15] rounded-2xl p-8">
-              <Image
-                src="/logo.png"
-                alt="Ventoz Sails"
-                width={180}
-                height={44}
-                className="h-11 w-auto brightness-0 invert mb-5"
-                priority
-              />
-              <p className="text-sm text-white leading-7 whitespace-pre-line">
+        {/* Content */}
+        <div className="relative max-w-[1100px] mx-auto px-6 lg:px-16 py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_4fr] gap-10 items-end">
+            {/* About card — glass panel */}
+            <div className="relative bg-white/[0.12] backdrop-blur-sm border border-white/[0.15] rounded-2xl px-7 pt-7 pb-12">
+              {/* Logo with glow */}
+              <div className="relative inline-block mb-6" style={{ filter: "drop-shadow(0 0 18px rgba(255,255,255,0.5)) drop-shadow(0 0 36px rgba(255,255,255,0.25))" }}>
+                <Image
+                  src="/logo-hero.png"
+                  alt="Ventoz Sails"
+                  width={200}
+                  height={44}
+                  className="h-11 w-auto"
+                  priority
+                />
+              </div>
+
+              <p className="text-sm text-white leading-7 whitespace-pre-line max-w-[380px]">
                 {aboutText}
               </p>
-              <Link
-                href="/catalogus"
-                className="mt-6 inline-flex items-center gap-2 bg-gold text-navy font-bold text-sm px-7 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_6px_20px_rgba(200,168,92,0.5)]"
-              >
-                <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l14 9-14 9V3z" />
-                </svg>
-                Bekijk assortiment
-              </Link>
+
+              {/* CTA — positioned half-overlapping bottom edge */}
+              <div className="absolute left-0 right-0 -bottom-6 flex justify-center">
+                <Link
+                  href="/catalogus"
+                  className="inline-flex items-center gap-2 bg-gold text-navy font-bold text-sm px-7 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_6px_20px_rgba(200,168,92,0.5)]"
+                >
+                  <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l14 9-14 9V3z" />
+                  </svg>
+                  Bekijk assortiment
+                </Link>
+              </div>
             </div>
 
-            {/* Featured product slider (first product) */}
-            {featured.length > 0 && (
+            {/* Product slider */}
+            {sliderProducts.length > 0 && (
               <div className="hidden lg:block">
-                <Link href={`/product/${productSlug(featured[0])}`} className="block bg-white/[0.82] rounded-2xl p-6 shadow-[0_10px_32px_rgba(0,0,0,0.3),0_0_40px_rgba(200,168,92,0.15)]">
-                  {displayAfbeelding(featured[0]) && (
-                    <div className="relative h-52 mb-4">
-                      <Image
-                        src={displayAfbeelding(featured[0])!}
-                        alt={displayNaam(featured[0])}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  )}
-                  {featured[0].categorie && (
-                    <span className="inline-block bg-navy/85 text-white text-[10px] font-semibold px-2 py-0.5 rounded mb-2">
-                      {categorieLabel(featured[0].categorie)}
-                    </span>
-                  )}
-                  <h3 className="text-sm font-semibold text-slate-800">{displayNaam(featured[0])}</h3>
-                  <p className="text-lg font-extrabold text-navy mt-1">{prijsFormatted(featured[0])}</p>
-                </Link>
+                <ProductSlider products={sliderProducts} />
               </div>
             )}
           </div>
         </div>
       </section>
 
-      {/* USP bar */}
+      {/* ── USP bar ── */}
       <section className="bg-white border-t border-border-default">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-16 py-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {[
-            { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", title: "Premium kwaliteit", sub: "Duurzame materialen, hoge afwerking" },
-            { icon: "M13 10V3L4 14h7v7l9-11h-7z", title: "Direct leverbaar", sub: "De meeste zeilen uit voorraad" },
-            { icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064", title: "Europese verzending", sub: "Veilig ingepakt, snel bezorgd" },
-          ].map((usp) => (
-            <div key={usp.title} className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
-                <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={usp.icon} />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-[13px] font-bold text-navy">{usp.title}</h3>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-16 py-7">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-4">
+            {[
+              {
+                icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+                title: "Gratis verzending",
+                sub: "Bestellingen binnen Nederland",
+              },
+              {
+                icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
+                title: "Europese verzending",
+                sub: "Veilig ingepakt, snel bezorgd",
+              },
+              {
+                icon: "M20 7l-8-4-8 4m16 0v10l-8 4M4 7v10l8 4m0-10V7",
+                title: "Direct uit voorraad",
+                sub: "De meeste zeilen leverbaar",
+              },
+              {
+                icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+                title: "Premium kwaliteit",
+                sub: "Duurzame materialen, hoge afwerking",
+              },
+              {
+                title: "★★★★★",
+                sub: "Klantbeoordelingen",
+                stars: true,
+              },
+            ].map((usp, i) => (
+              <div key={i} className="flex flex-col items-center text-center gap-2">
+                {"stars" in usp && usp.stars ? (
+                  <div className="flex items-center gap-0.5 h-11">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <svg key={j} className="w-[18px] h-[18px] text-gold" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <svg className="w-[22px] h-[22px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={usp.icon} />
+                    </svg>
+                  </div>
+                )}
+                {"stars" in usp && usp.stars ? null : (
+                  <h3 className="text-[13px] font-bold text-navy">{usp.title}</h3>
+                )}
                 <p className="text-[11px] text-slate-500">{usp.sub}</p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      {featured.length > 0 && (
-        <section className="max-w-[1200px] mx-auto px-6 py-12">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-navy">
-              Uitgelichte producten
-            </h2>
-            <Link href="/catalogus" className="text-xs font-semibold text-slate-500 hover:text-navy transition-colors uppercase tracking-wider">
-              Alles bekijken &rarr;
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {featured.slice(0, 8).map((product) => (
-              <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        </section>
-      )}
-
-      {/* Categories grid */}
-      {categories.length > 0 && (
-        <section className="bg-white border-t border-border-default py-12">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-navy mb-6">
-              Categorieën
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-              {categories.map((cat) => (
-                <Link
-                  key={cat}
-                  href={`/catalogus?categorie=${encodeURIComponent(cat)}`}
-                  className="bg-surface border border-border-default rounded-lg px-4 py-3 text-xs font-semibold text-navy hover:border-navy hover:bg-navy/[0.06] transition-all text-center uppercase tracking-wider"
-                >
-                  {categorieLabel(cat)}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+        </div>
+      </section>
     </>
   );
 }
