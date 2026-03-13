@@ -126,7 +126,7 @@ export default async function ProductPage({
 
       <div className="max-w-[1200px] mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Images */}
+          {/* Left column: Images */}
           <div>
             <div className="relative aspect-square bg-white rounded-xl overflow-hidden border border-border-default">
               {mainImage ? (
@@ -168,7 +168,7 @@ export default async function ProductPage({
             )}
           </div>
 
-          {/* Details */}
+          {/* Right column: Product info, specs, description */}
           <div>
             {product.categorie && (
               <Link
@@ -279,7 +279,7 @@ export default async function ProductPage({
                     <tbody>
                       <tr>
                         {Object.values(product.specs_tabel).map((val, i) => (
-                          <td key={i} className="px-3 py-2 text-slate-600">{val}</td>
+                          <td key={i} className="px-3 py-2 text-slate-600">{String(val ?? "")}</td>
                         ))}
                       </tr>
                     </tbody>
@@ -287,20 +287,39 @@ export default async function ProductPage({
                 </div>
               </div>
             )}
+
+            {/* Description — right column, below specs */}
+            {beschrijving && (
+              <div className="mt-8">
+                <h2 className="font-[family-name:var(--font-display)] text-xl text-navy mb-4">
+                  Productinformatie
+                </h2>
+                <div className="text-sm text-slate-600 leading-7 whitespace-pre-line break-words">
+                  {beschrijving}
+                </div>
+              </div>
+            )}
+
+            {/* English description if available */}
+            {product.beschrijving_en && (
+              <div className="mt-6">
+                <h2 className="font-[family-name:var(--font-display)] text-xl text-navy mb-4">
+                  Product information
+                </h2>
+                <div className="text-sm text-slate-600 leading-7 whitespace-pre-line break-words">
+                  {product.beschrijving_en}
+                </div>
+              </div>
+            )}
+
+            {/* EAN code */}
+            {product.ean_code && (
+              <p className="mt-6 text-xs text-slate-400">
+                EAN: {product.ean_code}
+              </p>
+            )}
           </div>
         </div>
-
-        {/* Description */}
-        {beschrijving && (
-          <section className="mt-12 max-w-3xl">
-            <h2 className="font-[family-name:var(--font-display)] text-xl text-navy mb-4">
-              Beschrijving
-            </h2>
-            <div className="text-sm text-slate-600 leading-7 whitespace-pre-line">
-              {beschrijving}
-            </div>
-          </section>
-        )}
       </div>
     </>
   );
