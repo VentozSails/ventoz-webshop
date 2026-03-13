@@ -81,6 +81,23 @@ export async function getCategories(): Promise<string[]> {
   return Array.from(cats).sort();
 }
 
+export async function getAboutTexts(): Promise<Record<string, string>> {
+  try {
+    const { data } = await supabase
+      .from("app_settings")
+      .select("value")
+      .eq("key", "about_text")
+      .single();
+
+    if (data?.value && typeof data.value === "object") {
+      return data.value as Record<string, string>;
+    }
+  } catch {
+    // Fallback to empty
+  }
+  return {};
+}
+
 export async function getAllProductSlugs(): Promise<string[]> {
   const { data } = await supabase
     .from("product_catalogus")

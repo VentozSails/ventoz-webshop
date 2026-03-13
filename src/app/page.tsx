@@ -1,16 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getFeaturedProducts, getCategories } from "@/lib/products";
+import { getFeaturedProducts, getCategories, getAboutTexts } from "@/lib/products";
 import { categorieLabel, displayNaam, displayAfbeelding, prijsFormatted, productSlug } from "@/lib/types";
 import ProductCard from "@/components/ProductCard";
 
 export const revalidate = 300;
 
+const ABOUT_FALLBACK =
+  "Ventoz Sails is een modern Europees zeilmerk, uit Nederland. " +
+  "Wij brengen kwalitatief hoogwaardige \"one design\" zeilen " +
+  "tegen een eerlijke prijs op de gehele Europese markt.";
+
 export default async function HomePage() {
-  const [featured, categories] = await Promise.all([
+  const [featured, categories, aboutTexts] = await Promise.all([
     getFeaturedProducts(),
     getCategories(),
+    getAboutTexts(),
   ]);
+
+  const aboutText = aboutTexts["nl"] || aboutTexts["en"] || ABOUT_FALLBACK;
 
   return (
     <>
@@ -39,10 +47,8 @@ export default async function HomePage() {
                 className="h-11 w-auto brightness-0 invert mb-5"
                 priority
               />
-              <p className="text-sm text-white leading-7">
-                Ventoz Sails is een modern Europees zeilmerk, uit Nederland. 
-                Wij brengen kwalitatief hoogwaardige &quot;one design&quot; zeilen 
-                tegen een eerlijke prijs op de gehele Europese markt.
+              <p className="text-sm text-white leading-7 whitespace-pre-line">
+                {aboutText}
               </p>
               <Link
                 href="/catalogus"

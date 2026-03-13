@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getCategories } from "@/lib/products";
 import { categorieLabel } from "@/lib/types";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default async function Header() {
   const categories = await getCategories();
@@ -36,6 +37,7 @@ export default async function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <LanguageSwitcher />
           <Link
             href="/catalogus"
             className="flex items-center gap-2 text-sm text-slate-500 hover:text-navy transition-colors"
