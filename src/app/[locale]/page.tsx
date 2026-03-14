@@ -98,7 +98,7 @@ export default async function HomePage({
               {heroData.subtitle && (
                 <p className="text-xs text-white/70 text-center mb-3">{heroData.subtitle}</p>
               )}
-              <p className="text-[14px] text-white/90 leading-[1.85] whitespace-pre-line max-w-[340px] mx-auto text-left flex-1">
+              <p className="text-[15px] text-white/90 leading-[1.85] whitespace-pre-line max-w-[340px] mx-auto text-left flex-1">
                 {aboutText}
               </p>
 
@@ -154,7 +154,7 @@ export default async function HomePage({
                 title: "★★★★★",
                 sub: t("reviews"),
                 stars: true,
-                href: "/about" as const,
+                href: "/reviews" as const,
               },
             ].map((usp, i) => {
               const content = (

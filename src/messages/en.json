@@ -10,7 +10,8 @@
     "home": "Home",
     "products": "Products",
     "backToProducts": "Back to products",
-    "about": "About us"
+    "about": "About us",
+    "reviews": "Reviews"
   },
   "hero": {
     "cta": "Browse products"

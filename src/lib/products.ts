@@ -218,6 +218,57 @@ export async function getLegalContent(slug: string): Promise<Record<string, stri
   return {};
 }
 
+export interface CategoryDescriptionRow {
+  categorie: string;
+  beschrijvingen: Record<string, string> | null;
+  beschrijving_nl: string | null;
+  beschrijving_en: string | null;
+  beschrijving_de: string | null;
+  beschrijving_fr: string | null;
+}
+
+export async function getCategoryDescriptions(): Promise<
+  Record<string, Record<string, string>>
+> {
+  try {
+    const { data, error } = await supabase
+      .from("category_descriptions")
+      .select(
+        "categorie, beschrijvingen, beschrijving_nl, beschrijving_en, beschrijving_de, beschrijving_fr"
+      );
+
+    if (error) {
+      console.error("getCategoryDescriptions error:", error.message);
+      return {};
+    }
+    if (!data) return {};
+
+    const result: Record<string, Record<string, string>> = {};
+    for (const row of data as CategoryDescriptionRow[]) {
+      const texts: Record<string, string> = {};
+
+      if (row.beschrijvingen && typeof row.beschrijvingen === "object") {
+        for (const [lang, text] of Object.entries(row.beschrijvingen)) {
+          if (text) texts[lang] = text;
+        }
+      }
+
+      if (!texts.nl && row.beschrijving_nl) texts.nl = row.beschrijving_nl;
+      if (!texts.en && row.beschrijving_en) texts.en = row.beschrijving_en;
+      if (!texts.de && row.beschrijving_de) texts.de = row.beschrijving_de;
+      if (!texts.fr && row.beschrijving_fr) texts.fr = row.beschrijving_fr;
+
+      if (Object.keys(texts).length > 0) {
+        result[row.categorie] = texts;
+      }
+    }
+    return result;
+  } catch (err) {
+    console.error("getCategoryDescriptions exception:", err);
+    return {};
+  }
+}
+
 export async function getAllProductSlugs(): Promise<string[]> {
   try {
     const { data } = await supabase

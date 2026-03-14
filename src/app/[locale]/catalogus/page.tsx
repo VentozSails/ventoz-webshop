@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { getAllProducts, getCategories } from "@/lib/products";
+import { getAllProducts, getCategories, getCategoryDescriptions } from "@/lib/products";
 import { categorieLabel } from "@/lib/types";
 import ProductCard from "@/components/ProductCard";
 import { Link } from "@/i18n/navigation";
@@ -37,9 +37,10 @@ export default async function CatalogusPage({
   const tCat = await getTranslations("categories");
   const tProduct = await getTranslations("product");
 
-  const [products, categories] = await Promise.all([
+  const [products, categories, categoryDescriptions] = await Promise.all([
     getAllProducts(category, search),
     getCategories(),
+    getCategoryDescriptions(),
   ]);
 
   const inStock = products.filter((p) => p.in_stock);
@@ -158,6 +159,40 @@ export default async function CatalogusPage({
                 </Link>
               </div>
             )}
+
+            {/* Category description */}
+            {category && (() => {
+              const texts = categoryDescriptions[category];
+              if (!texts) return null;
+              const text = texts[locale] || texts.en || texts.nl;
+              if (!text) return null;
+
+              return (
+                <div className="mb-6 rounded-xl bg-[#F0F4F8] border border-[#E2E8F0] px-5 py-4">
+                  <h2 className="font-[family-name:var(--font-display)] text-[22px] text-navy mb-2.5">
+                    {catLabel(category)}
+                  </h2>
+                  {text.split("\n\n").map((block, bi) => {
+                    const trimmed = block.trim();
+                    if (!trimmed) return null;
+                    const lines = trimmed.split("\n");
+                    if (lines.length === 2 && lines[0].trim().length < 80) {
+                      return (
+                        <div key={bi} className={bi > 0 ? "mt-3" : ""}>
+                          <p className="text-sm font-bold text-navy leading-snug">{lines[0].trim()}</p>
+                          <p className="text-sm text-slate-600 leading-relaxed mt-0.5">{lines[1].trim()}</p>
+                        </div>
+                      );
+                    }
+                    return (
+                      <p key={bi} className={`text-sm text-slate-600 leading-[1.7] ${bi > 0 ? "mt-3" : ""}`}>
+                        {trimmed}
+                      </p>
+                    );
+                  })}
+                </div>
+              );
+            })()}
 
             {inStock.length === 0 && outOfStock.length === 0 ? (
               <div className="text-center py-16">

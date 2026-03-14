@@ -7,6 +7,7 @@ import CartIcon from "./CartIcon";
 import UserIcon from "./UserIcon";
 import SearchButton from "./SearchButton";
 import VatToggle from "./VatToggle";
+import NavLink from "./NavLink";
 import { Link } from "@/i18n/navigation";
 
 export default async function Header({ locale }: { locale: string }) {
@@ -31,24 +32,10 @@ export default async function Header({ locale }: { locale: string }) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
-          <Link
-            href="/"
-            className="px-2 py-1.5 text-sm font-medium text-slate-500 hover:text-navy transition-colors"
-          >
-            {t("home")}
-          </Link>
-          <Link
-            href="/catalogus"
-            className="px-2 py-1.5 text-sm font-bold text-navy transition-colors"
-          >
-            {t("products")}
-          </Link>
-          <Link
-            href="/about"
-            className="px-2 py-1.5 text-sm font-medium text-slate-500 hover:text-navy transition-colors"
-          >
-            {t("about")}
-          </Link>
+          <NavLink href="/">{t("home")}</NavLink>
+          <NavLink href="/catalogus">{t("products")}</NavLink>
+          <NavLink href="/about">{t("about")}</NavLink>
+          <NavLink href="/reviews">{t("reviews")}</NavLink>
         </nav>
 
         <div className="flex items-center gap-2">
