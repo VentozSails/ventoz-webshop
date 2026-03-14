@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Failed to create order" }, { status: 500 });
     }
 
-    const lines = validatedItems.map((item: { product_id: number; product_naam: string; product_afbeelding: string | null; aantal: number; stukprijs: number; regel_totaal: number }) => ({
+    const lines = validatedItems.map((item: { product_id: number; product_naam: string; product_afbeelding: string | null; aantal: number; stukprijs: number; korting_percentage: number; regel_totaal: number }) => ({
       order_id: order.id,
       product_id: String(item.product_id),
       product_naam: item.product_naam,
