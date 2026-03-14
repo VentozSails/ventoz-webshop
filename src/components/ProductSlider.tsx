@@ -43,10 +43,9 @@ export default function ProductSlider({
   return (
     <Link
       href={`/product/${product.slug}`}
-      className="block rounded-2xl overflow-hidden bg-white/[0.82] shadow-[0_10px_32px_rgba(0,0,0,0.3),0_0_40px_rgba(200,168,92,0.15)]"
-      style={{ minHeight: 360 }}
+      className="flex flex-col rounded-2xl overflow-hidden bg-white/[0.82] shadow-[0_10px_32px_rgba(0,0,0,0.3),0_0_40px_rgba(200,168,92,0.15)] h-full"
     >
-      <div className="relative" style={{ height: 240 }}>
+      <div className="relative flex-1" style={{ minHeight: 240 }}>
         <div className="absolute inset-0 bg-white/60" />
         {product.image ? (
           <Image

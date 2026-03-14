@@ -64,23 +64,34 @@ export default async function HomePage({
         </div>
 
         <div className="relative max-w-[1100px] mx-auto px-6 lg:px-16 py-16 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[5fr_4fr] gap-10 items-end">
-            <div className="relative bg-white/[0.12] backdrop-blur-sm border border-white/[0.15] rounded-2xl px-7 pt-7 pb-12">
-              <div className="relative inline-block mb-6" style={{ filter: "drop-shadow(0 0 18px rgba(255,255,255,0.5)) drop-shadow(0 0 36px rgba(255,255,255,0.25))" }}>
-                <Image
-                  src="/logo-hero.png"
-                  alt="Ventoz Sails"
-                  width={200}
-                  height={44}
-                  className="h-11 w-auto"
-                  priority
-                />
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_4fr] gap-10 items-stretch">
+            <div className="relative bg-white/[0.12] backdrop-blur-sm border border-white/[0.15] rounded-2xl px-7 pt-7 pb-14 flex flex-col">
+              {/* Logo — centered with triple-layer glow */}
+              <div className="flex justify-center mb-8">
+                <div
+                  className="relative inline-block px-4 py-2 rounded-xl"
+                  style={{
+                    boxShadow:
+                      "0 0 28px 6px rgba(255,255,255,0.6), 0 0 50px 10px rgba(255,255,255,0.35), 0 0 80px 16px rgba(255,255,255,0.15)",
+                  }}
+                >
+                  <Image
+                    src="/logo-hero.png"
+                    alt="Ventoz Sails"
+                    width={220}
+                    height={48}
+                    className="h-12 w-auto"
+                    priority
+                  />
+                </div>
               </div>
 
-              <p className="text-sm text-white leading-7 whitespace-pre-line max-w-[380px]">
+              {/* About text — left-aligned, constrained to logo width */}
+              <p className="text-sm text-white/90 leading-7 whitespace-pre-line max-w-[320px] mx-auto text-left flex-1">
                 {aboutText}
               </p>
 
+              {/* CTA button */}
               <div className="absolute left-0 right-0 -bottom-6 flex justify-center">
                 <Link
                   href="/catalogus"
@@ -95,7 +106,7 @@ export default async function HomePage({
             </div>
 
             {sliderProducts.length > 0 && (
-              <div className="hidden lg:block">
+              <div className="hidden lg:flex flex-col">
                 <ProductSlider products={sliderProducts} viewProductLabel={tProduct("viewProduct")} />
               </div>
             )}
