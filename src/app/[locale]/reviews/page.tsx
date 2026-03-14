@@ -69,26 +69,6 @@ export default async function ReviewsPage({
         </div>
 
         <div className="relative max-w-[800px] mx-auto px-6 py-14 lg:py-20 text-center">
-          {/* Emblem / logo */}
-          <div className="flex justify-center mb-5">
-            <div
-              className="relative inline-block"
-              style={{
-                filter:
-                  "drop-shadow(0 0 20px rgba(255,255,255,0.5)) drop-shadow(0 0 40px rgba(255,255,255,0.25))",
-              }}
-            >
-              <Image
-                src="/logo-hero.png"
-                alt="Ventoz Sails"
-                width={56}
-                height={56}
-                className="h-14 w-auto"
-                priority
-              />
-            </div>
-          </div>
-
           {/* 5 gold stars */}
           <div className="flex items-center justify-center gap-1 mb-4">
             {Array.from({ length: 5 }).map((_, i) => (
