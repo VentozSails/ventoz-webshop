@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { getProductBySlug, getAllProductSlugs } from "@/lib/products";
+import { getProductBySlug } from "@/lib/products";
 import {
   type Product,
   displayNaam,
@@ -16,47 +16,46 @@ import ImageGallery from "@/components/ImageGallery";
 import AddToCartButton from "@/components/AddToCartButton";
 import { Link } from "@/i18n/navigation";
 
-export const revalidate = 300;
-
-export async function generateStaticParams() {
-  const slugs = await getAllProductSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
-  const { slug, locale } = await params;
-  const t = await getTranslations({ locale, namespace: "meta" });
-
-  let product: Product | null = null;
   try {
-    product = await getProductBySlug(slug);
+    const { slug, locale } = await params;
+    const t = await getTranslations({ locale, namespace: "meta" });
+
+    let product: Product | null = null;
+    try {
+      product = await getProductBySlug(slug);
+    } catch {
+      return { title: "Product | Ventoz Sails" };
+    }
+    if (!product) return { title: t("productNotFound") };
+
+    const naam = displayNaam(product, locale);
+    const beschrijving = displayBeschrijving(product, locale);
+    const img = displayAfbeelding(product);
+
+    return {
+      title: product.seo_title || naam,
+      description:
+        product.seo_description ||
+        beschrijving?.slice(0, 160) ||
+        `${naam} — Ventoz Sails`,
+      keywords: product.seo_keywords || undefined,
+      openGraph: {
+        title: naam,
+        description: beschrijving?.slice(0, 200) || `${naam} — Ventoz Sails`,
+        images: img ? [{ url: img, width: 800, height: 800, alt: naam }] : [],
+        type: "website",
+      },
+    };
   } catch {
-    return { title: t("productNotFound") };
+    return { title: "Product | Ventoz Sails" };
   }
-  if (!product) return { title: t("productNotFound") };
-
-  const naam = displayNaam(product, locale);
-  const beschrijving = displayBeschrijving(product, locale);
-  const img = displayAfbeelding(product);
-
-  return {
-    title: product.seo_title || naam,
-    description:
-      product.seo_description ||
-      beschrijving?.slice(0, 160) ||
-      `${naam} — Ventoz Sails`,
-    keywords: product.seo_keywords || undefined,
-    openGraph: {
-      title: naam,
-      description: beschrijving?.slice(0, 200) || `${naam} — Ventoz Sails`,
-      images: img ? [{ url: img, width: 800, height: 800, alt: naam }] : [],
-      type: "website",
-    },
-  };
 }
 
 export default async function ProductPage({
