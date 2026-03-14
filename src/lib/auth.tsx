@@ -86,15 +86,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         .maybeSingle();
 
       if (data) {
+        const LEGACY_ADMIN_TYPES = ["medewerker"];
+        const rawType = data.user_type || "klant";
+        const normalizedRole = LEGACY_ADMIN_TYPES.includes(rawType) ? "admin" : rawType;
+        const isAdminRole = data.is_admin || data.is_owner ||
+          ["owner", "admin", "medewerker"].includes(rawType);
+
         setProfile({
           id: userId,
           email,
-          role: data.user_type || "klant",
+          role: normalizedRole,
           korting: effectiveKorting(data),
           bedrijfsnaam: data.bedrijfsnaam || null,
           btw_nummer: data.btw_nummer || null,
-          isAdmin: data.is_admin || data.is_owner || false,
-          isOwner: data.is_owner || false,
+          isAdmin: isAdminRole,
+          isOwner: data.is_owner || rawType === "owner" || false,
           voornaam: data.voornaam || null,
           achternaam: data.achternaam || null,
         });

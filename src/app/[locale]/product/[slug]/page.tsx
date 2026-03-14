@@ -16,6 +16,7 @@ import ImageGallery from "@/components/ImageGallery";
 import AddToCartButton from "@/components/AddToCartButton";
 import PriceDisplay from "@/components/PriceDisplay";
 import FormattedDescription from "@/components/FormattedDescription";
+import { extractSpecsFromText } from "@/components/FormattedDescription";
 import { Link } from "@/i18n/navigation";
 
 export const dynamic = "force-dynamic";
@@ -84,6 +85,21 @@ export default async function ProductPage({
   const prijs = displayPrijs(product);
   const images = alleAfbeeldingen(product);
   const mainImage = displayAfbeelding(product);
+
+  const textSpecs = beschrijving ? extractSpecsFromText(beschrijving) : {};
+  const specs = {
+    materiaal: product.materiaal || textSpecs.materiaal || null,
+    luff: product.luff || textSpecs.luff || null,
+    foot: product.foot || textSpecs.foot || null,
+    sail_area: product.sail_area || textSpecs.sail_area || null,
+    gewicht: product.gewicht ? `${product.gewicht} kg` : textSpecs.gewicht || null,
+    inclusief: product.inclusief || textSpecs.inclusief || null,
+    leech: textSpecs.leech || null,
+    mastdelen: textSpecs.mastdelen || null,
+    zeillatten: textSpecs.zeillatten || null,
+    masthoogte: textSpecs.masthoogte || null,
+  };
+  const hasSpecs = Object.values(specs).some(Boolean);
   const catLabel = (s: string | null) => {
     try {
       return categorieLabel(s, (k) => tCat.has(k) ? tCat(k) : "");
@@ -231,11 +247,11 @@ export default async function ProductPage({
             </div>
 
             {/* Product info card — specs + description + EAN */}
-            {(product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief || beschrijving) && (
+            {(hasSpecs || beschrijving) && (
               <div className="mt-8 rounded-2xl bg-[#F8FAFB] border border-[#E2E8F0] overflow-hidden">
 
                 {/* Specs section */}
-                {(product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief) && (
+                {hasSpecs && (
                   <div className="px-6 pt-5 pb-4">
                     <div className="flex items-center gap-2 mb-3">
                       <svg className="w-4 h-4 text-navy/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -245,12 +261,16 @@ export default async function ProductPage({
                     </div>
                     <dl className="divide-y divide-[#E2E8F0]">
                       {[
-                        { label: t("material"), value: product.materiaal },
-                        { label: t("luff"), value: product.luff },
-                        { label: t("foot"), value: product.foot },
-                        { label: t("sailArea"), value: product.sail_area },
-                        { label: t("weight"), value: product.gewicht ? `${product.gewicht} kg` : null },
-                        { label: t("includes"), value: product.inclusief },
+                        { label: t("material"), value: specs.materiaal },
+                        { label: t("luff"), value: specs.luff },
+                        { label: "Leech", value: specs.leech },
+                        { label: t("foot"), value: specs.foot },
+                        { label: t("sailArea"), value: specs.sail_area },
+                        { label: t("weight"), value: specs.gewicht },
+                        { label: t("includes"), value: specs.inclusief },
+                        { label: "Mast", value: specs.mastdelen },
+                        { label: "Masthoogte", value: specs.masthoogte },
+                        { label: "Zeillatten", value: specs.zeillatten },
                       ]
                         .filter((s) => s.value)
                         .map((spec) => (
@@ -264,7 +284,7 @@ export default async function ProductPage({
                 )}
 
                 {/* Divider */}
-                {beschrijving && (product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief) && (
+                {beschrijving && hasSpecs && (
                   <div className="border-t border-[#E2E8F0]" />
                 )}
 

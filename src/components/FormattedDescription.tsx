@@ -1,27 +1,42 @@
-const SPEC_PATTERNS = [
-  /^\s*(voorlijk|luff|vorliek)\s*[:：]\s*/i,
-  /^\s*(achterlijk|leech|achterliek)\s*[:：]\s*/i,
-  /^\s*(onderlijk|foot|boom|unterliek)\s*[:：]\s*/i,
-  /^\s*(oppervlakte|sail\s*area|fläche|surface|superficie)\s*[:：]\s*/i,
-  /^\s*(materiaal|material|matériau)\s*[:：]\s*/i,
-  /^\s*(gewicht|weight|poids|gewicht\s*\(kg\))\s*[:：]\s*/i,
-  /^\s*(inclusief|includes?|inclus|inklusive|einschließlich)\s*[:：]\s*/i,
-  /^\s*(mast\s*(?:delen|sections?|teile)|mastdelen)\s*[:：]\s*/i,
-  /^\s*(zeillatten|battens?|lattes?|segellatten)\s*[:：]\s*/i,
-  /^\s*(mast(?:hoogte|lengte)|mast\s*(?:height|length))\s*[:：]\s*/i,
+export const SPEC_PATTERNS: [RegExp, string][] = [
+  [/^\s*(?:voorlijk|luff|vorliek)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "luff"],
+  [/^\s*(?:achterlijk|leech|achterliek)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "leech"],
+  [/^\s*(?:onderlijk|foot|boom|unterliek)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "foot"],
+  [/^\s*(?:oppervlakte|sail\s*area|fläche|surface|superficie|zeiloppervlak)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "sail_area"],
+  [/^\s*(?:materiaal|material|matériau)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "materiaal"],
+  [/^\s*(?:gewicht|weight|poids)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "gewicht"],
+  [/^\s*(?:inclusief|includes?|inclus|inklusive|einschließlich)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "inclusief"],
+  [/^\s*(?:mast\s*(?:delen|sections?|teile)|mastdelen)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "mastdelen"],
+  [/^\s*(?:zeillatten|battens?|lattes?|segellatten)\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "zeillatten"],
+  [/^\s*(?:mast(?:hoogte|lengte)|mast\s*(?:height|length))\s*(?:\([^)]*\)\s*)?[:：]\s*(.+)/i, "masthoogte"],
 ];
 
-function isSpecLine(line: string): boolean {
-  return SPEC_PATTERNS.some((re) => re.test(line));
+export function extractSpecsFromText(text: string): Record<string, string> {
+  const specs: Record<string, string> = {};
+  for (const line of text.split("\n")) {
+    for (const [re, key] of SPEC_PATTERNS) {
+      const m = line.match(re);
+      if (m && m[1]) {
+        specs[key] = m[1].trim();
+        break;
+      }
+    }
+  }
+  return specs;
 }
 
-function stripSpecLines(text: string): string {
-  const lines = text.split("\n");
-  const cleaned = lines.filter((line) => !isSpecLine(line));
+function isSpecLine(line: string): boolean {
+  return SPEC_PATTERNS.some(([re]) => re.test(line));
+}
 
-  let result = cleaned.join("\n");
-  result = result.replace(/\n{3,}/g, "\n\n").trim();
-  return result;
+function isDividerLine(line: string): boolean {
+  return /^\s*[-–—]{3,}\s*$/.test(line);
+}
+
+function cleanDescription(text: string): string {
+  const lines = text.split("\n");
+  const cleaned = lines.filter((line) => !isSpecLine(line) && !isDividerLine(line));
+  return cleaned.join("\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
 interface FormattedDescriptionProps {
@@ -29,7 +44,7 @@ interface FormattedDescriptionProps {
 }
 
 export default function FormattedDescription({ text }: FormattedDescriptionProps) {
-  const cleanedText = stripSpecLines(text);
+  const cleanedText = cleanDescription(text);
   if (!cleanedText) return null;
 
   const blocks = cleanedText.split(/\n\n+/);
