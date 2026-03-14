@@ -1,10 +1,42 @@
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
+import { createDecipheriv } from "crypto";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 
 export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+
+let _cachedVaultKey: string | null = null;
+
+async function getVaultKey(): Promise<string | null> {
+  if (_cachedVaultKey) return _cachedVaultKey;
+  try {
+    const { data } = await supabaseAdmin
+      .from("vault_keys")
+      .select("encryption_key")
+      .eq("id", 1)
+      .maybeSingle();
+    _cachedVaultKey = data?.encryption_key ?? null;
+    return _cachedVaultKey;
+  } catch {
+    return null;
+  }
+}
+
+function decryptValue(encrypted: string, keyBase64: string): string {
+  const payload = encrypted.slice(4); // strip "ENC:"
+  const parts = payload.split(":");
+  if (parts.length !== 2) return encrypted;
+
+  const iv = Buffer.from(parts[0], "base64");
+  const data = Buffer.from(parts[1], "base64");
+  const key = Buffer.from(keyBase64, "base64");
+
+  const decipher = createDecipheriv("aes-256-cbc", key, iv);
+  decipher.setAutoPadding(true);
+  return Buffer.concat([decipher.update(data), decipher.final()]).toString("utf8");
+}
 
 async function decryptFields(
   config: Record<string, unknown>,
@@ -15,16 +47,24 @@ async function decryptFields(
   );
   if (!hasEncrypted) return config;
 
-  try {
-    const { data } = await supabaseAdmin.rpc("decrypt_settings_secrets", {
-      p_settings: config,
-      p_secret_fields: secretFields,
-    });
-    if (data && typeof data === "object") return data as Record<string, unknown>;
-  } catch {
-    console.error("Failed to decrypt payment credentials via RPC");
+  const vaultKey = await getVaultKey();
+  if (!vaultKey) {
+    console.error("Cannot decrypt: vault key not found");
+    return config;
   }
-  return config;
+
+  const result = { ...config };
+  for (const field of secretFields) {
+    const val = result[field];
+    if (typeof val === "string" && val.startsWith("ENC:")) {
+      try {
+        result[field] = decryptValue(val, vaultKey);
+      } catch (e) {
+        console.error(`Decryption failed for field ${field}:`, e);
+      }
+    }
+  }
+  return result;
 }
 
 export async function getPaymentConfig(): Promise<Record<string, unknown> | null> {
