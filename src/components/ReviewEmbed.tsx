@@ -20,7 +20,7 @@ function isLikelyBlocked(name: string): boolean {
 export default function ReviewEmbed({ src, name, url }: ReviewEmbedProps) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const showFallback = error || isLikelyBlocked(name);
 
