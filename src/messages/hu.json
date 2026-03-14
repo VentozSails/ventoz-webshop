@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Prémium One Design Vitorlák",
+    "description": "Ventoz Sails: kiváló minőségű one design vitorlák Optimist, Laser/ILCA, Topaz, Hobie Cat és más hajókhoz. Európai vitorlamárka Hollandiából.",
+    "catalogTitle": "Termékek",
+    "catalogDescription": "Tekintse meg a Ventoz Sails teljes vitorlakínálatát.",
+    "productNotFound": "A termék nem található"
+  },
+  "nav": {
+    "home": "Főoldal",
+    "products": "Termékek",
+    "backToProducts": "Vissza a termékekhez"
+  },
+  "hero": {
+    "cta": "Termékek böngészése"
+  },
+  "usp": {
+    "freeShipping": "Ingyenes szállítás",
+    "freeShippingSub": "Hollandián belüli rendelések",
+    "euShipping": "Európai szállítás",
+    "euShippingSub": "Biztonságosan csomagolva, gyors kézbesítés",
+    "inStock": "Közvetlenül raktárról",
+    "inStockSub": "A legtöbb vitorla elérhető",
+    "quality": "Prémium minőség",
+    "qualitySub": "Tartós anyagok, magas minőségű kidolgozás",
+    "reviews": "Vásárlói vélemények"
+  },
+  "catalog": {
+    "allProducts": "Minden termék",
+    "all": "Összes",
+    "searchPlaceholder": "Vitorla keresése...",
+    "categories": "Kategóriák",
+    "resultsFor": "Eredmények",
+    "clear": "Törlés",
+    "noProducts": "Nem található termék.",
+    "viewAll": "Összes termék megtekintése",
+    "outOfStock": "Elfogyott",
+    "subtitle": "Fedezze fel teljes vitorlakínálatunkat",
+    "allSails": "Minden {category} vitorla a Ventoztól"
+  },
+  "product": {
+    "inStock": "Raktáron",
+    "soldOut": "Elfogyott",
+    "outOfStock": "Jelenleg nem elérhető",
+    "priceOnRequest": "Ár kérésre",
+    "exclVat": "ÁFA nélkül",
+    "volumePricing": "Mennyiségi árak",
+    "fromQty": "{qty} darabtól",
+    "orderInfo": "Rendelés / Információ",
+    "emailAdvice": "Írjon nekünk a {email} címre rendeléshez vagy tanácsadáshoz",
+    "specs": "Specifikáció",
+    "material": "Anyag",
+    "luff": "Elülső perem",
+    "foot": "Alsó perem",
+    "sailArea": "Vitorlafelület",
+    "weight": "Súly",
+    "includes": "Tartalmazza",
+    "details": "Részletek",
+    "productInfo": "Termékinformáció",
+    "viewProduct": "Termék megtekintése"
+  },
+  "footer": {
+    "contact": "Kapcsolat",
+    "navigation": "Navigáció",
+    "paymentMethods": "Fizetési módok",
+    "copyright": "Minden jog fenntartva.",
+    "tagline": "Prémium One Design Vitorlák"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Parti vitorla",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Viharfok",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Egyéb",
+    "other": "Más"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Aukščiausios kokybės One Design Burės",
+    "description": "Ventoz Sails: aukštos kokybės one design burės Optimist, Laser/ILCA, Topaz, Hobie Cat ir kt. Europos burių prekės ženklas iš Nyderlandų.",
+    "catalogTitle": "Produktai",
+    "catalogDescription": "Peržiūrėkite visą Ventoz Sails burių asortimentą.",
+    "productNotFound": "Produktas nerastas"
+  },
+  "nav": {
+    "home": "Pradžia",
+    "products": "Produktai",
+    "backToProducts": "Grįžti prie produktų"
+  },
+  "hero": {
+    "cta": "Peržiūrėti produktus"
+  },
+  "usp": {
+    "freeShipping": "Nemokamas pristatymas",
+    "freeShippingSub": "Užsakymai Nyderlanduose",
+    "euShipping": "Europos pristatymas",
+    "euShippingSub": "Saugiai supakuota, greitas pristatymas",
+    "inStock": "Tiesiai iš sandėlio",
+    "inStockSub": "Dauguma burių yra sandėlyje",
+    "quality": "Aukščiausia kokybė",
+    "qualitySub": "Patvarūs medžiagos, aukšta apdaila",
+    "reviews": "Klientų atsiliepimai"
+  },
+  "catalog": {
+    "allProducts": "Visi produktai",
+    "all": "Visi",
+    "searchPlaceholder": "Ieškoti burės...",
+    "categories": "Kategorijos",
+    "resultsFor": "Rezultatai",
+    "clear": "Išvalyti",
+    "noProducts": "Produktų nerasta.",
+    "viewAll": "Žiūrėti visus produktus",
+    "outOfStock": "Išparduota",
+    "subtitle": "Atraskite mūsų pilną burių asortimentą",
+    "allSails": "Visos {category} burės iš Ventoz"
+  },
+  "product": {
+    "inStock": "Yra sandėlyje",
+    "soldOut": "Išparduota",
+    "outOfStock": "Šiuo metu nėra",
+    "priceOnRequest": "Kaina pagal užklausą",
+    "exclVat": "be PVM",
+    "volumePricing": "Kiekio nuolaidos",
+    "fromQty": "Nuo {qty} vnt.",
+    "orderInfo": "Užsakyti / Informacija",
+    "emailAdvice": "Rašykite mums {email} dėl užsakymų ar konsultacijos",
+    "specs": "Specifikacijos",
+    "material": "Medžiaga",
+    "luff": "Priekinis kraštas",
+    "foot": "Apatinis kraštas",
+    "sailArea": "Burės plotas",
+    "weight": "Svoris",
+    "includes": "Įskaičiuota",
+    "details": "Detalės",
+    "productInfo": "Produkto informacija",
+    "viewProduct": "Žiūrėti produktą"
+  },
+  "footer": {
+    "contact": "Kontaktai",
+    "navigation": "Navigacija",
+    "paymentMethods": "Mokėjimo būdai",
+    "copyright": "Visos teisės saugomos.",
+    "tagline": "Aukščiausios kokybės One Design Burės"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Paplūdimio burė",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Audros fokas",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Įvairūs",
+    "other": "Kita"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Premium One Design Yelkenler",
+    "description": "Ventoz Sails: Optimist, Laser/ILCA, Topaz, Hobie Cat ve daha fazlası için yüksek kaliteli one design yelkenler. Hollanda'dan Avrupa yelken markası.",
+    "catalogTitle": "Ürünler",
+    "catalogDescription": "Ventoz Sails'in tam yelken yelpazesini keşfedin.",
+    "productNotFound": "Ürün bulunamadı"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "products": "Ürünler",
+    "backToProducts": "Ürünlere dön"
+  },
+  "hero": {
+    "cta": "Ürünleri görüntüle"
+  },
+  "usp": {
+    "freeShipping": "Ücretsiz kargo",
+    "freeShippingSub": "Hollanda içi siparişler",
+    "euShipping": "Avrupa kargo",
+    "euShippingSub": "Güvenli paketleme, hızlı teslimat",
+    "inStock": "Stoktan hemen",
+    "inStockSub": "Çoğu yelken mevcut",
+    "quality": "Premium kalite",
+    "qualitySub": "Dayanıklı malzemeler, yüksek işçilik",
+    "reviews": "Müşteri yorumları"
+  },
+  "catalog": {
+    "allProducts": "Tüm ürünler",
+    "all": "Tümü",
+    "searchPlaceholder": "Yelken ara...",
+    "categories": "Kategoriler",
+    "resultsFor": "Sonuçlar",
+    "clear": "Temizle",
+    "noProducts": "Ürün bulunamadı.",
+    "viewAll": "Tüm ürünleri görüntüle",
+    "outOfStock": "Tükendi",
+    "subtitle": "Tam yelken yelpazemizi keşfedin",
+    "allSails": "Tüm {category} yelkenler Ventoz'dan"
+  },
+  "product": {
+    "inStock": "Stokta",
+    "soldOut": "Tükendi",
+    "outOfStock": "Şu anda mevcut değil",
+    "priceOnRequest": "Fiyat talep üzerine",
+    "exclVat": "KDV hariç",
+    "volumePricing": "Toptan fiyatlar",
+    "fromQty": "{qty} adetten itibaren",
+    "orderInfo": "Sipariş / Bilgi",
+    "emailAdvice": "Sipariş veya danışmanlık için {email} adresine yazın",
+    "specs": "Teknik özellikler",
+    "material": "Malzeme",
+    "luff": "Ön kenar",
+    "foot": "Alt kenar",
+    "sailArea": "Yelken alanı",
+    "weight": "Ağırlık",
+    "includes": "Dahildir",
+    "details": "Detaylar",
+    "productInfo": "Ürün bilgisi",
+    "viewProduct": "Ürünü görüntüle"
+  },
+  "footer": {
+    "contact": "İletişim",
+    "navigation": "Gezinme",
+    "paymentMethods": "Ödeme yöntemleri",
+    "copyright": "Tüm hakları saklıdır.",
+    "tagline": "Premium One Design Yelkenler"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Plaj yelkeni",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Fırtına floku",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Çeşitli",
+    "other": "Diğer"
+  }
+}

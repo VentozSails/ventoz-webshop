@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Vele Premium One Design",
+    "description": "Ventoz Sails: vele one design de înaltă calitate pentru Optimist, Laser/ILCA, Topaz, Hobie Cat și altele. Brand european de vele din Olanda.",
+    "catalogTitle": "Produse",
+    "catalogDescription": "Descoperiți gama completă de vele Ventoz Sails.",
+    "productNotFound": "Produsul nu a fost găsit"
+  },
+  "nav": {
+    "home": "Acasă",
+    "products": "Produse",
+    "backToProducts": "Înapoi la produse"
+  },
+  "hero": {
+    "cta": "Vezi produsele"
+  },
+  "usp": {
+    "freeShipping": "Livrare gratuită",
+    "freeShippingSub": "Comenzi în Olanda",
+    "euShipping": "Livrare europeană",
+    "euShippingSub": "Ambalat sigur, livrare rapidă",
+    "inStock": "Direct din stoc",
+    "inStockSub": "Majoritatea velelor disponibile",
+    "quality": "Calitate premium",
+    "qualitySub": "Materiale durabile, finisaj de înaltă calitate",
+    "reviews": "Recenzii clienți"
+  },
+  "catalog": {
+    "allProducts": "Toate produsele",
+    "all": "Toate",
+    "searchPlaceholder": "Caută o velă...",
+    "categories": "Categorii",
+    "resultsFor": "Rezultate pentru",
+    "clear": "Șterge",
+    "noProducts": "Nu au fost găsite produse.",
+    "viewAll": "Vezi toate produsele",
+    "outOfStock": "Epuizat",
+    "subtitle": "Descoperiți gama noastră completă de vele",
+    "allSails": "Toate velele {category} de la Ventoz"
+  },
+  "product": {
+    "inStock": "În stoc",
+    "soldOut": "Epuizat",
+    "outOfStock": "Momentan indisponibil",
+    "priceOnRequest": "Preț la cerere",
+    "exclVat": "fără TVA",
+    "volumePricing": "Prețuri pe volum",
+    "fromQty": "De la {qty} bucăți",
+    "orderInfo": "Comandă / Informații",
+    "emailAdvice": "Scrieți-ne la {email} pentru comenzi sau consiliere",
+    "specs": "Specificații",
+    "material": "Material",
+    "luff": "Marginea frontală",
+    "foot": "Marginea inferioară",
+    "sailArea": "Suprafața velei",
+    "weight": "Greutate",
+    "includes": "Include",
+    "details": "Detalii",
+    "productInfo": "Informații produs",
+    "viewProduct": "Vezi produsul"
+  },
+  "footer": {
+    "contact": "Contact",
+    "navigation": "Navigare",
+    "paymentMethods": "Metode de plată",
+    "copyright": "Toate drepturile rezervate.",
+    "tagline": "Vele Premium One Design"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Velă de plajă",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Velă de furtună",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Diverse",
+    "other": "Altele"
+  }
+}

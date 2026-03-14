@@ -98,6 +98,38 @@ export async function getAboutTexts(): Promise<Record<string, string>> {
   return {};
 }
 
+export async function getWebshopHero(): Promise<{ title?: string; subtitle?: string }> {
+  try {
+    const { data } = await supabase
+      .from("app_settings")
+      .select("value")
+      .eq("key", "webshop_hero")
+      .single();
+    if (data?.value && typeof data.value === "object") {
+      return data.value as { title?: string; subtitle?: string };
+    }
+  } catch {
+    // Fallback
+  }
+  return {};
+}
+
+export async function getWebshopUsp(): Promise<Record<string, string>> {
+  try {
+    const { data } = await supabase
+      .from("app_settings")
+      .select("value")
+      .eq("key", "webshop_usp")
+      .single();
+    if (data?.value && typeof data.value === "object") {
+      return data.value as Record<string, string>;
+    }
+  } catch {
+    // Fallback
+  }
+  return {};
+}
+
 export async function getAllProductSlugs(): Promise<string[]> {
   const { data } = await supabase
     .from("product_catalogus")

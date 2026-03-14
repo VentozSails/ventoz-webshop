@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Κορυφαία Πανιά One Design",
+    "description": "Ventoz Sails: υψηλής ποιότητας πανιά one design για Optimist, Laser/ILCA, Topaz, Hobie Cat και άλλα. Ευρωπαϊκή μάρκα πανιών από την Ολλανδία.",
+    "catalogTitle": "Προϊόντα",
+    "catalogDescription": "Ανακαλύψτε την πλήρη γκάμα πανιών της Ventoz Sails.",
+    "productNotFound": "Το προϊόν δεν βρέθηκε"
+  },
+  "nav": {
+    "home": "Αρχική",
+    "products": "Προϊόντα",
+    "backToProducts": "Πίσω στα προϊόντα"
+  },
+  "hero": {
+    "cta": "Δείτε τα προϊόντα"
+  },
+  "usp": {
+    "freeShipping": "Δωρεάν αποστολή",
+    "freeShippingSub": "Παραγγελίες εντός Ολλανδίας",
+    "euShipping": "Ευρωπαϊκή αποστολή",
+    "euShippingSub": "Ασφαλής συσκευασία, γρήγορη παράδοση",
+    "inStock": "Άμεσα διαθέσιμο",
+    "inStockSub": "Τα περισσότερα πανιά διαθέσιμα",
+    "quality": "Κορυφαία ποιότητα",
+    "qualitySub": "Ανθεκτικά υλικά, υψηλό φινίρισμα",
+    "reviews": "Κριτικές πελατών"
+  },
+  "catalog": {
+    "allProducts": "Όλα τα προϊόντα",
+    "all": "Όλα",
+    "searchPlaceholder": "Αναζήτηση πανιού...",
+    "categories": "Κατηγορίες",
+    "resultsFor": "Αποτελέσματα για",
+    "clear": "Καθαρισμός",
+    "noProducts": "Δεν βρέθηκαν προϊόντα.",
+    "viewAll": "Δείτε όλα τα προϊόντα",
+    "outOfStock": "Εξαντλημένο",
+    "subtitle": "Ανακαλύψτε την πλήρη γκάμα πανιών μας",
+    "allSails": "Όλα τα {category} πανιά από Ventoz"
+  },
+  "product": {
+    "inStock": "Σε απόθεμα",
+    "soldOut": "Εξαντλημένο",
+    "outOfStock": "Προσωρινά μη διαθέσιμο",
+    "priceOnRequest": "Τιμή κατόπιν αιτήματος",
+    "exclVat": "χωρίς ΦΠΑ",
+    "volumePricing": "Τιμές χονδρικής",
+    "fromQty": "Από {qty} τεμάχια",
+    "orderInfo": "Παραγγελία / Πληροφορίες",
+    "emailAdvice": "Στείλτε μας email στο {email} για παραγγελίες ή συμβουλές",
+    "specs": "Προδιαγραφές",
+    "material": "Υλικό",
+    "luff": "Πρωραίο κάθετο",
+    "foot": "Κάτω πλευρά",
+    "sailArea": "Επιφάνεια πανιού",
+    "weight": "Βάρος",
+    "includes": "Περιλαμβάνει",
+    "details": "Λεπτομέρειες",
+    "productInfo": "Πληροφορίες προϊόντος",
+    "viewProduct": "Δείτε το προϊόν"
+  },
+  "footer": {
+    "contact": "Επικοινωνία",
+    "navigation": "Πλοήγηση",
+    "paymentMethods": "Μέθοδοι πληρωμής",
+    "copyright": "Με επιφύλαξη παντός δικαιώματος.",
+    "tagline": "Κορυφαία Πανιά One Design"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Πανί παραλίας",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Θυελλοφόρο πανί",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Διάφορα",
+    "other": "Άλλα"
+  }
+}

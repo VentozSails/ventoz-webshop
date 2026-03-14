@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Qlugħ Premium One Design",
+    "description": "Ventoz Sails: qlugħ one design ta' kwalità għolja għal-Optimist, Laser/ILCA, Topaz, Hobie Cat u aktar. Marka Ewropea ta' qlugħ mill-Olanda.",
+    "catalogTitle": "Prodotti",
+    "catalogDescription": "Ara l-firxa sħiħa ta' qlugħ ta' Ventoz Sails.",
+    "productNotFound": "Il-prodott ma nstabx"
+  },
+  "nav": {
+    "home": "Paġna Ewlenija",
+    "products": "Prodotti",
+    "backToProducts": "Lura għall-prodotti"
+  },
+  "hero": {
+    "cta": "Ara l-prodotti"
+  },
+  "usp": {
+    "freeShipping": "Kunsinna b'xejn",
+    "freeShippingSub": "Ordnijiet fl-Olanda",
+    "euShipping": "Spedizzjoni Ewropea",
+    "euShippingSub": "Ippakkjat b'mod sigur, kunsinna veloċi",
+    "inStock": "Direttament mill-istokk",
+    "inStockSub": "Il-biċċa l-kbira tal-qlugħ disponibbli",
+    "quality": "Kwalità premium",
+    "qualitySub": "Materjali li jdumu, finitura għolja",
+    "reviews": "Reviżjonijiet tal-klijenti"
+  },
+  "catalog": {
+    "allProducts": "Il-prodotti kollha",
+    "all": "Kollha",
+    "searchPlaceholder": "Fittex qlugħ...",
+    "categories": "Kategoriji",
+    "resultsFor": "Riżultati għal",
+    "clear": "Neħħi",
+    "noProducts": "Ma nstabu l-ebda prodotti.",
+    "viewAll": "Ara l-prodotti kollha",
+    "outOfStock": "Mhux disponibbli",
+    "subtitle": "Skopri l-firxa sħiħa ta' qlugħ tagħna",
+    "allSails": "Il-qlugħ kollha {category} minn Ventoz"
+  },
+  "product": {
+    "inStock": "Disponibbli",
+    "soldOut": "Mibjugħ kollu",
+    "outOfStock": "Bħalissa mhux disponibbli",
+    "priceOnRequest": "Prezz fuq talba",
+    "exclVat": "mingħajr VAT",
+    "volumePricing": "Prezzijiet tal-volum",
+    "fromQty": "Minn {qty} biċċa",
+    "orderInfo": "Ordna / Informazzjoni",
+    "emailAdvice": "Iktbilna fuq {email} għal ordnijiet jew pariri",
+    "specs": "Speċifikazzjonijiet",
+    "material": "Materjal",
+    "luff": "Tarf ta' quddiem",
+    "foot": "Tarf t'isfel",
+    "sailArea": "Superfiċje tal-qlugħ",
+    "weight": "Piż",
+    "includes": "Jinkludi",
+    "details": "Dettalji",
+    "productInfo": "Informazzjoni dwar il-prodott",
+    "viewProduct": "Ara l-prodott"
+  },
+  "footer": {
+    "contact": "Kuntatt",
+    "navigation": "Navigazzjoni",
+    "paymentMethods": "Metodi ta' ħlas",
+    "copyright": "Id-drittijiet kollha riżervati.",
+    "tagline": "Qlugħ Premium One Design"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Qlugħ tal-bajja",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Qlugħ tat-tempesta",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Diversi",
+    "other": "Oħrajn"
+  }
+}

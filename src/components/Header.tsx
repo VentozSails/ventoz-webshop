@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 import { getCategories } from "@/lib/products";
 import { categorieLabel } from "@/lib/types";
 import LanguageSwitcher from "./LanguageSwitcher";
+import CartIcon from "./CartIcon";
+import UserIcon from "./UserIcon";
 import { Link } from "@/i18n/navigation";
 
 export default async function Header({ locale }: { locale: string }) {
@@ -51,6 +53,8 @@ export default async function Header({ locale }: { locale: string }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </Link>
+          <CartIcon />
+          <UserIcon />
         </div>
       </div>
 

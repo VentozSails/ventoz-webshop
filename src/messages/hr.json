@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Premium One Design Jedra",
+    "description": "Ventoz Sails: visokokvalitetna one design jedra za Optimist, Laser/ILCA, Topaz, Hobie Cat i više. Europska marka jedara iz Nizozemske.",
+    "catalogTitle": "Proizvodi",
+    "catalogDescription": "Pregledajte kompletnu ponudu jedara Ventoz Sails.",
+    "productNotFound": "Proizvod nije pronađen"
+  },
+  "nav": {
+    "home": "Naslovnica",
+    "products": "Proizvodi",
+    "backToProducts": "Natrag na proizvode"
+  },
+  "hero": {
+    "cta": "Pregledajte proizvode"
+  },
+  "usp": {
+    "freeShipping": "Besplatna dostava",
+    "freeShippingSub": "Narudžbe u Nizozemskoj",
+    "euShipping": "Europska dostava",
+    "euShippingSub": "Sigurno zapakirano, brza dostava",
+    "inStock": "Izravno sa zalihe",
+    "inStockSub": "Većina jedara dostupna",
+    "quality": "Premium kvaliteta",
+    "qualitySub": "Izdržljivi materijali, visoka završna obrada",
+    "reviews": "Recenzije kupaca"
+  },
+  "catalog": {
+    "allProducts": "Svi proizvodi",
+    "all": "Svi",
+    "searchPlaceholder": "Traži jedro...",
+    "categories": "Kategorije",
+    "resultsFor": "Rezultati za",
+    "clear": "Obriši",
+    "noProducts": "Nema pronađenih proizvoda.",
+    "viewAll": "Pogledaj sve proizvode",
+    "outOfStock": "Nema na zalihi",
+    "subtitle": "Otkrijte naš kompletan asortiman jedara",
+    "allSails": "Sva {category} jedra od Ventoz"
+  },
+  "product": {
+    "inStock": "Na zalihi",
+    "soldOut": "Rasprodano",
+    "outOfStock": "Trenutno nedostupno",
+    "priceOnRequest": "Cijena na upit",
+    "exclVat": "bez PDV-a",
+    "volumePricing": "Količinski popusti",
+    "fromQty": "Od {qty} komada",
+    "orderInfo": "Naruči / Informacije",
+    "emailAdvice": "Pišite nam na {email} za narudžbe ili savjete",
+    "specs": "Specifikacije",
+    "material": "Materijal",
+    "luff": "Prednji rub",
+    "foot": "Donji rub",
+    "sailArea": "Površina jedra",
+    "weight": "Težina",
+    "includes": "Uključuje",
+    "details": "Detalji",
+    "productInfo": "Informacije o proizvodu",
+    "viewProduct": "Pogledaj proizvod"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "navigation": "Navigacija",
+    "paymentMethods": "Načini plaćanja",
+    "copyright": "Sva prava pridržana.",
+    "tagline": "Premium One Design Jedra"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Plažno jedro",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Olujni flok",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Razno",
+    "other": "Ostalo"
+  }
+}

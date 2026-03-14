@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Premium One Design Purjed",
+    "description": "Ventoz Sails: kvaliteetsed one design purjed Optimistile, Laser/ILCA-le, Topazile, Hobie Catile ja muudele. Euroopa purjebränd Hollandist.",
+    "catalogTitle": "Tooted",
+    "catalogDescription": "Vaadake Ventoz Sailsi täielikku purjedevalikut.",
+    "productNotFound": "Toodet ei leitud"
+  },
+  "nav": {
+    "home": "Avaleht",
+    "products": "Tooted",
+    "backToProducts": "Tagasi toodete juurde"
+  },
+  "hero": {
+    "cta": "Vaadake tooteid"
+  },
+  "usp": {
+    "freeShipping": "Tasuta kohaletoimetamine",
+    "freeShippingSub": "Tellimused Hollandis",
+    "euShipping": "Euroopa tarne",
+    "euShippingSub": "Turvaliselt pakitud, kiire kohaletoimetamine",
+    "inStock": "Otse laost",
+    "inStockSub": "Enamik purjeid saadaval",
+    "quality": "Kõrgkvaliteet",
+    "qualitySub": "Vastupidavad materjalid, kõrge viimistlus",
+    "reviews": "Klientide arvustused"
+  },
+  "catalog": {
+    "allProducts": "Kõik tooted",
+    "all": "Kõik",
+    "searchPlaceholder": "Otsi purjet...",
+    "categories": "Kategooriad",
+    "resultsFor": "Tulemused",
+    "clear": "Tühjenda",
+    "noProducts": "Tooteid ei leitud.",
+    "viewAll": "Vaata kõiki tooteid",
+    "outOfStock": "Otsas",
+    "subtitle": "Avastage meie täielik purjedevalik",
+    "allSails": "Kõik {category} purjed Ventozilt"
+  },
+  "product": {
+    "inStock": "Laos",
+    "soldOut": "Otsas",
+    "outOfStock": "Hetkel pole saadaval",
+    "priceOnRequest": "Hind päringul",
+    "exclVat": "ilma km-ta",
+    "volumePricing": "Mahuhinnad",
+    "fromQty": "Alates {qty} tk",
+    "orderInfo": "Telli / Info",
+    "emailAdvice": "Kirjutage meile aadressil {email} tellimuste või nõuannete saamiseks",
+    "specs": "Spetsifikatsioonid",
+    "material": "Materjal",
+    "luff": "Eesliik",
+    "foot": "Alumine liik",
+    "sailArea": "Purje pindala",
+    "weight": "Kaal",
+    "includes": "Sisaldab",
+    "details": "Üksikasjad",
+    "productInfo": "Tooteinfo",
+    "viewProduct": "Vaata toodet"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "navigation": "Navigeerimine",
+    "paymentMethods": "Makseviisid",
+    "copyright": "Kõik õigused kaitstud.",
+    "tagline": "Premium One Design Purjed"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Rannapuri",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Tormifokk",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Muud",
+    "other": "Muu"
+  }
+}

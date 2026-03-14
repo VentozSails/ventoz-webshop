@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Premium One Design Sejl",
+    "description": "Ventoz Sails: højkvalitets one design sejl til Optimist, Laser/ILCA, Topaz, Hobie Cat og mere. Europæisk sejlmærke fra Holland.",
+    "catalogTitle": "Produkter",
+    "catalogDescription": "Se det komplette udvalg af sejl fra Ventoz Sails.",
+    "productNotFound": "Produkt ikke fundet"
+  },
+  "nav": {
+    "home": "Hjem",
+    "products": "Produkter",
+    "backToProducts": "Tilbage til produkter"
+  },
+  "hero": {
+    "cta": "Se produkter"
+  },
+  "usp": {
+    "freeShipping": "Gratis fragt",
+    "freeShippingSub": "Ordrer i Holland",
+    "euShipping": "Europæisk forsendelse",
+    "euShippingSub": "Sikkert pakket, hurtig levering",
+    "inStock": "Direkte fra lager",
+    "inStockSub": "De fleste sejl tilgængelige",
+    "quality": "Premium kvalitet",
+    "qualitySub": "Holdbare materialer, høj finish",
+    "reviews": "Kundeanmeldelser"
+  },
+  "catalog": {
+    "allProducts": "Alle produkter",
+    "all": "Alle",
+    "searchPlaceholder": "Søg efter et sejl...",
+    "categories": "Kategorier",
+    "resultsFor": "Resultater for",
+    "clear": "Ryd",
+    "noProducts": "Ingen produkter fundet.",
+    "viewAll": "Se alle produkter",
+    "outOfStock": "Udsolgt",
+    "subtitle": "Opdag vores komplette udvalg af sejl",
+    "allSails": "Alle {category} sejl fra Ventoz"
+  },
+  "product": {
+    "inStock": "På lager",
+    "soldOut": "Udsolgt",
+    "outOfStock": "Ikke på lager",
+    "priceOnRequest": "Pris på forespørgsel",
+    "exclVat": "ekskl. moms",
+    "volumePricing": "Mængderabat",
+    "fromQty": "Fra {qty} stk.",
+    "orderInfo": "Bestil / Information",
+    "emailAdvice": "Skriv til os på {email} for bestillinger eller rådgivning",
+    "specs": "Specifikationer",
+    "material": "Materiale",
+    "luff": "Forlig",
+    "foot": "Underlig",
+    "sailArea": "Sejlareal",
+    "weight": "Vægt",
+    "includes": "Inkluderer",
+    "details": "Detaljer",
+    "productInfo": "Produktinformation",
+    "viewProduct": "Se produkt"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "navigation": "Navigation",
+    "paymentMethods": "Betalingsmetoder",
+    "copyright": "Alle rettigheder forbeholdes.",
+    "tagline": "Premium One Design Sejl"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Strandsejl",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Stormfok",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Diverse",
+    "other": "Andre"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Prémiové plachty One Design",
+    "description": "Ventoz Sails: vysoko kvalitné plachty one design pre Optimist, Laser/ILCA, Topaz, Hobie Cat a ďalšie. Európska značka plachiet z Holandska.",
+    "catalogTitle": "Produkty",
+    "catalogDescription": "Prezrite si kompletný sortiment plachiet Ventoz Sails.",
+    "productNotFound": "Produkt nebol nájdený"
+  },
+  "nav": {
+    "home": "Domov",
+    "products": "Produkty",
+    "backToProducts": "Späť na produkty"
+  },
+  "hero": {
+    "cta": "Prezrieť produkty"
+  },
+  "usp": {
+    "freeShipping": "Doprava zadarmo",
+    "freeShippingSub": "Objednávky v Holandsku",
+    "euShipping": "Európske doručenie",
+    "euShippingSub": "Bezpečne zabalené, rýchle doručenie",
+    "inStock": "Priamo zo skladu",
+    "inStockSub": "Väčšina plachiet dostupná",
+    "quality": "Prémiová kvalita",
+    "qualitySub": "Odolné materiály, vysoká kvalita spracovania",
+    "reviews": "Hodnotenia zákazníkov"
+  },
+  "catalog": {
+    "allProducts": "Všetky produkty",
+    "all": "Všetky",
+    "searchPlaceholder": "Hľadať plachtu...",
+    "categories": "Kategórie",
+    "resultsFor": "Výsledky pre",
+    "clear": "Vymazať",
+    "noProducts": "Nenašli sa žiadne produkty.",
+    "viewAll": "Zobraziť všetky produkty",
+    "outOfStock": "Vypredané",
+    "subtitle": "Objavte náš kompletný sortiment plachiet",
+    "allSails": "Všetky {category} plachty od Ventoz"
+  },
+  "product": {
+    "inStock": "Na sklade",
+    "soldOut": "Vypredané",
+    "outOfStock": "Momentálne nedostupné",
+    "priceOnRequest": "Cena na dopyt",
+    "exclVat": "bez DPH",
+    "volumePricing": "Množstevné zľavy",
+    "fromQty": "Od {qty} kusov",
+    "orderInfo": "Objednať / Informácie",
+    "emailAdvice": "Napíšte nám na {email} pre objednávky alebo poradenstvo",
+    "specs": "Špecifikácie",
+    "material": "Materiál",
+    "luff": "Predný lem",
+    "foot": "Spodný lem",
+    "sailArea": "Plocha plachty",
+    "weight": "Hmotnosť",
+    "includes": "Zahŕňa",
+    "details": "Detaily",
+    "productInfo": "Informácie o produkte",
+    "viewProduct": "Zobraziť produkt"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "navigation": "Navigácia",
+    "paymentMethods": "Spôsoby platby",
+    "copyright": "Všetky práva vyhradené.",
+    "tagline": "Prémiové plachty One Design"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Plážová plachta",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Búrková plachta",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Rôzne",
+    "other": "Ostatné"
+  }
+}

@@ -12,6 +12,7 @@ import {
   categorieLabel,
 } from "@/lib/types";
 import ImageGallery from "@/components/ImageGallery";
+import AddToCartButton from "@/components/AddToCartButton";
 import { Link } from "@/i18n/navigation";
 
 export const revalidate = 300;
@@ -95,7 +96,7 @@ export default async function ProductPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
 
       <div className="bg-navy">
@@ -186,16 +187,16 @@ export default async function ProductPage({
             </div>
 
             <div className="mt-6">
-              <a
-                href={`mailto:info@ventoz.com?subject=${encodeURIComponent(`${t("orderInfo")} ${naam}`)}`}
-                className="inline-flex items-center gap-2 bg-gold text-navy font-bold text-sm px-7 py-3.5 rounded-lg hover:brightness-110 transition-all shadow-[0_4px_16px_rgba(200,168,92,0.4)]"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                {t("orderInfo")}
-              </a>
-              <p className="mt-2 text-[11px] text-slate-400">
+              <AddToCartButton
+                productId={product.id}
+                naam={naam}
+                image={displayAfbeelding(product)}
+                prijs={prijs ?? 0}
+                categorie={product.categorie}
+                inStock={product.in_stock}
+              />
+
+              <p className="mt-4 text-[11px] text-slate-400">
                 {t("emailAdvice", { email: "info@ventoz.com" })}
               </p>
             </div>

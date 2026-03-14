@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Premium One Design Buras",
+    "description": "Ventoz Sails: augstas kvalitātes one design buras Optimist, Laser/ILCA, Topaz, Hobie Cat un citām. Eiropas buru zīmols no Nīderlandes.",
+    "catalogTitle": "Produkti",
+    "catalogDescription": "Apskatiet pilnu Ventoz Sails buru sortimentu.",
+    "productNotFound": "Produkts nav atrasts"
+  },
+  "nav": {
+    "home": "Sākums",
+    "products": "Produkti",
+    "backToProducts": "Atpakaļ pie produktiem"
+  },
+  "hero": {
+    "cta": "Apskatīt produktus"
+  },
+  "usp": {
+    "freeShipping": "Bezmaksas piegāde",
+    "freeShippingSub": "Pasūtījumi Nīderlandē",
+    "euShipping": "Eiropas piegāde",
+    "euShippingSub": "Droši iepakots, ātra piegāde",
+    "inStock": "Tieši no noliktavas",
+    "inStockSub": "Lielākā daļa buru pieejama",
+    "quality": "Premium kvalitāte",
+    "qualitySub": "Izturīgi materiāli, augsta apdare",
+    "reviews": "Klientu atsauksmes"
+  },
+  "catalog": {
+    "allProducts": "Visi produkti",
+    "all": "Visi",
+    "searchPlaceholder": "Meklēt buru...",
+    "categories": "Kategorijas",
+    "resultsFor": "Rezultāti",
+    "clear": "Notīrīt",
+    "noProducts": "Nav atrasts neviens produkts.",
+    "viewAll": "Skatīt visus produktus",
+    "outOfStock": "Nav pieejams",
+    "subtitle": "Atklājiet mūsu pilno buru sortimentu",
+    "allSails": "Visas {category} buras no Ventoz"
+  },
+  "product": {
+    "inStock": "Noliktavā",
+    "soldOut": "Izpārdots",
+    "outOfStock": "Pašlaik nav pieejams",
+    "priceOnRequest": "Cena pēc pieprasījuma",
+    "exclVat": "bez PVN",
+    "volumePricing": "Apjoma cenas",
+    "fromQty": "No {qty} gab.",
+    "orderInfo": "Pasūtīt / Informācija",
+    "emailAdvice": "Rakstiet mums uz {email} pasūtījumiem vai konsultācijai",
+    "specs": "Specifikācijas",
+    "material": "Materiāls",
+    "luff": "Priekšējā mala",
+    "foot": "Apakšējā mala",
+    "sailArea": "Buras laukums",
+    "weight": "Svars",
+    "includes": "Ietver",
+    "details": "Detaļas",
+    "productInfo": "Produkta informācija",
+    "viewProduct": "Skatīt produktu"
+  },
+  "footer": {
+    "contact": "Kontakti",
+    "navigation": "Navigācija",
+    "paymentMethods": "Maksājumu metodes",
+    "copyright": "Visas tiesības aizsargātas.",
+    "tagline": "Premium One Design Buras"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Pludmales bura",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Vētras foks",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Dažādi",
+    "other": "Citi"
+  }
+}

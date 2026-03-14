@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Żagle Premium One Design",
+    "description": "Ventoz Sails: wysokiej jakości żagle one design do Optimista, Lasera/ILCA, Topaza, Hobie Cata i innych. Europejska marka żaglowa z Holandii.",
+    "catalogTitle": "Produkty",
+    "catalogDescription": "Zobacz pełną ofertę żagli Ventoz Sails.",
+    "productNotFound": "Nie znaleziono produktu"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "products": "Produkty",
+    "backToProducts": "Powrót do produktów"
+  },
+  "hero": {
+    "cta": "Przeglądaj produkty"
+  },
+  "usp": {
+    "freeShipping": "Darmowa wysyłka",
+    "freeShippingSub": "Zamówienia w Holandii",
+    "euShipping": "Wysyłka europejska",
+    "euShippingSub": "Bezpiecznie zapakowane, szybka dostawa",
+    "inStock": "Bezpośrednio z magazynu",
+    "inStockSub": "Większość żagli dostępna",
+    "quality": "Jakość premium",
+    "qualitySub": "Trwałe materiały, wysokie wykończenie",
+    "reviews": "Opinie klientów"
+  },
+  "catalog": {
+    "allProducts": "Wszystkie produkty",
+    "all": "Wszystkie",
+    "searchPlaceholder": "Szukaj żagla...",
+    "categories": "Kategorie",
+    "resultsFor": "Wyniki dla",
+    "clear": "Wyczyść",
+    "noProducts": "Nie znaleziono produktów.",
+    "viewAll": "Zobacz wszystkie produkty",
+    "outOfStock": "Wyprzedane",
+    "subtitle": "Odkryj nasz kompletny asortyment żagli",
+    "allSails": "Wszystkie żagle {category} od Ventoz"
+  },
+  "product": {
+    "inStock": "W magazynie",
+    "soldOut": "Wyprzedane",
+    "outOfStock": "Obecnie niedostępne",
+    "priceOnRequest": "Cena na zapytanie",
+    "exclVat": "bez VAT",
+    "volumePricing": "Ceny hurtowe",
+    "fromQty": "Od {qty} szt.",
+    "orderInfo": "Zamów / Informacje",
+    "emailAdvice": "Napisz do nas na {email} w sprawie zamówień lub porad",
+    "specs": "Specyfikacja",
+    "material": "Materiał",
+    "luff": "Lik przedni",
+    "foot": "Lik dolny",
+    "sailArea": "Powierzchnia żagla",
+    "weight": "Waga",
+    "includes": "Zawiera",
+    "details": "Szczegóły",
+    "productInfo": "Informacje o produkcie",
+    "viewProduct": "Zobacz produkt"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "navigation": "Nawigacja",
+    "paymentMethods": "Metody płatności",
+    "copyright": "Wszelkie prawa zastrzeżone.",
+    "tagline": "Żagle Premium One Design"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Żagiel plażowy",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Sztormowy fok",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Różne",
+    "other": "Inne"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — 优质 One Design 帆",
+    "description": "Ventoz Sails：适用于Optimist、Laser/ILCA、Topaz、Hobie Cat等的高品质one design帆。来自荷兰的欧洲帆品牌。",
+    "catalogTitle": "产品",
+    "catalogDescription": "浏览Ventoz Sails的完整帆具系列。",
+    "productNotFound": "未找到产品"
+  },
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "backToProducts": "返回产品"
+  },
+  "hero": {
+    "cta": "浏览产品"
+  },
+  "usp": {
+    "freeShipping": "免费配送",
+    "freeShippingSub": "荷兰境内订单",
+    "euShipping": "欧洲配送",
+    "euShippingSub": "安全包装，快速配送",
+    "inStock": "现货供应",
+    "inStockSub": "大部分帆有库存",
+    "quality": "优质品质",
+    "qualitySub": "耐用材料，精细做工",
+    "reviews": "客户评价"
+  },
+  "catalog": {
+    "allProducts": "所有产品",
+    "all": "全部",
+    "searchPlaceholder": "搜索帆...",
+    "categories": "分类",
+    "resultsFor": "搜索结果",
+    "clear": "清除",
+    "noProducts": "未找到产品。",
+    "viewAll": "查看所有产品",
+    "outOfStock": "缺货",
+    "subtitle": "探索我们完整的帆具系列",
+    "allSails": "所有 {category} 帆来自 Ventoz"
+  },
+  "product": {
+    "inStock": "有库存",
+    "soldOut": "已售罄",
+    "outOfStock": "暂时缺货",
+    "priceOnRequest": "价格请询",
+    "exclVat": "不含增值税",
+    "volumePricing": "批量价格",
+    "fromQty": "从 {qty} 件起",
+    "orderInfo": "订购 / 信息",
+    "emailAdvice": "请发送邮件至 {email} 订购或咨询",
+    "specs": "规格",
+    "material": "材料",
+    "luff": "前缘",
+    "foot": "下缘",
+    "sailArea": "帆面积",
+    "weight": "重量",
+    "includes": "包含",
+    "details": "详情",
+    "productInfo": "产品信息",
+    "viewProduct": "查看产品"
+  },
+  "footer": {
+    "contact": "联系方式",
+    "navigation": "导航",
+    "paymentMethods": "支付方式",
+    "copyright": "版权所有。",
+    "tagline": "优质 One Design 帆"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "沙滩帆",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "风暴前帆",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "其他",
+    "other": "其他"
+  }
+}

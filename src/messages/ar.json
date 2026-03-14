@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — أشرعة One Design الفاخرة",
+    "description": "Ventoz Sails: أشرعة one design عالية الجودة لـ Optimist و Laser/ILCA و Topaz و Hobie Cat والمزيد. علامة تجارية أوروبية للأشرعة من هولندا.",
+    "catalogTitle": "المنتجات",
+    "catalogDescription": "تصفح مجموعة أشرعة Ventoz Sails الكاملة.",
+    "productNotFound": "المنتج غير موجود"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "backToProducts": "العودة إلى المنتجات"
+  },
+  "hero": {
+    "cta": "تصفح المنتجات"
+  },
+  "usp": {
+    "freeShipping": "شحن مجاني",
+    "freeShippingSub": "الطلبات داخل هولندا",
+    "euShipping": "شحن أوروبي",
+    "euShippingSub": "تغليف آمن، توصيل سريع",
+    "inStock": "متوفر مباشرة",
+    "inStockSub": "معظم الأشرعة متوفرة",
+    "quality": "جودة فاخرة",
+    "qualitySub": "مواد متينة، تشطيب عالي",
+    "reviews": "تقييمات العملاء"
+  },
+  "catalog": {
+    "allProducts": "جميع المنتجات",
+    "all": "الكل",
+    "searchPlaceholder": "ابحث عن شراع...",
+    "categories": "الفئات",
+    "resultsFor": "نتائج لـ",
+    "clear": "مسح",
+    "noProducts": "لم يتم العثور على منتجات.",
+    "viewAll": "عرض جميع المنتجات",
+    "outOfStock": "نفد من المخزون",
+    "subtitle": "اكتشف مجموعتنا الكاملة من الأشرعة",
+    "allSails": "جميع أشرعة {category} من Ventoz"
+  },
+  "product": {
+    "inStock": "متوفر",
+    "soldOut": "نفد",
+    "outOfStock": "غير متوفر حالياً",
+    "priceOnRequest": "السعر عند الطلب",
+    "exclVat": "بدون ضريبة",
+    "volumePricing": "أسعار الجملة",
+    "fromQty": "من {qty} قطعة",
+    "orderInfo": "طلب / معلومات",
+    "emailAdvice": "راسلنا على {email} للطلبات أو الاستشارة",
+    "specs": "المواصفات",
+    "material": "المادة",
+    "luff": "الحافة الأمامية",
+    "foot": "الحافة السفلية",
+    "sailArea": "مساحة الشراع",
+    "weight": "الوزن",
+    "includes": "يشمل",
+    "details": "التفاصيل",
+    "productInfo": "معلومات المنتج",
+    "viewProduct": "عرض المنتج"
+  },
+  "footer": {
+    "contact": "اتصل بنا",
+    "navigation": "التنقل",
+    "paymentMethods": "طرق الدفع",
+    "copyright": "جميع الحقوق محفوظة.",
+    "tagline": "أشرعة One Design الفاخرة"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "شراع الشاطئ",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "شراع العاصفة",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "متنوعة",
+    "other": "أخرى"
+  }
+}

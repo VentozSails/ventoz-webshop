@@ -27,32 +27,30 @@ export interface Product {
   beschrijving_override: string | null;
   prijs_override: number | null;
   afbeelding_url_override: string | null;
-  naam_en: string | null;
-  naam_de: string | null;
-  naam_fr: string | null;
-  naam_es: string | null;
-  naam_it: string | null;
-  beschrijving_en: string | null;
-  beschrijving_de: string | null;
-  beschrijving_fr: string | null;
-  beschrijving_es: string | null;
-  beschrijving_it: string | null;
+  [key: `naam_${string}`]: string | null;
+  [key: `beschrijving_${string}`]: string | null;
 }
 
-export function displayNaam(p: Product, locale = "nl"): string {
+export function displayNaam(p: Product, locale = "en"): string {
   if (locale !== "nl") {
-    const key = `naam_${locale}` as keyof Product;
-    const translated = p[key];
+    const translated = p[`naam_${locale}`];
     if (typeof translated === "string" && translated) return translated;
+    if (locale !== "en") {
+      const en = p["naam_en"];
+      if (typeof en === "string" && en) return en;
+    }
   }
   return p.naam_override || p.naam;
 }
 
-export function displayBeschrijving(p: Product, locale = "nl"): string | null {
+export function displayBeschrijving(p: Product, locale = "en"): string | null {
   if (locale !== "nl") {
-    const key = `beschrijving_${locale}` as keyof Product;
-    const translated = p[key];
+    const translated = p[`beschrijving_${locale}`];
     if (typeof translated === "string" && translated) return translated;
+    if (locale !== "en") {
+      const en = p["beschrijving_en"];
+      if (typeof en === "string" && en) return en;
+    }
   }
   return p.beschrijving_override || p.beschrijving;
 }
@@ -83,12 +81,13 @@ export function productSlug(p: Product): string {
     + `-${p.id}`;
 }
 
-export function prijsFormatted(p: Product, locale = "nl"): string {
+export function prijsFormatted(p: Product, locale = "en"): string {
   const price = displayPrijs(p);
   if (price == null) {
     const labels: Record<string, string> = {
       nl: "Prijs op aanvraag", en: "Price on request", de: "Preis auf Anfrage",
       fr: "Prix sur demande", es: "Precio a consultar", it: "Prezzo su richiesta",
+      zh: "价格请询", ar: "السعر عند الطلب", tr: "Fiyat talep üzerine",
     };
     return labels[locale] || labels.en!;
   }
@@ -97,7 +96,7 @@ export function prijsFormatted(p: Product, locale = "nl"): string {
 }
 
 export function categorieLabel(slug: string | null, t?: (key: string) => string): string {
-  if (!slug) return t ? t("other") : "Overig";
+  if (!slug) return t ? t("other") : "Other";
   if (t) return t(slug) || slug;
   return CATEGORIES[slug] || slug;
 }
@@ -107,7 +106,7 @@ export const CATEGORIES: Record<string, string> = {
   "ventoz-laserzeil": "Laser / ILCA",
   "ventoz-topaz": "Topaz",
   "ventoz-splash": "Splash",
-  beachsailing: "Strandzeil",
+  beachsailing: "Beach Sail",
   "ventoz-centaur": "Centaur",
   "rs-feva": "RS Feva",
   valk: "Polyvalk",
@@ -116,11 +115,11 @@ export const CATEGORIES: Record<string, string> = {
   "ventoz-420-470-sails": "420 / 470",
   efsix: "EFSix",
   sunfish: "Sunfish",
-  stormfok: "Stormfok",
+  stormfok: "Storm Jib",
   "open-bic": "Open Bic",
   "nacra-17": "Nacra 17",
   "yamaha-seahopper": "Yamaha Seahopper",
   mirror: "Mirror",
   "fox-22": "Fox 22",
-  diversen: "Diversen",
+  diversen: "Miscellaneous",
 };

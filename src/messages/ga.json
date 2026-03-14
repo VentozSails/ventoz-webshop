@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Seolta Préimhe One Design",
+    "description": "Ventoz Sails: seolta one design ardcháilíochta don Optimist, Laser/ILCA, Topaz, Hobie Cat agus tuilleadh. Branda Eorpach seoltóireachta ón Ísiltír.",
+    "catalogTitle": "Táirgí",
+    "catalogDescription": "Féach ar raon iomlán seolta Ventoz Sails.",
+    "productNotFound": "Táirge gan aimsiú"
+  },
+  "nav": {
+    "home": "Baile",
+    "products": "Táirgí",
+    "backToProducts": "Ar ais go táirgí"
+  },
+  "hero": {
+    "cta": "Féach ar tháirgí"
+  },
+  "usp": {
+    "freeShipping": "Seachadadh saor in aisce",
+    "freeShippingSub": "Orduithe san Ísiltír",
+    "euShipping": "Seoladh Eorpach",
+    "euShippingSub": "Pacáilte go sábháilte, seachadadh tapa",
+    "inStock": "Díreach ón stoc",
+    "inStockSub": "An chuid is mó seolta ar fáil",
+    "quality": "Caighdeán préimhe",
+    "qualitySub": "Ábhair marthanach, bailchríoch ard",
+    "reviews": "Léirmheasanna custaiméirí"
+  },
+  "catalog": {
+    "allProducts": "Gach táirge",
+    "all": "Gach",
+    "searchPlaceholder": "Cuardaigh seol...",
+    "categories": "Catagóirí",
+    "resultsFor": "Torthaí do",
+    "clear": "Glan",
+    "noProducts": "Ní bhfuarthas aon táirge.",
+    "viewAll": "Féach ar gach táirge",
+    "outOfStock": "As stoc",
+    "subtitle": "Aimsigh ár raon iomlán seolta",
+    "allSails": "Gach {category} seol ó Ventoz"
+  },
+  "product": {
+    "inStock": "Ar fáil",
+    "soldOut": "Díolta amach",
+    "outOfStock": "Níl ar fáil faoi láthair",
+    "priceOnRequest": "Praghas ar iarratas",
+    "exclVat": "gan CBL",
+    "volumePricing": "Praghsáil toirte",
+    "fromQty": "Ó {qty} píosa",
+    "orderInfo": "Ordaigh / Eolas",
+    "emailAdvice": "Seol ríomhphost chugainn ag {email} le haghaidh orduithe nó comhairle",
+    "specs": "Sonraíochtaí",
+    "material": "Ábhar",
+    "luff": "Bord tosaigh",
+    "foot": "Bord íochtair",
+    "sailArea": "Achar seoil",
+    "weight": "Meáchan",
+    "includes": "Áirítear",
+    "details": "Sonraí",
+    "productInfo": "Eolas táirge",
+    "viewProduct": "Féach ar an táirge"
+  },
+  "footer": {
+    "contact": "Teagmháil",
+    "navigation": "Nascleanúint",
+    "paymentMethods": "Modhanna íocaíochta",
+    "copyright": "Gach ceart ar cosaint.",
+    "tagline": "Seolta Préimhe One Design"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Seol trá",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Seol stoirme",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Éagsúil",
+    "other": "Eile"
+  }
+}

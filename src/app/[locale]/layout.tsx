@@ -7,6 +7,8 @@ import { routing } from "@/i18n/routing";
 import type { Locale } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/lib/cart";
+import { AuthProvider } from "@/lib/auth";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -41,9 +43,9 @@ export async function generateMetadata({
       siteName: "Ventoz Sails",
     },
     alternates: {
-      canonical: `https://ventoz.com${locale === "nl" ? "" : `/${locale}`}`,
+      canonical: `https://ventoz.com${locale === "en" ? "" : `/${locale}`}`,
       languages: Object.fromEntries(
-        routing.locales.map((l) => [l, `https://ventoz.com${l === "nl" ? "" : `/${l}`}`])
+        routing.locales.map((l) => [l, `https://ventoz.com${l === "en" ? "" : `/${l}`}`])
       ),
     },
   };
@@ -68,9 +70,13 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${dmSans.variable} ${dmSerif.variable}`}>
       <body className="font-[family-name:var(--font-sans)] bg-surface text-slate-900 antialiased min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
-          <Header locale={locale} />
-          <main className="flex-1">{children}</main>
-          <Footer locale={locale} />
+          <AuthProvider>
+            <CartProvider>
+              <Header locale={locale} />
+              <main className="flex-1">{children}</main>
+              <Footer locale={locale} />
+            </CartProvider>
+          </AuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>

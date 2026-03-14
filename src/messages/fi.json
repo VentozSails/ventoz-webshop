@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Premium One Design Purjeet",
+    "description": "Ventoz Sails: korkealaatuiset one design purjeet Optimistille, Laser/ILCA:lle, Topazille, Hobie Catille ja muille. Eurooppalainen purjemerkki Alankomaista.",
+    "catalogTitle": "Tuotteet",
+    "catalogDescription": "Tutustu Ventoz Sailsin täydelliseen purjevalikoimaan.",
+    "productNotFound": "Tuotetta ei löytynyt"
+  },
+  "nav": {
+    "home": "Etusivu",
+    "products": "Tuotteet",
+    "backToProducts": "Takaisin tuotteisiin"
+  },
+  "hero": {
+    "cta": "Selaa tuotteita"
+  },
+  "usp": {
+    "freeShipping": "Ilmainen toimitus",
+    "freeShippingSub": "Tilaukset Alankomaissa",
+    "euShipping": "Euroopan toimitus",
+    "euShippingSub": "Turvallisesti pakattu, nopea toimitus",
+    "inStock": "Suoraan varastosta",
+    "inStockSub": "Useimmat purjeet saatavilla",
+    "quality": "Premium-laatu",
+    "qualitySub": "Kestävät materiaalit, laadukas viimeistely",
+    "reviews": "Asiakasarvostelut"
+  },
+  "catalog": {
+    "allProducts": "Kaikki tuotteet",
+    "all": "Kaikki",
+    "searchPlaceholder": "Etsi purjetta...",
+    "categories": "Kategoriat",
+    "resultsFor": "Tulokset haulle",
+    "clear": "Tyhjennä",
+    "noProducts": "Tuotteita ei löytynyt.",
+    "viewAll": "Näytä kaikki tuotteet",
+    "outOfStock": "Loppuunmyyty",
+    "subtitle": "Tutustu täydelliseen purjevalikoimaamme",
+    "allSails": "Kaikki {category} purjeet Ventozilta"
+  },
+  "product": {
+    "inStock": "Varastossa",
+    "soldOut": "Loppuunmyyty",
+    "outOfStock": "Ei tällä hetkellä saatavilla",
+    "priceOnRequest": "Hinta pyynnöstä",
+    "exclVat": "ilman ALV",
+    "volumePricing": "Määräalennukset",
+    "fromQty": "Alkaen {qty} kpl",
+    "orderInfo": "Tilaa / Tiedot",
+    "emailAdvice": "Lähetä meille sähköpostia osoitteeseen {email} tilauksista tai neuvonnasta",
+    "specs": "Tekniset tiedot",
+    "material": "Materiaali",
+    "luff": "Etuliikki",
+    "foot": "Alaliikki",
+    "sailArea": "Purjepinta-ala",
+    "weight": "Paino",
+    "includes": "Sisältää",
+    "details": "Yksityiskohdat",
+    "productInfo": "Tuotetiedot",
+    "viewProduct": "Näytä tuote"
+  },
+  "footer": {
+    "contact": "Yhteystiedot",
+    "navigation": "Navigointi",
+    "paymentMethods": "Maksutavat",
+    "copyright": "Kaikki oikeudet pidätetään.",
+    "tagline": "Premium One Design Purjeet"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Rantapurje",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Myrskyföökki",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Sekalaiset",
+    "other": "Muut"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Премиум платна One Design",
+    "description": "Ventoz Sails: висококачествени платна one design за Optimist, Laser/ILCA, Topaz, Hobie Cat и други. Европейска марка за платна от Нидерландия.",
+    "catalogTitle": "Продукти",
+    "catalogDescription": "Разгледайте пълната гама платна на Ventoz Sails.",
+    "productNotFound": "Продуктът не е намерен"
+  },
+  "nav": {
+    "home": "Начало",
+    "products": "Продукти",
+    "backToProducts": "Обратно към продукти"
+  },
+  "hero": {
+    "cta": "Разгледайте продукти"
+  },
+  "usp": {
+    "freeShipping": "Безплатна доставка",
+    "freeShippingSub": "Поръчки в Нидерландия",
+    "euShipping": "Европейска доставка",
+    "euShippingSub": "Безопасно опаковано, бърза доставка",
+    "inStock": "Директно от склада",
+    "inStockSub": "Повечето платна на склад",
+    "quality": "Премиум качество",
+    "qualitySub": "Издръжливи материали, висококачествена обработка",
+    "reviews": "Отзиви на клиенти"
+  },
+  "catalog": {
+    "allProducts": "Всички продукти",
+    "all": "Всички",
+    "searchPlaceholder": "Търсене на платно...",
+    "categories": "Категории",
+    "resultsFor": "Резултати за",
+    "clear": "Изчисти",
+    "noProducts": "Няма намерени продукти.",
+    "viewAll": "Виж всички продукти",
+    "outOfStock": "Изчерпано",
+    "subtitle": "Открийте пълната ни гама от платна",
+    "allSails": "Всички {category} платна от Ventoz"
+  },
+  "product": {
+    "inStock": "В наличност",
+    "soldOut": "Изчерпано",
+    "outOfStock": "В момента не е налично",
+    "priceOnRequest": "Цена при запитване",
+    "exclVat": "без ДДС",
+    "volumePricing": "Обемни цени",
+    "fromQty": "От {qty} броя",
+    "orderInfo": "Поръчка / Информация",
+    "emailAdvice": "Пишете ни на {email} за поръчки или съвети",
+    "specs": "Спецификации",
+    "material": "Материал",
+    "luff": "Предно подгъване",
+    "foot": "Долно подгъване",
+    "sailArea": "Площ на платното",
+    "weight": "Тегло",
+    "includes": "Включва",
+    "details": "Детайли",
+    "productInfo": "Информация за продукта",
+    "viewProduct": "Виж продукта"
+  },
+  "footer": {
+    "contact": "Контакт",
+    "navigation": "Навигация",
+    "paymentMethods": "Начини на плащане",
+    "copyright": "Всички права запазени.",
+    "tagline": "Премиум платна One Design"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Плажно платно",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Щормов кливер",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Разни",
+    "other": "Други"
+  }
+}
