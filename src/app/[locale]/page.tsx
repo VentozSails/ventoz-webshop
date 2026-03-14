@@ -13,10 +13,12 @@ import { Link } from "@/i18n/navigation";
 
 export const revalidate = 300;
 
-const ABOUT_FALLBACK =
-  "Ventoz Sails is een modern Europees zeilmerk, uit Nederland. " +
-  'Wij brengen kwalitatief hoogwaardige "one design" zeilen ' +
-  "tegen een eerlijke prijs op de gehele Europese markt.";
+const ABOUT_FALLBACK: Record<string, string> = {
+  nl: "Ventoz Sails is een modern Europees zeilmerk, uit Nederland. Wij brengen kwalitatief hoogwaardige \"one design\" zeilen tegen een eerlijke prijs op de gehele Europese markt.",
+  en: "Ventoz Sails is a modern European sail brand from the Netherlands. We offer high-quality one design sails at a fair price across the entire European market.",
+  de: "Ventoz Sails ist eine moderne europäische Segelmarke aus den Niederlanden. Wir bieten hochwertige One-Design-Segel zu einem fairen Preis auf dem gesamten europäischen Markt an.",
+  fr: "Ventoz Sails est une marque européenne moderne de voiles, basée aux Pays-Bas. Nous proposons des voiles one design de haute qualité à un prix équitable sur l'ensemble du marché européen.",
+};
 
 export default async function HomePage({
   params,
@@ -34,7 +36,8 @@ export default async function HomePage({
     getAboutTexts(),
   ]);
 
-  const aboutText = aboutTexts[locale] || aboutTexts["nl"] || aboutTexts["en"] || ABOUT_FALLBACK;
+  const fallback = ABOUT_FALLBACK[locale] || ABOUT_FALLBACK["en"] || ABOUT_FALLBACK["nl"];
+  const aboutText = aboutTexts[locale] || aboutTexts["en"] || aboutTexts["nl"] || fallback;
 
   const sliderProducts = featured.map((p) => ({
     slug: productSlug(p),

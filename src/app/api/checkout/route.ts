@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabaseAdmin, getPaymentConfig } from "@/lib/supabase-admin";
 import { createPayNlTransaction, createBuckarooTransaction } from "@/lib/payment";
 import { getShippingRate, calculateVat, EU_COUNTRIES } from "@/lib/shipping";
 
@@ -8,15 +8,6 @@ function generateOrderNumber(): string {
   const date = now.toISOString().slice(0, 10).replace(/-/g, "");
   const seq = String(Math.floor(Math.random() * 9999) + 1).padStart(4, "0");
   return `VTZ-${date}-${seq}`;
-}
-
-async function getPaymentConfig() {
-  const { data } = await supabaseAdmin
-    .from("app_settings")
-    .select("value")
-    .eq("key", "payment_config")
-    .single();
-  return data?.value as Record<string, unknown> | null;
 }
 
 function validateEmail(email: string): boolean {
@@ -169,6 +160,7 @@ export async function POST(request: NextRequest) {
       .from("orders")
       .update({
         betaal_referentie: paymentResult.transactionId,
+        betaal_gateway: paymentResult.gateway,
         status: "betaling_gestart",
       })
       .eq("id", order.id);

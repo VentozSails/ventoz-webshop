@@ -1,15 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabaseAdmin, getPaymentConfig, sendOrderEmail } from "@/lib/supabase-admin";
 import crypto from "crypto";
-
-async function getPaymentConfig() {
-  const { data } = await supabaseAdmin
-    .from("app_settings")
-    .select("value")
-    .eq("key", "payment_config")
-    .single();
-  return data?.value as Record<string, unknown> | null;
-}
 
 function verifyPayNlSignature(body: string, signature: string | null, token: string): boolean {
   if (!signature) return false;
@@ -81,6 +72,10 @@ export async function POST(request: NextRequest) {
       const updates: Record<string, unknown> = { status: newStatus };
       if (newStatus === "betaald") updates.betaald_op = new Date().toISOString();
       await supabaseAdmin.from("orders").update(updates).eq("id", order.id);
+
+      if (newStatus === "betaald") {
+        sendOrderEmail(order.id).catch(() => {});
+      }
     }
 
     return NextResponse.json({ ok: true });

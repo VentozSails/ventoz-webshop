@@ -1,15 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabaseAdmin, getPaymentConfig, sendOrderEmail } from "@/lib/supabase-admin";
 import { getPayNlStatus, getBuckarooStatus } from "@/lib/payment";
-
-async function getPaymentConfig() {
-  const { data } = await supabaseAdmin
-    .from("app_settings")
-    .select("value")
-    .eq("key", "payment_config")
-    .single();
-  return data?.value as Record<string, unknown> | null;
-}
 
 function maskEmail(email: string): string {
   const [user, domain] = email.split("@");
@@ -31,7 +22,7 @@ export async function GET(
 
     const { data: order } = await supabaseAdmin
       .from("orders")
-      .select("id, order_nummer, status, betaal_referentie, betaal_methode, totaal, user_email")
+      .select("id, order_nummer, status, betaal_referentie, betaal_methode, betaal_gateway, totaal, user_email")
       .eq("id", orderId)
       .single();
 
@@ -58,7 +49,8 @@ export async function GET(
 
     let paymentStatus = "UNKNOWN";
 
-    const isBuckaroo = order.betaal_methode && ["creditcard", "paypal"].includes(order.betaal_methode);
+    const isBuckaroo = order.betaal_gateway === "buckaroo" ||
+      (!order.betaal_gateway && order.betaal_methode && ["creditcard", "paypal"].includes(order.betaal_methode));
 
     try {
       if (isBuckaroo && config.buckaroo) {
@@ -77,6 +69,8 @@ export async function GET(
         .from("orders")
         .update({ status: "betaald", betaald_op: new Date().toISOString() })
         .eq("id", order.id);
+
+      sendOrderEmail(order.id).catch(() => {});
     } else if (paymentStatus === "FAILED" || paymentStatus === "CANCELLED") {
       await supabaseAdmin
         .from("orders")

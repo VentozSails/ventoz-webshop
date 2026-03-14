@@ -102,17 +102,22 @@ export async function getCategories(): Promise<string[]> {
 
 export async function getAboutTexts(): Promise<Record<string, string>> {
   try {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("app_settings")
       .select("value")
       .eq("key", "about_text")
-      .single();
+      .maybeSingle();
+
+    if (error) {
+      console.error("getAboutTexts error:", error.message);
+      return {};
+    }
 
     if (data?.value && typeof data.value === "object") {
       return data.value as Record<string, string>;
     }
-  } catch {
-    // Fallback to empty
+  } catch (err) {
+    console.error("getAboutTexts exception:", err);
   }
   return {};
 }
@@ -123,7 +128,7 @@ export async function getWebshopHero(): Promise<{ title?: string; subtitle?: str
       .from("app_settings")
       .select("value")
       .eq("key", "webshop_hero")
-      .single();
+      .maybeSingle();
     if (data?.value && typeof data.value === "object") {
       return data.value as { title?: string; subtitle?: string };
     }
@@ -139,7 +144,7 @@ export async function getWebshopUsp(): Promise<Record<string, string>> {
       .from("app_settings")
       .select("value")
       .eq("key", "webshop_usp")
-      .single();
+      .maybeSingle();
     if (data?.value && typeof data.value === "object") {
       return data.value as Record<string, string>;
     }
