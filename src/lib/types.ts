@@ -28,14 +28,32 @@ export interface Product {
   prijs_override: number | null;
   afbeelding_url_override: string | null;
   naam_en: string | null;
+  naam_de: string | null;
+  naam_fr: string | null;
+  naam_es: string | null;
+  naam_it: string | null;
   beschrijving_en: string | null;
+  beschrijving_de: string | null;
+  beschrijving_fr: string | null;
+  beschrijving_es: string | null;
+  beschrijving_it: string | null;
 }
 
-export function displayNaam(p: Product): string {
+export function displayNaam(p: Product, locale = "nl"): string {
+  if (locale !== "nl") {
+    const key = `naam_${locale}` as keyof Product;
+    const translated = p[key];
+    if (typeof translated === "string" && translated) return translated;
+  }
   return p.naam_override || p.naam;
 }
 
-export function displayBeschrijving(p: Product): string | null {
+export function displayBeschrijving(p: Product, locale = "nl"): string | null {
+  if (locale !== "nl") {
+    const key = `beschrijving_${locale}` as keyof Product;
+    const translated = p[key];
+    if (typeof translated === "string" && translated) return translated;
+  }
   return p.beschrijving_override || p.beschrijving;
 }
 
@@ -65,10 +83,23 @@ export function productSlug(p: Product): string {
     + `-${p.id}`;
 }
 
-export function prijsFormatted(p: Product): string {
+export function prijsFormatted(p: Product, locale = "nl"): string {
   const price = displayPrijs(p);
-  if (price == null) return "Prijs op aanvraag";
+  if (price == null) {
+    const labels: Record<string, string> = {
+      nl: "Prijs op aanvraag", en: "Price on request", de: "Preis auf Anfrage",
+      fr: "Prix sur demande", es: "Precio a consultar", it: "Prezzo su richiesta",
+    };
+    return labels[locale] || labels.en!;
+  }
+  if (locale === "en") return `€ ${price.toFixed(2)}`;
   return `€ ${price.toFixed(2).replace(".", ",")}`;
+}
+
+export function categorieLabel(slug: string | null, t?: (key: string) => string): string {
+  if (!slug) return t ? t("other") : "Overig";
+  if (t) return t(slug) || slug;
+  return CATEGORIES[slug] || slug;
 }
 
 export const CATEGORIES: Record<string, string> = {
@@ -93,8 +124,3 @@ export const CATEGORIES: Record<string, string> = {
   "fox-22": "Fox 22",
   diversen: "Diversen",
 };
-
-export function categorieLabel(slug: string | null): string {
-  if (!slug) return "Overig";
-  return CATEGORIES[slug] || slug;
-}

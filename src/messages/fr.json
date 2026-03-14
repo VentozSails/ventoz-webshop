@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Voiles One Design Premium",
+    "description": "Ventoz Sails : voiles one design de haute qualité pour Optimist, Laser/ILCA, Topaz, Hobie Cat et plus. Marque de voiles européenne des Pays-Bas.",
+    "catalogTitle": "Assortiment",
+    "catalogDescription": "Découvrez l'assortiment complet de voiles Ventoz Sails. De l'Optimist au Laser, du Topaz au Hobie Cat.",
+    "productNotFound": "Produit non trouvé"
+  },
+  "nav": {
+    "home": "Accueil",
+    "products": "Assortiment",
+    "backToProducts": "Retour à l'assortiment"
+  },
+  "hero": {
+    "cta": "Voir l'assortiment"
+  },
+  "usp": {
+    "freeShipping": "Livraison gratuite",
+    "freeShippingSub": "Commandes aux Pays-Bas",
+    "euShipping": "Expédition européenne",
+    "euShippingSub": "Emballage sûr, livraison rapide",
+    "inStock": "En stock",
+    "inStockSub": "La plupart des voiles disponibles",
+    "quality": "Qualité premium",
+    "qualitySub": "Matériaux durables, finition supérieure",
+    "reviews": "Avis clients"
+  },
+  "catalog": {
+    "allProducts": "Tous les produits",
+    "all": "Tous",
+    "searchPlaceholder": "Chercher une voile...",
+    "categories": "Catégories",
+    "resultsFor": "Résultats pour",
+    "clear": "Effacer",
+    "noProducts": "Aucun produit trouvé.",
+    "viewAll": "Voir tous les produits",
+    "outOfStock": "Rupture de stock",
+    "subtitle": "Découvrez notre gamme complète de voiles",
+    "allSails": "Toutes les voiles {category} de Ventoz"
+  },
+  "product": {
+    "inStock": "En stock",
+    "soldOut": "Épuisé",
+    "outOfStock": "Actuellement en rupture de stock",
+    "priceOnRequest": "Prix sur demande",
+    "exclVat": "hors TVA",
+    "volumePricing": "Prix dégressifs",
+    "fromQty": "À partir de {qty} pièces",
+    "orderInfo": "Commander / Information",
+    "emailAdvice": "Envoyez-nous un e-mail à {email} pour commander ou demander conseil",
+    "specs": "Spécifications",
+    "material": "Matériau",
+    "luff": "Guindant",
+    "foot": "Bordure",
+    "sailArea": "Surface de voile",
+    "weight": "Poids",
+    "includes": "Inclus",
+    "details": "Détails",
+    "productInfo": "Informations produit",
+    "viewProduct": "Voir le produit"
+  },
+  "footer": {
+    "contact": "Contact",
+    "navigation": "Navigation",
+    "paymentMethods": "Moyens de paiement",
+    "copyright": "Tous droits réservés.",
+    "tagline": "Voiles One Design Premium"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Voile de plage",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Foc de tempête",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Divers",
+    "other": "Autre"
+  }
+}

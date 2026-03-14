@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "@/i18n/navigation";
 
 interface SliderProduct {
   slug: string;
@@ -13,7 +13,13 @@ interface SliderProduct {
   image: string | null;
 }
 
-export default function ProductSlider({ products }: { products: SliderProduct[] }) {
+export default function ProductSlider({
+  products,
+  viewProductLabel = "Bekijk product",
+}: {
+  products: SliderProduct[];
+  viewProductLabel?: string;
+}) {
   const [current, setCurrent] = useState(0);
 
   const next = useCallback(() => {
@@ -40,7 +46,6 @@ export default function ProductSlider({ products }: { products: SliderProduct[] 
       className="block rounded-2xl overflow-hidden bg-white/[0.82] shadow-[0_10px_32px_rgba(0,0,0,0.3),0_0_40px_rgba(200,168,92,0.15)]"
       style={{ minHeight: 360 }}
     >
-      {/* Image area */}
       <div className="relative" style={{ height: 240 }}>
         <div className="absolute inset-0 bg-white/60" />
         {product.image ? (
@@ -60,17 +65,14 @@ export default function ProductSlider({ products }: { products: SliderProduct[] 
           </div>
         )}
 
-        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15" style={{ pointerEvents: "none" }} />
 
-        {/* Category badge */}
         {product.categorie && (
           <span className="absolute top-3 left-3 bg-navy/85 text-white text-[10px] font-semibold px-2 py-1 rounded-md">
             {product.categorieLabel}
           </span>
         )}
 
-        {/* Navigation arrows */}
         {products.length > 1 && (
           <>
             <button
@@ -95,7 +97,6 @@ export default function ProductSlider({ products }: { products: SliderProduct[] 
         )}
       </div>
 
-      {/* Product info */}
       <div className="px-4 pt-3 pb-2">
         <h3 className="text-sm font-bold text-navy leading-snug line-clamp-2">
           {product.naam}
@@ -103,11 +104,10 @@ export default function ProductSlider({ products }: { products: SliderProduct[] 
         <div className="mt-2 flex items-center justify-between">
           <span className="text-lg font-extrabold text-navy">{product.prijs}</span>
           <span className="bg-gold text-navy text-[11px] font-bold px-2.5 py-1.5 rounded-md">
-            Bekijk product
+            {viewProductLabel}
           </span>
         </div>
 
-        {/* Dot indicators */}
         {products.length > 1 && (
           <div className="flex items-center justify-center gap-1.5 mt-2 pb-1">
             {products.map((_, i) => (

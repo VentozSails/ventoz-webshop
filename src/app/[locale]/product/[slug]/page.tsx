@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProductSlugs } from "@/lib/products";
 import {
@@ -12,6 +12,7 @@ import {
   categorieLabel,
 } from "@/lib/types";
 import ImageGallery from "@/components/ImageGallery";
+import { Link } from "@/i18n/navigation";
 
 export const revalidate = 300;
 
@@ -23,14 +24,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
   const product = await getProductBySlug(slug);
-  if (!product) return { title: "Product niet gevonden" };
+  if (!product) return { title: t("productNotFound") };
 
-  const naam = displayNaam(product);
-  const beschrijving = displayBeschrijving(product);
+  const naam = displayNaam(product, locale);
+  const beschrijving = displayBeschrijving(product, locale);
   const img = displayAfbeelding(product);
 
   return {
@@ -52,17 +54,22 @@ export async function generateMetadata({
 export default async function ProductPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
-  const naam = displayNaam(product);
-  const beschrijving = displayBeschrijving(product);
+  const t = await getTranslations("product");
+  const tCat = await getTranslations("categories");
+  const tNav = await getTranslations("nav");
+
+  const naam = displayNaam(product, locale);
+  const beschrijving = displayBeschrijving(product, locale);
   const prijs = displayPrijs(product);
   const images = alleAfbeeldingen(product);
   const mainImage = displayAfbeelding(product);
+  const catLabel = (s: string | null) => categorieLabel(s, (k) => tCat.has(k) ? tCat(k) : "");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -91,30 +98,28 @@ export default async function ProductPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Back bar */}
       <div className="bg-navy">
         <div className="max-w-[1200px] mx-auto px-6 py-2">
           <Link href="/catalogus" className="text-white/70 text-xs hover:text-white transition-colors flex items-center gap-1">
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Terug naar assortiment
+            {tNav("backToProducts")}
           </Link>
         </div>
       </div>
 
-      {/* Breadcrumb */}
       <div className="bg-card-placeholder border-b border-border-default">
         <div className="max-w-[1200px] mx-auto px-6 py-2.5">
           <nav className="text-[13px] text-slate-500 flex items-center gap-1.5 flex-wrap">
-            <Link href="/" className="hover:text-navy transition-colors">Home</Link>
+            <Link href="/" className="hover:text-navy transition-colors">{tNav("home")}</Link>
             <span className="text-slate-300">/</span>
-            <Link href="/catalogus" className="hover:text-navy transition-colors">Assortiment</Link>
+            <Link href="/catalogus" className="hover:text-navy transition-colors">{tNav("products")}</Link>
             {product.categorie && (
               <>
                 <span className="text-slate-300">/</span>
                 <Link href={`/catalogus?categorie=${encodeURIComponent(product.categorie)}`} className="hover:text-navy transition-colors">
-                  {categorieLabel(product.categorie)}
+                  {catLabel(product.categorie)}
                 </Link>
               </>
             )}
@@ -126,17 +131,15 @@ export default async function ProductPage({
 
       <div className="max-w-[1200px] mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Left column: Images */}
           <ImageGallery images={images} alt={naam} />
 
-          {/* Right column: Product info, specs, description */}
           <div>
             {product.categorie && (
               <Link
                 href={`/catalogus?categorie=${encodeURIComponent(product.categorie)}`}
                 className="inline-block text-[10px] font-semibold text-navy bg-navy/[0.06] px-2 py-1 rounded uppercase tracking-wider hover:bg-navy/10 transition-colors"
               >
-                {categorieLabel(product.categorie)}
+                {catLabel(product.categorie)}
               </Link>
             )}
 
@@ -152,23 +155,22 @@ export default async function ProductPage({
 
             <div className="mt-4 flex items-baseline gap-2">
               <span className="text-[28px] font-bold text-navy">
-                {prijsFormatted(product)}
+                {prijsFormatted(product, locale)}
               </span>
-              {prijs && <span className="text-xs text-slate-400">excl. BTW</span>}
+              {prijs && <span className="text-xs text-slate-400">{t("exclVat")}</span>}
             </div>
 
-            {/* Volume pricing */}
             {product.staffelprijzen && Object.keys(product.staffelprijzen).length > 0 && (
               <div className="mt-4 bg-green-50 border border-green-200 rounded-xl p-4">
                 <h3 className="text-[10px] font-bold text-green-800 uppercase tracking-wider mb-2">
-                  Staffelprijzen
+                  {t("volumePricing")}
                 </h3>
                 <div className="space-y-1">
                   {Object.entries(product.staffelprijzen)
                     .sort(([a], [b]) => parseInt(a) - parseInt(b))
                     .map(([qty, price]) => (
                       <div key={qty} className="flex justify-between text-sm">
-                        <span className="text-green-700">Vanaf {qty} stuks</span>
+                        <span className="text-green-700">{t("fromQty", { qty })}</span>
                         <span className="font-semibold text-green-900">
                           &euro; {price.toFixed(2).replace(".", ",")}
                         </span>
@@ -178,40 +180,37 @@ export default async function ProductPage({
               </div>
             )}
 
-            {/* Stock status */}
             <div className={`mt-4 inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg ${product.in_stock ? "bg-green-50 text-green-800" : "bg-orange-50 text-orange-800"}`}>
               <span className={`w-2 h-2 rounded-full ${product.in_stock ? "bg-green-500" : "bg-orange-500"}`} />
-              {product.in_stock ? "Op voorraad" : "Momenteel niet op voorraad"}
+              {product.in_stock ? t("inStock") : t("outOfStock")}
             </div>
 
-            {/* CTA */}
             <div className="mt-6">
               <a
-                href={`mailto:info@ventoz.com?subject=Bestelling ${naam}`}
+                href={`mailto:info@ventoz.com?subject=${encodeURIComponent(`${t("orderInfo")} ${naam}`)}`}
                 className="inline-flex items-center gap-2 bg-gold text-navy font-bold text-sm px-7 py-3.5 rounded-lg hover:brightness-110 transition-all shadow-[0_4px_16px_rgba(200,168,92,0.4)]"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Bestellen / Informatie
+                {t("orderInfo")}
               </a>
               <p className="mt-2 text-[11px] text-slate-400">
-                Mail ons op <a href="mailto:info@ventoz.com" className="text-blue-600 hover:underline">info@ventoz.com</a> voor een bestelling of advies
+                {t("emailAdvice", { email: "info@ventoz.com" })}
               </p>
             </div>
 
-            {/* Specs */}
             {(product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief) && (
               <div className="mt-8">
-                <h2 className="text-sm font-bold text-navy mb-3">Specificaties</h2>
+                <h2 className="text-sm font-bold text-navy mb-3">{t("specs")}</h2>
                 <dl className="divide-y divide-border-default">
                   {[
-                    { label: "Materiaal", value: product.materiaal },
-                    { label: "Voorlijk (luff)", value: product.luff },
-                    { label: "Onderlijk (foot)", value: product.foot },
-                    { label: "Zeiloppervlak", value: product.sail_area },
-                    { label: "Gewicht", value: product.gewicht ? `${product.gewicht} kg` : null },
-                    { label: "Inclusief", value: product.inclusief },
+                    { label: t("material"), value: product.materiaal },
+                    { label: t("luff"), value: product.luff },
+                    { label: t("foot"), value: product.foot },
+                    { label: t("sailArea"), value: product.sail_area },
+                    { label: t("weight"), value: product.gewicht ? `${product.gewicht} kg` : null },
+                    { label: t("includes"), value: product.inclusief },
                   ]
                     .filter((s) => s.value)
                     .map((spec) => (
@@ -224,10 +223,9 @@ export default async function ProductPage({
               </div>
             )}
 
-            {/* Specs table */}
             {product.specs_tabel && Object.keys(product.specs_tabel).length > 0 && (
               <div className="mt-6">
-                <h2 className="text-sm font-bold text-navy mb-3">Details</h2>
+                <h2 className="text-sm font-bold text-navy mb-3">{t("details")}</h2>
                 <div className="overflow-x-auto bg-white rounded-lg border border-border-default">
                   <table className="w-full text-[13px]">
                     <thead>
@@ -249,11 +247,10 @@ export default async function ProductPage({
               </div>
             )}
 
-            {/* Description — right column, below specs */}
             {beschrijving && (
               <div className="mt-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl text-navy mb-4">
-                  Productinformatie
+                  {t("productInfo")}
                 </h2>
                 <div className="text-sm text-slate-600 leading-7 whitespace-pre-line break-words">
                   {beschrijving}
@@ -261,19 +258,6 @@ export default async function ProductPage({
               </div>
             )}
 
-            {/* English description if available */}
-            {product.beschrijving_en && (
-              <div className="mt-6">
-                <h2 className="font-[family-name:var(--font-display)] text-xl text-navy mb-4">
-                  Product information
-                </h2>
-                <div className="text-sm text-slate-600 leading-7 whitespace-pre-line break-words">
-                  {product.beschrijving_en}
-                </div>
-              </div>
-            )}
-
-            {/* EAN code */}
             {product.ean_code && (
               <p className="mt-6 text-xs text-slate-400">
                 EAN: {product.ean_code}

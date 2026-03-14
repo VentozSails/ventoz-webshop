@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ventoz Sails — Premium One Design Zeilen",
+    "description": "Ventoz Sails: hoogwaardige one design zeilen voor Optimist, Laser/ILCA, Topaz, Hobie Cat en meer. Europees zeilmerk uit Nederland.",
+    "catalogTitle": "Assortiment",
+    "catalogDescription": "Bekijk het volledige assortiment zeilen van Ventoz Sails. Van Optimist tot Laser, van Topaz tot Hobie Cat.",
+    "productNotFound": "Product niet gevonden"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Assortiment",
+    "backToProducts": "Terug naar assortiment"
+  },
+  "hero": {
+    "cta": "Bekijk assortiment"
+  },
+  "usp": {
+    "freeShipping": "Gratis verzending",
+    "freeShippingSub": "Bestellingen binnen Nederland",
+    "euShipping": "Europese verzending",
+    "euShippingSub": "Veilig ingepakt, snel bezorgd",
+    "inStock": "Direct uit voorraad",
+    "inStockSub": "De meeste zeilen leverbaar",
+    "quality": "Premium kwaliteit",
+    "qualitySub": "Duurzame materialen, hoge afwerking",
+    "reviews": "Klantbeoordelingen"
+  },
+  "catalog": {
+    "allProducts": "Alle producten",
+    "all": "Alle",
+    "searchPlaceholder": "Zoek een zeil...",
+    "categories": "Categorieën",
+    "resultsFor": "Resultaten voor",
+    "clear": "Wissen",
+    "noProducts": "Geen producten gevonden.",
+    "viewAll": "Bekijk alle producten",
+    "outOfStock": "Niet op voorraad",
+    "subtitle": "Ontdek ons complete aanbod zeilen",
+    "allSails": "Alle {category} zeilen van Ventoz"
+  },
+  "product": {
+    "inStock": "Op voorraad",
+    "soldOut": "Uitverkocht",
+    "outOfStock": "Momenteel niet op voorraad",
+    "priceOnRequest": "Prijs op aanvraag",
+    "exclVat": "excl. BTW",
+    "volumePricing": "Staffelprijzen",
+    "fromQty": "Vanaf {qty} stuks",
+    "orderInfo": "Bestellen / Informatie",
+    "emailAdvice": "Mail ons op {email} voor een bestelling of advies",
+    "specs": "Specificaties",
+    "material": "Materiaal",
+    "luff": "Voorlijk (luff)",
+    "foot": "Onderlijk (foot)",
+    "sailArea": "Zeiloppervlak",
+    "weight": "Gewicht",
+    "includes": "Inclusief",
+    "details": "Details",
+    "productInfo": "Productinformatie",
+    "viewProduct": "Bekijk product"
+  },
+  "footer": {
+    "contact": "Contact",
+    "navigation": "Navigatie",
+    "paymentMethods": "Betaalmethoden",
+    "copyright": "Alle rechten voorbehouden.",
+    "tagline": "Premium One Design Sails"
+  },
+  "categories": {
+    "optimist": "Optimist",
+    "ventoz-laserzeil": "Laser / ILCA",
+    "ventoz-topaz": "Topaz",
+    "ventoz-splash": "Splash",
+    "beachsailing": "Strandzeil",
+    "ventoz-centaur": "Centaur",
+    "rs-feva": "RS Feva",
+    "valk": "Polyvalk",
+    "randmeer": "Randmeer",
+    "hobie-cat": "Hobie Cat",
+    "ventoz-420-470-sails": "420 / 470",
+    "efsix": "EFSix",
+    "sunfish": "Sunfish",
+    "stormfok": "Stormfok",
+    "open-bic": "Open Bic",
+    "nacra-17": "Nacra 17",
+    "yamaha-seahopper": "Yamaha Seahopper",
+    "mirror": "Mirror",
+    "fox-22": "Fox 22",
+    "diversen": "Diversen",
+    "other": "Overig"
+  }
+}

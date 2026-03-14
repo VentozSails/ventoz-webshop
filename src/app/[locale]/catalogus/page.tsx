@@ -1,26 +1,41 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { getAllProducts, getCategories } from "@/lib/products";
 import { categorieLabel } from "@/lib/types";
 import ProductCard from "@/components/ProductCard";
+import { Link } from "@/i18n/navigation";
 
 export const revalidate = 300;
 
-export const metadata: Metadata = {
-  title: "Assortiment",
-  description:
-    "Bekijk het volledige assortiment zeilen van Ventoz Sails. Van Optimist tot Laser, van Topaz tot Hobie Cat.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("catalogTitle"),
+    description: t("catalogDescription"),
+  };
+}
 
 export default async function CatalogusPage({
+  params,
   searchParams,
 }: {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ categorie?: string; zoek?: string }>;
 }) {
-  const params = await searchParams;
-  const category = params.categorie || null;
-  const search = params.zoek || null;
+  const { locale } = await params;
+  const sp = await searchParams;
+  const category = sp.categorie || null;
+  const search = sp.zoek || null;
+
+  const t = await getTranslations("catalog");
+  const tCat = await getTranslations("categories");
+  const tProduct = await getTranslations("product");
 
   const [products, categories] = await Promise.all([
     getAllProducts(category, search),
@@ -30,20 +45,21 @@ export default async function CatalogusPage({
   const inStock = products.filter((p) => p.in_stock);
   const outOfStock = products.filter((p) => !p.in_stock);
 
+  const catLabel = (slug: string | null) => categorieLabel(slug, (k) => tCat.has(k) ? tCat(k) : "");
+
   return (
     <>
-      {/* Catalog header */}
       <div className="bg-gradient-to-r from-navy-dark to-navy py-8">
         <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-4">
           <Image src="/emblem.png" alt="" width={52} height={52} className="w-13 h-13 opacity-80" />
           <div>
             <h1 className="font-[family-name:var(--font-display)] text-[28px] text-white">
-              {category ? categorieLabel(category) : "Assortiment"}
+              {category ? catLabel(category) : t("allProducts")}
             </h1>
             <p className="text-sm text-[#B0C4DE]">
               {category
-                ? `Alle ${categorieLabel(category)} zeilen van Ventoz`
-                : "Ontdek ons complete aanbod zeilen"}
+                ? t("allSails", { category: catLabel(category) })
+                : t("subtitle")}
             </p>
           </div>
         </div>
@@ -53,15 +69,14 @@ export default async function CatalogusPage({
         <div className="flex gap-8">
           {/* Sidebar */}
           <aside className="hidden lg:block w-[220px] shrink-0">
-            {/* Search */}
-            <form action="/catalogus" method="GET" className="mb-6">
+            <form action={`/${locale === "nl" ? "" : locale + "/"}catalogus`} method="GET" className="mb-6">
               {category && <input type="hidden" name="categorie" value={category} />}
               <div className="relative">
                 <input
                   type="text"
                   name="zoek"
                   defaultValue={search || ""}
-                  placeholder="Zoek een zeil..."
+                  placeholder={t("searchPlaceholder")}
                   className="w-full px-3 py-2 border border-border-default rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy pr-9"
                 />
                 <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400">
@@ -72,8 +87,7 @@ export default async function CatalogusPage({
               </div>
             </form>
 
-            {/* Categories */}
-            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Categorieën</h3>
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">{t("categories")}</h3>
             <ul className="space-y-0.5">
               <li>
                 <Link
@@ -84,7 +98,7 @@ export default async function CatalogusPage({
                       : "font-medium text-slate-500 hover:bg-slate-50"
                   }`}
                 >
-                  Alle producten
+                  {t("allProducts")}
                   <span className="text-[10px] bg-border-default text-slate-500 px-1.5 py-0.5 rounded-full">
                     {products.length}
                   </span>
@@ -100,7 +114,7 @@ export default async function CatalogusPage({
                         : "font-medium text-slate-500 hover:bg-slate-50"
                     }`}
                   >
-                    {categorieLabel(cat)}
+                    {catLabel(cat)}
                   </Link>
                 </li>
               ))}
@@ -119,7 +133,7 @@ export default async function CatalogusPage({
                     : "bg-white text-navy border-border-default hover:border-navy"
                 }`}
               >
-                Alle
+                {t("all")}
               </Link>
               {categories.map((cat) => (
                 <Link
@@ -131,17 +145,16 @@ export default async function CatalogusPage({
                       : "bg-white text-navy border-border-default hover:border-navy"
                   }`}
                 >
-                  {categorieLabel(cat)}
+                  {catLabel(cat)}
                 </Link>
               ))}
             </div>
 
-            {/* Search indicator */}
             {search && (
               <div className="mb-4 text-sm text-slate-500">
-                Resultaten voor &ldquo;<span className="font-semibold text-navy">{search}</span>&rdquo;
+                {t("resultsFor")} &ldquo;<span className="font-semibold text-navy">{search}</span>&rdquo;
                 <Link href={category ? `/catalogus?categorie=${encodeURIComponent(category)}` : "/catalogus"} className="ml-2 text-xs text-blue-600 hover:underline">
-                  Wissen
+                  {t("clear")}
                 </Link>
               </div>
             )}
@@ -153,28 +166,27 @@ export default async function CatalogusPage({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
-                <p className="text-slate-500 text-sm">Geen producten gevonden.</p>
+                <p className="text-slate-500 text-sm">{t("noProducts")}</p>
                 <Link href="/catalogus" className="mt-2 inline-block text-xs font-semibold text-navy hover:underline">
-                  Bekijk alle producten &rarr;
+                  {t("viewAll")} &rarr;
                 </Link>
               </div>
             ) : (
               <>
-                {/* 4 cols (>900px), 3 cols (>600px), 2 cols (mobile) — matching Flutter */}
                 <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
                   {inStock.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} locale={locale} />
                   ))}
                 </div>
 
                 {outOfStock.length > 0 && (
                   <>
                     <h2 className="text-sm font-bold text-slate-400 mt-10 mb-3 uppercase tracking-wider">
-                      Niet op voorraad
+                      {t("outOfStock")}
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 opacity-50">
                       {outOfStock.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+                        <ProductCard key={product.id} product={product} locale={locale} />
                       ))}
                     </div>
                   </>

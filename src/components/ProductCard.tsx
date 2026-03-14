@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Product } from "@/lib/types";
 import {
   displayNaam,
@@ -8,16 +7,26 @@ import {
   productSlug,
   categorieLabel,
 } from "@/lib/types";
+import { Link } from "@/i18n/navigation";
 
-export default function ProductCard({ product }: { product: Product }) {
-  const naam = displayNaam(product);
+export default function ProductCard({ product, locale = "nl" }: { product: Product; locale?: string }) {
+  const naam = displayNaam(product, locale);
   const img = displayAfbeelding(product);
   const slug = productSlug(product);
+
+  const stockLabels: Record<string, [string, string]> = {
+    nl: ["Op voorraad", "Uitverkocht"],
+    en: ["In stock", "Sold out"],
+    de: ["Auf Lager", "Ausverkauft"],
+    fr: ["En stock", "Épuisé"],
+    es: ["En stock", "Agotado"],
+    it: ["Disponibile", "Esaurito"],
+  };
+  const [inStockLabel, soldOutLabel] = stockLabels[locale] || stockLabels.en!;
 
   return (
     <Link href={`/product/${slug}`} className="group block">
       <div className="bg-white rounded-xl border border-border-default overflow-hidden hover:shadow-md transition-all duration-200">
-        {/* Image — 5/9 ratio like Flutter */}
         <div className="relative bg-white" style={{ paddingBottom: "55.5%" }}>
           {img ? (
             <Image
@@ -36,7 +45,6 @@ export default function ProductCard({ product }: { product: Product }) {
           )}
         </div>
 
-        {/* Content */}
         <div className="p-2.5">
           <div className="flex items-center gap-2 mb-1">
             {product.categorie && (
@@ -45,7 +53,7 @@ export default function ProductCard({ product }: { product: Product }) {
               </span>
             )}
             <span className={`text-[8px] font-semibold px-1.5 py-0.5 rounded ${product.in_stock ? "bg-green-50 text-green-800" : "bg-orange-50 text-orange-800"}`}>
-              {product.in_stock ? "Op voorraad" : "Uitverkocht"}
+              {product.in_stock ? inStockLabel : soldOutLabel}
             </span>
           </div>
 
@@ -55,7 +63,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
           <div className="mt-1.5 flex items-center justify-between">
             <span className="text-sm font-extrabold text-navy">
-              {prijsFormatted(product)}
+              {prijsFormatted(product, locale)}
             </span>
             <div className="w-7 h-7 rounded-full flex items-center justify-center text-navy hover:bg-navy/10 transition-colors">
               <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

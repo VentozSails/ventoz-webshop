@@ -1,6 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
-import { CATEGORIES } from "@/lib/types";
+import { getTranslations } from "next-intl/server";
+import { CATEGORIES, categorieLabel } from "@/lib/types";
+import { Link } from "@/i18n/navigation";
 
 const PAYMENT_METHODS = [
   { name: "iDEAL", color: "#CC0066" },
@@ -45,17 +46,20 @@ const LEGAL_LINKS = [
   "Contact",
 ] as const;
 
-export default function Footer() {
+export default async function Footer({ locale }: { locale: string }) {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
+  const tCat = await getTranslations("categories");
+
   const catEntries = Object.entries(CATEGORIES);
+  const catLabel = (slug: string) => categorieLabel(slug, (k) => tCat.has(k) ? tCat(k) : "");
 
   return (
     <footer>
-      {/* Main footer */}
       <div className="bg-[#E8EDF2]">
         <div className="max-w-[1100px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-[3fr_2fr_4fr] gap-8">
-          {/* Contact column */}
           <div>
-            <h3 className="text-sm font-bold text-slate-700 mb-3">Contact</h3>
+            <h3 className="text-sm font-bold text-slate-700 mb-3">{t("contact")}</h3>
             <ul className="space-y-1 text-xs text-slate-700">
               <li className="flex items-start gap-2">
                 <svg className="w-3.5 h-3.5 mt-0.5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
@@ -85,17 +89,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Navigation column */}
           <div>
-            <h3 className="text-sm font-bold text-slate-700 mb-3">Navigatie</h3>
+            <h3 className="text-sm font-bold text-slate-700 mb-3">{t("navigation")}</h3>
             <ul className="space-y-1 text-xs">
               <li>
-                <Link href="/catalogus" className="text-blue-700 hover:underline">Assortiment</Link>
+                <Link href="/catalogus" className="text-blue-700 hover:underline">{tNav("products")}</Link>
               </li>
-              {catEntries.map(([slug, label]) => (
+              {catEntries.map(([slug]) => (
                 <li key={slug}>
                   <Link href={`/catalogus?categorie=${encodeURIComponent(slug)}`} className="text-slate-500 hover:text-navy transition-colors">
-                    {label}
+                    {catLabel(slug)}
                   </Link>
                 </li>
               ))}
@@ -107,9 +110,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Payment methods column */}
           <div>
-            <h3 className="text-sm font-bold text-slate-700 mb-3">Betaalmethoden</h3>
+            <h3 className="text-sm font-bold text-slate-700 mb-3">{t("paymentMethods")}</h3>
             <div className="flex flex-wrap gap-1.5">
               {PAYMENT_METHODS.map(({ name, color }) => (
                 <span
@@ -125,14 +127,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="bg-navy">
         <div className="max-w-[1100px] mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image src="/emblem.png" alt="Ventoz" width={24} height={24} className="w-6 h-6 opacity-60" />
-            <span className="text-slate-400 text-xs">&copy; {new Date().getFullYear()} Ventoz Sails. Alle rechten voorbehouden.</span>
+            <span className="text-slate-400 text-xs">&copy; {new Date().getFullYear()} Ventoz Sails. {t("copyright")}</span>
           </div>
-          <span className="text-slate-500 text-[10px]">Premium One Design Sails</span>
+          <span className="text-slate-500 text-[10px]">{t("tagline")}</span>
         </div>
       </div>
     </footer>

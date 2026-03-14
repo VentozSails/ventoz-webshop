@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { getFeaturedProducts, getAboutTexts } from "@/lib/products";
 import {
   displayNaam,
@@ -9,6 +9,7 @@ import {
   categorieLabel,
 } from "@/lib/types";
 import ProductSlider from "@/components/ProductSlider";
+import { Link } from "@/i18n/navigation";
 
 export const revalidate = 300;
 
@@ -17,28 +18,37 @@ const ABOUT_FALLBACK =
   'Wij brengen kwalitatief hoogwaardige "one design" zeilen ' +
   "tegen een eerlijke prijs op de gehele Europese markt.";
 
-export default async function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("usp");
+  const tNav = await getTranslations("nav");
+  const tHero = await getTranslations("hero");
+  const tProduct = await getTranslations("product");
+
   const [featured, aboutTexts] = await Promise.all([
     getFeaturedProducts(),
     getAboutTexts(),
   ]);
 
-  const aboutText = aboutTexts["nl"] || aboutTexts["en"] || ABOUT_FALLBACK;
+  const aboutText = aboutTexts[locale] || aboutTexts["nl"] || aboutTexts["en"] || ABOUT_FALLBACK;
 
   const sliderProducts = featured.map((p) => ({
     slug: productSlug(p),
-    naam: displayNaam(p),
+    naam: displayNaam(p, locale),
     categorie: p.categorie,
     categorieLabel: categorieLabel(p.categorie),
-    prijs: prijsFormatted(p),
+    prijs: prijsFormatted(p, locale),
     image: displayAfbeelding(p),
   }));
 
   return (
     <>
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="relative overflow-hidden" style={{ minHeight: 480 }}>
-        {/* Background image */}
         <div className="absolute inset-0">
           <Image
             src="/hero-bg.png"
@@ -50,12 +60,9 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#37474F]/65 via-[#37474F]/45 to-[#37474F]/25" />
         </div>
 
-        {/* Content */}
         <div className="relative max-w-[1100px] mx-auto px-6 lg:px-16 py-16 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[5fr_4fr] gap-10 items-end">
-            {/* About card — glass panel */}
             <div className="relative bg-white/[0.12] backdrop-blur-sm border border-white/[0.15] rounded-2xl px-7 pt-7 pb-12">
-              {/* Logo with glow */}
               <div className="relative inline-block mb-6" style={{ filter: "drop-shadow(0 0 18px rgba(255,255,255,0.5)) drop-shadow(0 0 36px rgba(255,255,255,0.25))" }}>
                 <Image
                   src="/logo-hero.png"
@@ -71,7 +78,6 @@ export default async function HomePage() {
                 {aboutText}
               </p>
 
-              {/* CTA — positioned half-overlapping bottom edge */}
               <div className="absolute left-0 right-0 -bottom-6 flex justify-center">
                 <Link
                   href="/catalogus"
@@ -80,49 +86,48 @@ export default async function HomePage() {
                   <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l14 9-14 9V3z" />
                   </svg>
-                  Bekijk assortiment
+                  {tHero("cta")}
                 </Link>
               </div>
             </div>
 
-            {/* Product slider */}
             {sliderProducts.length > 0 && (
               <div className="hidden lg:block">
-                <ProductSlider products={sliderProducts} />
+                <ProductSlider products={sliderProducts} viewProductLabel={tProduct("viewProduct")} />
               </div>
             )}
           </div>
         </div>
       </section>
 
-      {/* ── USP bar ── */}
+      {/* USP bar */}
       <section className="bg-white border-t border-border-default">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-16 py-7">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-4">
             {[
               {
                 icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-                title: "Gratis verzending",
-                sub: "Bestellingen binnen Nederland",
+                title: t("freeShipping"),
+                sub: t("freeShippingSub"),
               },
               {
                 icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
-                title: "Europese verzending",
-                sub: "Veilig ingepakt, snel bezorgd",
+                title: t("euShipping"),
+                sub: t("euShippingSub"),
               },
               {
                 icon: "M20 7l-8-4-8 4m16 0v10l-8 4M4 7v10l8 4m0-10V7",
-                title: "Direct uit voorraad",
-                sub: "De meeste zeilen leverbaar",
+                title: t("inStock"),
+                sub: t("inStockSub"),
               },
               {
                 icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-                title: "Premium kwaliteit",
-                sub: "Duurzame materialen, hoge afwerking",
+                title: t("quality"),
+                sub: t("qualitySub"),
               },
               {
                 title: "★★★★★",
-                sub: "Klantbeoordelingen",
+                sub: t("reviews"),
                 stars: true,
               },
             ].map((usp, i) => (
