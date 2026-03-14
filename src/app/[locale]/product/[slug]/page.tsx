@@ -15,6 +15,7 @@ import {
 import ImageGallery from "@/components/ImageGallery";
 import AddToCartButton from "@/components/AddToCartButton";
 import PriceDisplay from "@/components/PriceDisplay";
+import FormattedDescription from "@/components/FormattedDescription";
 import { Link } from "@/i18n/navigation";
 
 export const dynamic = "force-dynamic";
@@ -229,46 +230,64 @@ export default async function ProductPage({
               </p>
             </div>
 
-            {(product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief) && (
-              <div className="mt-8">
-                <h2 className="font-[family-name:var(--font-display)] text-lg text-navy mb-4">{t("specs")}</h2>
-                <div className="bg-white rounded-xl border border-border-default overflow-hidden">
-                  <dl className="divide-y divide-border-default">
-                    {[
-                      { label: t("material"), value: product.materiaal },
-                      { label: t("luff"), value: product.luff },
-                      { label: t("foot"), value: product.foot },
-                      { label: t("sailArea"), value: product.sail_area },
-                      { label: t("weight"), value: product.gewicht ? `${product.gewicht} kg` : null },
-                      { label: t("includes"), value: product.inclusief },
-                    ]
-                      .filter((s) => s.value)
-                      .map((spec) => (
-                        <div key={spec.label} className="flex justify-between items-center px-5 py-3">
-                          <dt className="text-[13px] text-slate-500">{spec.label}</dt>
-                          <dd className="text-[13px] font-semibold text-navy text-right max-w-[60%]">{spec.value}</dd>
-                        </div>
-                      ))}
-                  </dl>
-                </div>
-              </div>
-            )}
+            {/* Product info card — specs + description + EAN */}
+            {(product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief || beschrijving) && (
+              <div className="mt-8 rounded-2xl bg-[#F8FAFB] border border-[#E2E8F0] overflow-hidden">
 
-            {beschrijving && (
-              <div className="mt-8">
-                <h2 className="font-[family-name:var(--font-display)] text-xl text-navy mb-4">
-                  {t("productInfo")}
-                </h2>
-                <div className="text-sm text-slate-600 leading-7 whitespace-pre-line break-words">
-                  {beschrijving}
-                </div>
-              </div>
-            )}
+                {/* Specs section */}
+                {(product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief) && (
+                  <div className="px-6 pt-5 pb-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <svg className="w-4 h-4 text-navy/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                      <h2 className="text-xs font-bold text-navy/60 uppercase tracking-wider">{t("specs")}</h2>
+                    </div>
+                    <dl className="divide-y divide-[#E2E8F0]">
+                      {[
+                        { label: t("material"), value: product.materiaal },
+                        { label: t("luff"), value: product.luff },
+                        { label: t("foot"), value: product.foot },
+                        { label: t("sailArea"), value: product.sail_area },
+                        { label: t("weight"), value: product.gewicht ? `${product.gewicht} kg` : null },
+                        { label: t("includes"), value: product.inclusief },
+                      ]
+                        .filter((s) => s.value)
+                        .map((spec) => (
+                          <div key={spec.label} className="flex justify-between items-start py-2.5">
+                            <dt className="text-[13px] text-slate-500 shrink-0">{spec.label}</dt>
+                            <dd className="text-[13px] font-semibold text-navy text-right max-w-[60%]">{spec.value}</dd>
+                          </div>
+                        ))}
+                    </dl>
+                  </div>
+                )}
 
-            {product.ean_code && (
-              <p className="mt-6 text-xs text-slate-400">
-                EAN: {product.ean_code}
-              </p>
+                {/* Divider */}
+                {beschrijving && (product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief) && (
+                  <div className="border-t border-[#E2E8F0]" />
+                )}
+
+                {/* Description section */}
+                {beschrijving && (
+                  <div className="px-6 pt-5 pb-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <svg className="w-4 h-4 text-navy/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <h2 className="text-xs font-bold text-navy/60 uppercase tracking-wider">{t("productInfo")}</h2>
+                    </div>
+                    <FormattedDescription text={beschrijving} />
+                  </div>
+                )}
+
+                {/* EAN */}
+                {product.ean_code && (
+                  <div className="border-t border-[#E2E8F0] px-6 py-2.5">
+                    <p className="text-[11px] text-slate-400">EAN: {product.ean_code}</p>
+                  </div>
+                )}
+              </div>
             )}
           </div>
         </div>
