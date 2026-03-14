@@ -61,7 +61,11 @@
     "includes": "يشمل",
     "details": "التفاصيل",
     "productInfo": "معلومات المنتج",
-    "viewProduct": "عرض المنتج"
+    "viewProduct": "عرض المنتج",
+    "trustFreeShipping": "شحن مجاني (NL)",
+    "trustSecurePayment": "دفع آمن",
+    "trustEasyReturns": "إرجاع سهل",
+    "trustSupport": "دعم شخصي"
   },
   "about": {
     "title": "عن Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "هذا الحقل مطلوب",
     "invalidEmail": "بريد إلكتروني غير صالح",
     "shippingTo": "الشحن إلى {country}",
-    "exclVat": "بدون ضريبة القيمة المضافة"
+    "exclVat": "بدون ضريبة القيمة المضافة",
+    "createAccountCheckout": "أنشئ حساباً لتسريع الدفع في المرة القادمة",
+    "choosePassword": "اختر كلمة مرور (٦ أحرف على الأقل)",
+    "passwordMin": "يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل",
+    "accountBenefits": "تتبع طلباتك واحصل على عروض حصرية",
+    "resellerDiscount": "يتم تطبيق خصم الموزع {pct}% تلقائياً"
   },
   "payment": {
     "processing": "جارٍ معالجة الدفع...",
@@ -194,5 +203,39 @@
     "backToShop": "العودة إلى المتجر",
     "tryAgain": "حاول مرة أخرى",
     "retryPayment": "إعادة محاولة الدفع"
+  },
+  "contact": {
+    "title": "التواصل",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "هولندا",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "الإثنين – الجمعة",
+    "sat": "السبت",
+    "byAppointment": "حسب الموعد",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

@@ -61,7 +61,11 @@
     "includes": "Inclusief",
     "details": "Details",
     "productInfo": "Productinformatie",
-    "viewProduct": "Bekijk product"
+    "viewProduct": "Bekijk product",
+    "trustFreeShipping": "Gratis verzending (NL)",
+    "trustSecurePayment": "Veilig betalen",
+    "trustEasyReturns": "Eenvoudig retourneren",
+    "trustSupport": "Persoonlijk advies"
   },
   "about": {
     "title": "Over Ventoz Sails",
@@ -135,7 +139,12 @@
     "required": "Dit veld is verplicht",
     "invalidEmail": "Ongeldig e-mailadres",
     "shippingTo": "Verzending naar {country}",
-    "exclVat": "excl. BTW"
+    "exclVat": "excl. BTW",
+    "createAccountCheckout": "Maak een account aan voor sneller afrekenen",
+    "choosePassword": "Kies een wachtwoord (min. 6 tekens)",
+    "passwordMin": "Wachtwoord moet minimaal 6 tekens bevatten",
+    "accountBenefits": "Volg je bestellingen en krijg toegang tot exclusieve aanbiedingen",
+    "resellerDiscount": "Je wederverkoperskorting van {pct}% wordt automatisch toegepast"
   },
   "payment": {
     "processing": "Betaling wordt verwerkt...",
@@ -194,5 +203,39 @@
     "fox-22": "Fox 22",
     "diversen": "Diversen",
     "other": "Overig"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Wij helpen je graag. Neem contact op met vragen over zeilen, bestellingen of samenwerking.",
+    "formTitle": "Stuur ons een bericht",
+    "formSubtitle": "We reageren meestal binnen één werkdag.",
+    "name": "Naam",
+    "namePlaceholder": "Je naam",
+    "email": "E-mail",
+    "emailPlaceholder": "jouw@email.nl",
+    "phone": "Telefoon",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Onderwerp",
+    "subjectDefault": "Kies een onderwerp",
+    "subjectProduct": "Productvraag",
+    "subjectOrder": "Bestelling / verzending",
+    "subjectReseller": "Wederverkoper worden",
+    "subjectSailschool": "Zeilschool / vereniging",
+    "subjectOther": "Overig",
+    "message": "Bericht",
+    "messagePlaceholder": "Hoe kunnen we je helpen?",
+    "send": "Verstuur bericht",
+    "sending": "Versturen...",
+    "successTitle": "Bericht verzonden!",
+    "successMessage": "Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.",
+    "directContact": "Bel ons direct",
+    "address": "Adres",
+    "netherlands": "Nederland",
+    "visitNote": "Bel graag even vooraf als je langs wilt komen.",
+    "hours": "Openingstijden",
+    "monFri": "Ma – Vr",
+    "sat": "Zaterdag",
+    "byAppointment": "Op afspraak",
+    "shippingNote": "Bestellingen worden wekelijks op vrijdagmiddag verzonden."
   }
 }

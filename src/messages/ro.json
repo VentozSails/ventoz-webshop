@@ -61,7 +61,11 @@
     "includes": "Include",
     "details": "Detalii",
     "productInfo": "Informații produs",
-    "viewProduct": "Vezi produsul"
+    "viewProduct": "Vezi produsul",
+    "trustFreeShipping": "Livrare gratuită (NL)",
+    "trustSecurePayment": "Plată securizată",
+    "trustEasyReturns": "Returnări ușoare",
+    "trustSupport": "Suport personal"
   },
   "about": {
     "title": "Despre Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Acest câmp este obligatoriu",
     "invalidEmail": "Adresă de e-mail invalidă",
     "shippingTo": "Livrare către {country}",
-    "exclVat": "fără TVA"
+    "exclVat": "fără TVA",
+    "createAccountCheckout": "Creează un cont pentru plată mai rapidă",
+    "choosePassword": "Alege o parolă (min. 6 caractere)",
+    "passwordMin": "Parola trebuie să aibă cel puțin 6 caractere",
+    "accountBenefits": "Urmărește comenzile și beneficiază de oferte exclusive",
+    "resellerDiscount": "Reducerea ta de distribuitor de {pct}% se aplică automat"
   },
   "payment": {
     "processing": "Se procesează plata...",
@@ -194,5 +203,39 @@
     "backToShop": "Înapoi la magazin",
     "tryAgain": "Încearcă din nou",
     "retryPayment": "Reîncearcă plata"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Țările de Jos",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Lun – Vin",
+    "sat": "Sâmbătă",
+    "byAppointment": "La programare",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

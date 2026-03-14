@@ -61,7 +61,11 @@
     "includes": "Uključuje",
     "details": "Detalji",
     "productInfo": "Informacije o proizvodu",
-    "viewProduct": "Pogledaj proizvod"
+    "viewProduct": "Pogledaj proizvod",
+    "trustFreeShipping": "Besplatna dostava (NL)",
+    "trustSecurePayment": "Sigurno plaćanje",
+    "trustEasyReturns": "Jednostavan povrat",
+    "trustSupport": "Osobna podrška"
   },
   "about": {
     "title": "O Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Ovo polje je obavezno",
     "invalidEmail": "Nevažeća e-mail adresa",
     "shippingTo": "Dostava u {country}",
-    "exclVat": "bez PDV-a"
+    "exclVat": "bez PDV-a",
+    "createAccountCheckout": "Napravite račun za brže plaćanje",
+    "choosePassword": "Odaberite lozinku (min. 6 znakova)",
+    "passwordMin": "Lozinka mora imati najmanje 6 znakova",
+    "accountBenefits": "Pratite narudžbe i pristupite ekskluzivnim ponudama",
+    "resellerDiscount": "Vaš popust preprodavača od {pct}% primjenjuje se automatski"
   },
   "payment": {
     "processing": "Obrada plaćanja...",
@@ -194,5 +203,39 @@
     "backToShop": "Natrag u trgovinu",
     "tryAgain": "Pokušajte ponovno",
     "retryPayment": "Ponovite plaćanje"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Nizozemska",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Pon – Pet",
+    "sat": "Subota",
+    "byAppointment": "Po dogovoru",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

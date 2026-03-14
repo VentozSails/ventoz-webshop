@@ -15,6 +15,7 @@ import {
 import ImageGallery from "@/components/ImageGallery";
 import AddToCartButton from "@/components/AddToCartButton";
 import PriceDisplay from "@/components/PriceDisplay";
+import ShareButton from "@/components/ShareButton";
 import FormattedDescription from "@/components/FormattedDescription";
 import { extractSpecsFromText } from "@/components/FormattedDescription";
 import { Link } from "@/i18n/navigation";
@@ -184,7 +185,7 @@ export default async function ProductPage({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <ImageGallery images={images} alt={naam} />
 
-          <div>
+          <div className="lg:sticky lg:top-4 lg:self-start">
             {product.categorie && (
               <Link
                 href={`/catalogus?categorie=${encodeURIComponent(product.categorie)}`}
@@ -245,6 +246,27 @@ export default async function ProductPage({
                 {t("emailAdvice", { email: "info@ventoz.com" })}
               </p>
             </div>
+
+            {/* Trust signals */}
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              {[
+                { icon: "M5 13l4 4L19 7", text: t("trustFreeShipping") },
+                { icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", text: t("trustSecurePayment") },
+                { icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15", text: t("trustEasyReturns") },
+                { icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", text: t("trustSupport") },
+              ].map((item) => (
+                <div key={item.text} className="flex items-center gap-2 text-[11px] text-slate-500">
+                  <svg className="w-3.5 h-3.5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                  </svg>
+                  {item.text}
+                </div>
+              ))}
+            </div>
+
+            {/* Share */}
+            <div className="mt-4">
+              <ShareButton naam={naam} /></div>
 
             {/* Product info card — specs + description + EAN */}
             {(hasSpecs || beschrijving) && (

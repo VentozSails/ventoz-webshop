@@ -61,7 +61,11 @@
     "includes": "Inkluderar",
     "details": "Detaljer",
     "productInfo": "Produktinformation",
-    "viewProduct": "Se produkt"
+    "viewProduct": "Se produkt",
+    "trustFreeShipping": "Fri frakt (NL)",
+    "trustSecurePayment": "Säker betalning",
+    "trustEasyReturns": "Enkel retur",
+    "trustSupport": "Personlig rådgivning"
   },
   "about": {
     "title": "Om Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Detta fält är obligatoriskt",
     "invalidEmail": "Ogiltig e-postadress",
     "shippingTo": "Frakt till {country}",
-    "exclVat": "exkl. moms"
+    "exclVat": "exkl. moms",
+    "createAccountCheckout": "Skapa ett konto för snabbare betalning",
+    "choosePassword": "Välj lösenord (minst 6 tecken)",
+    "passwordMin": "Lösenordet måste vara minst 6 tecken",
+    "accountBenefits": "Följ dina beställningar och få exklusiva erbjudanden",
+    "resellerDiscount": "Din återförsäljarrabatt på {pct}% tillämpas automatiskt"
   },
   "payment": {
     "processing": "Bearbetar betalning...",
@@ -194,5 +203,39 @@
     "backToShop": "Tillbaka till butiken",
     "tryAgain": "Försök igen",
     "retryPayment": "Försök betala igen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Nederland",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Mån – Fre",
+    "sat": "Lördag",
+    "byAppointment": "Efter överenskommelse",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

@@ -61,7 +61,11 @@
     "includes": "Zawiera",
     "details": "Szczegóły",
     "productInfo": "Informacje o produkcie",
-    "viewProduct": "Zobacz produkt"
+    "viewProduct": "Zobacz produkt",
+    "trustFreeShipping": "Darmowa wysyłka (NL)",
+    "trustSecurePayment": "Bezpieczna płatność",
+    "trustEasyReturns": "Łatwy zwrot",
+    "trustSupport": "Osobiste doradztwo"
   },
   "about": {
     "title": "O Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "To pole jest wymagane",
     "invalidEmail": "Nieprawidłowy adres e-mail",
     "shippingTo": "Wysyłka do {country}",
-    "exclVat": "bez VAT"
+    "exclVat": "bez VAT",
+    "createAccountCheckout": "Utwórz konto aby szybciej zamawiać",
+    "choosePassword": "Wybierz hasło (min. 6 znaków)",
+    "passwordMin": "Hasło musi mieć co najmniej 6 znaków",
+    "accountBenefits": "Śledź zamówienia i korzystaj z ekskluzywnych ofert",
+    "resellerDiscount": "Twój rabat dealerski {pct}% jest naliczany automatycznie"
   },
   "payment": {
     "processing": "Przetwarzanie płatności...",
@@ -194,5 +203,39 @@
     "backToShop": "Wróć do sklepu",
     "tryAgain": "Spróbuj ponownie",
     "retryPayment": "Ponów płatność"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Holandia",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Pn – Pt",
+    "sat": "Sobota",
+    "byAppointment": "Po wcześniejszym umówieniu",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

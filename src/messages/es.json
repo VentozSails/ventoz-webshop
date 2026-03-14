@@ -61,7 +61,11 @@
     "includes": "Incluye",
     "details": "Detalles",
     "productInfo": "Información del producto",
-    "viewProduct": "Ver producto"
+    "viewProduct": "Ver producto",
+    "trustFreeShipping": "Envío gratuito (NL)",
+    "trustSecurePayment": "Pago seguro",
+    "trustEasyReturns": "Devoluciones fáciles",
+    "trustSupport": "Atención personalizada"
   },
   "about": {
     "title": "Sobre Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Este campo es obligatorio",
     "invalidEmail": "Correo electrónico no válido",
     "shippingTo": "Envío a {country}",
-    "exclVat": "sin IVA"
+    "exclVat": "sin IVA",
+    "createAccountCheckout": "Crea una cuenta para pagar más rápido",
+    "choosePassword": "Elige una contraseña (mín. 6 caracteres)",
+    "passwordMin": "La contraseña debe tener al menos 6 caracteres",
+    "accountBenefits": "Sigue tus pedidos y accede a ofertas exclusivas",
+    "resellerDiscount": "Tu descuento de distribuidor del {pct}% se aplica automáticamente"
   },
   "payment": {
     "processing": "Procesando pago...",
@@ -194,5 +203,39 @@
     "backToShop": "Volver a la tienda",
     "tryAgain": "Intentar de nuevo",
     "retryPayment": "Reintentar pago"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Estaremos encantados de ayudarle. Contáctenos para cualquier pregunta sobre nuestras velas, pedidos o colaboraciones.",
+    "formTitle": "Envíenos un mensaje",
+    "formSubtitle": "Normalmente respondemos en un día laborable.",
+    "name": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "su@email.com",
+    "phone": "Teléfono",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Asunto",
+    "subjectDefault": "Seleccione un asunto",
+    "subjectProduct": "Pregunta sobre producto",
+    "subjectOrder": "Pedido / envío",
+    "subjectReseller": "Ser distribuidor",
+    "subjectSailschool": "Escuela de vela / club",
+    "subjectOther": "Otros",
+    "message": "Mensaje",
+    "messagePlaceholder": "¿Cómo podemos ayudarle?",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successMessage": "Gracias por su mensaje. Nos pondremos en contacto lo antes posible.",
+    "directContact": "Llámenos",
+    "address": "Dirección",
+    "netherlands": "Países Bajos",
+    "visitNote": "Por favor llame antes de visitarnos.",
+    "hours": "Horario",
+    "monFri": "Lun – Vie",
+    "sat": "Sábado",
+    "byAppointment": "Con cita previa",
+    "shippingNote": "Los pedidos se envían los viernes por la tarde."
   }
 }

@@ -61,7 +61,11 @@
     "includes": "Ietver",
     "details": "Detaļas",
     "productInfo": "Produkta informācija",
-    "viewProduct": "Skatīt produktu"
+    "viewProduct": "Skatīt produktu",
+    "trustFreeShipping": "Bezmaksas piegāde (NL)",
+    "trustSecurePayment": "Droša maksāšana",
+    "trustEasyReturns": "Vienkārša atgriešana",
+    "trustSupport": "Personīgs atbalsts"
   },
   "about": {
     "title": "Par Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Šis lauks ir obligāts",
     "invalidEmail": "Nederīga e-pasta adrese",
     "shippingTo": "Piegāde uz {country}",
-    "exclVat": "bez PVN"
+    "exclVat": "bez PVN",
+    "createAccountCheckout": "Izveidojiet kontu ātrākai norēķināšanai",
+    "choosePassword": "Izvēlieties paroli (vismaz 6 rakstzīmes)",
+    "passwordMin": "Parolei jābūt vismaz 6 rakstzīmēm garai",
+    "accountBenefits": "Sekojiet pasūtījumiem un saņemiet ekskluzīvus piedāvājumus",
+    "resellerDiscount": "Jūsu izplatītāja atlaide {pct}% tiek piemērota automātiski"
   },
   "payment": {
     "processing": "Maksājums tiek apstrādāts...",
@@ -194,5 +203,39 @@
     "backToShop": "Atpakaļ uz veikalu",
     "tryAgain": "Mēģināt vēlreiz",
     "retryPayment": "Atkārtot maksājumu"
+  },
+  "contact": {
+    "title": "Kontakti",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Nīderlande",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "P – Pk",
+    "sat": "Sestdiena",
+    "byAppointment": "Pēc vienošanās",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

@@ -61,7 +61,11 @@
     "includes": "Dahildir",
     "details": "Detaylar",
     "productInfo": "Ürün bilgisi",
-    "viewProduct": "Ürünü görüntüle"
+    "viewProduct": "Ürünü görüntüle",
+    "trustFreeShipping": "Ücretsiz kargo (NL)",
+    "trustSecurePayment": "Güvenli ödeme",
+    "trustEasyReturns": "Kolay iade",
+    "trustSupport": "Kişisel destek"
   },
   "about": {
     "title": "Ventoz Sails Hakkında",
@@ -180,7 +184,12 @@
     "required": "Bu alan zorunludur",
     "invalidEmail": "Geçersiz e-posta adresi",
     "shippingTo": "{country} adresine kargo",
-    "exclVat": "KDV hariç"
+    "exclVat": "KDV hariç",
+    "createAccountCheckout": "Daha hızlı ödeme için bir hesap oluşturun",
+    "choosePassword": "Bir şifre seçin (en az 6 karakter)",
+    "passwordMin": "Şifre en az 6 karakter olmalıdır",
+    "accountBenefits": "Siparişlerinizi takip edin ve özel tekliflere erişin",
+    "resellerDiscount": "{pct}% bayi indiriminiz otomatik olarak uygulanır"
   },
   "payment": {
     "processing": "Ödeme işleniyor...",
@@ -194,5 +203,39 @@
     "backToShop": "Mağazaya dön",
     "tryAgain": "Tekrar dene",
     "retryPayment": "Ödemeyi tekrarla"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Hollanda",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Pzt – Cum",
+    "sat": "Cumartesi",
+    "byAppointment": "Randevu ile",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

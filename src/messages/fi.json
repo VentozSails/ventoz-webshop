@@ -61,7 +61,11 @@
     "includes": "Sisältää",
     "details": "Yksityiskohdat",
     "productInfo": "Tuotetiedot",
-    "viewProduct": "Näytä tuote"
+    "viewProduct": "Näytä tuote",
+    "trustFreeShipping": "Ilmainen toimitus (NL)",
+    "trustSecurePayment": "Turvallinen maksu",
+    "trustEasyReturns": "Helppo palautus",
+    "trustSupport": "Henkilökohtainen tuki"
   },
   "about": {
     "title": "Tietoa Ventoz Sailsista",
@@ -180,7 +184,12 @@
     "required": "Tämä kenttä on pakollinen",
     "invalidEmail": "Virheellinen sähköpostiosoite",
     "shippingTo": "Toimitus maahan {country}",
-    "exclVat": "ilman ALV"
+    "exclVat": "ilman ALV",
+    "createAccountCheckout": "Luo tili nopeampaa maksamista varten",
+    "choosePassword": "Valitse salasana (väh. 6 merkkiä)",
+    "passwordMin": "Salasanassa on oltava vähintään 6 merkkiä",
+    "accountBenefits": "Seuraa tilauksiasi ja saa eksklusiivisia tarjouksia",
+    "resellerDiscount": "Jälleenmyyjäalennuksesi {pct}% sovelletaan automaattisesti"
   },
   "payment": {
     "processing": "Maksua käsitellään...",
@@ -194,5 +203,39 @@
     "backToShop": "Takaisin kauppaan",
     "tryAgain": "Yritä uudelleen",
     "retryPayment": "Yritä maksua uudelleen"
+  },
+  "contact": {
+    "title": "Yhteystiedot",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Alankomaat",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Ma – Pe",
+    "sat": "Lauantai",
+    "byAppointment": "Ajanvarauksella",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

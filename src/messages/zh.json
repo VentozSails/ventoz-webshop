@@ -61,7 +61,11 @@
     "includes": "包含",
     "details": "详情",
     "productInfo": "产品信息",
-    "viewProduct": "查看产品"
+    "viewProduct": "查看产品",
+    "trustFreeShipping": "免费配送 (NL)",
+    "trustSecurePayment": "安全支付",
+    "trustEasyReturns": "轻松退货",
+    "trustSupport": "个人支持"
   },
   "about": {
     "title": "关于 Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "此字段为必填项",
     "invalidEmail": "无效的电子邮箱地址",
     "shippingTo": "运送至 {country}",
-    "exclVat": "不含增值税"
+    "exclVat": "不含增值税",
+    "createAccountCheckout": "创建账户以加快下次结账",
+    "choosePassword": "设置密码（至少6个字符）",
+    "passwordMin": "密码至少需要6个字符",
+    "accountBenefits": "跟踪订单并获得专属优惠",
+    "resellerDiscount": "您的经销商折扣{pct}%将自动应用"
   },
   "payment": {
     "processing": "正在处理付款...",
@@ -194,5 +203,39 @@
     "backToShop": "返回商店",
     "tryAgain": "重试",
     "retryPayment": "重新付款"
+  },
+  "contact": {
+    "title": "联系",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "荷兰",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "周一至周五",
+    "sat": "周六",
+    "byAppointment": "预约",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

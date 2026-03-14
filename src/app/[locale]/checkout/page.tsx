@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/lib/cart";
+import { useAuth } from "@/lib/auth";
 import { useRouter } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
 import {
@@ -27,6 +28,7 @@ export default function CheckoutPage() {
   const tProduct = useTranslations("product");
   const locale = useLocale();
   const { items, subtotal, clearCart } = useCart();
+  const { user, profile, signUp } = useAuth();
   const router = useRouter();
 
   const [country, setCountry] = useState("NL");
@@ -35,6 +37,8 @@ export default function CheckoutPage() {
   const [selectedMethod, setSelectedMethod] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [createAccount, setCreateAccount] = useState(false);
+  const [accountPassword, setAccountPassword] = useState("");
 
   const [form, setForm] = useState({
     naam: "", email: "", telefoon: "",
@@ -42,6 +46,16 @@ export default function CheckoutPage() {
     factuur_straat: "", factuur_huisnummer: "", factuur_postcode: "", factuur_woonplaats: "",
     bedrijfsnaam: "", btw_nummer: "", opmerkingen: "",
   });
+
+  useEffect(() => {
+    if (user?.email && !form.email) {
+      setForm((prev) => ({ ...prev, email: user.email ?? "" }));
+    }
+    if (profile?.voornaam && !form.naam) {
+      const name = [profile.voornaam, profile.achternaam].filter(Boolean).join(" ");
+      if (name) setForm((prev) => ({ ...prev, naam: name }));
+    }
+  }, [user, profile]);
 
   useEffect(() => {
     fetch(`/api/payment-methods?country=${country}`)
@@ -93,9 +107,24 @@ export default function CheckoutPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    if (createAccount && accountPassword.length < 6) {
+      setErrors({ accountPassword: t("passwordMin") });
+      return;
+    }
     setSubmitting(true);
 
     try {
+      // Optionally create account before checkout
+      let userId = user?.id;
+      if (!user && createAccount && accountPassword) {
+        const result = await signUp(form.email, accountPassword);
+        if (result.error) {
+          setErrors({ submit: result.error });
+          setSubmitting(false);
+          return;
+        }
+      }
+
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -108,6 +137,7 @@ export default function CheckoutPage() {
             stukprijs: i.prijs,
           })),
           ...form,
+          user_id: userId || undefined,
           land_code: country,
           same_address: sameAddress,
           payment_method: selectedMethod,
@@ -225,6 +255,50 @@ export default function CheckoutPage() {
               className="w-full px-3 py-2.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
             />
           </section>
+
+          {/* Account creation (only for guests) */}
+          {!user && (
+            <section className="bg-white border border-border-default rounded-xl p-6">
+              <label className="flex items-center gap-2 text-sm text-slate-600 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={createAccount}
+                  onChange={(e) => setCreateAccount(e.target.checked)}
+                  className="rounded accent-gold"
+                />
+                {t("createAccountCheckout")}
+              </label>
+              {createAccount && (
+                <div className="mt-3">
+                  <input
+                    type="password"
+                    placeholder={t("choosePassword")}
+                    value={accountPassword}
+                    onChange={(e) => {
+                      setAccountPassword(e.target.value);
+                      if (errors.accountPassword) setErrors((prev) => ({ ...prev, accountPassword: "" }));
+                    }}
+                    minLength={6}
+                    className={inputClass("accountPassword")}
+                  />
+                  {errors.accountPassword && <p className="text-xs text-red-500 mt-1">{errors.accountPassword}</p>}
+                  <p className="text-[11px] text-slate-400 mt-1.5">{t("accountBenefits")}</p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* Logged-in reseller discount notice */}
+          {user && profile?.korting && profile.korting > 0 && (
+            <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded-xl px-5 py-3">
+              <svg className="w-4 h-4 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <p className="text-sm text-green-700">
+                {t("resellerDiscount", { pct: profile.korting })}
+              </p>
+            </div>
+          )}
 
           {/* Payment Method */}
           <section className="bg-white border border-border-default rounded-xl p-6">

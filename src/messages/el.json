@@ -61,7 +61,11 @@
     "includes": "Περιλαμβάνει",
     "details": "Λεπτομέρειες",
     "productInfo": "Πληροφορίες προϊόντος",
-    "viewProduct": "Δείτε το προϊόν"
+    "viewProduct": "Δείτε το προϊόν",
+    "trustFreeShipping": "Δωρεάν αποστολή (NL)",
+    "trustSecurePayment": "Ασφαλής πληρωμή",
+    "trustEasyReturns": "Εύκολες επιστροφές",
+    "trustSupport": "Προσωπική υποστήριξη"
   },
   "about": {
     "title": "Σχετικά με την Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Αυτό το πεδίο είναι υποχρεωτικό",
     "invalidEmail": "Μη έγκυρη διεύθυνση email",
     "shippingTo": "Αποστολή σε {country}",
-    "exclVat": "χωρίς ΦΠΑ"
+    "exclVat": "χωρίς ΦΠΑ",
+    "createAccountCheckout": "Δημιουργήστε λογαριασμό για ταχύτερη πληρωμή",
+    "choosePassword": "Επιλέξτε κωδικό (τουλ. 6 χαρακτήρες)",
+    "passwordMin": "Ο κωδικός πρέπει να έχει τουλάχιστον 6 χαρακτήρες",
+    "accountBenefits": "Παρακολουθήστε τις παραγγελίες σας",
+    "resellerDiscount": "Η έκπτωση μεταπωλητή {pct}% εφαρμόζεται αυτόματα"
   },
   "payment": {
     "processing": "Επεξεργασία πληρωμής...",
@@ -194,5 +203,39 @@
     "backToShop": "Επιστροφή στο κατάστημα",
     "tryAgain": "Δοκιμάστε ξανά",
     "retryPayment": "Επαναλάβετε την πληρωμή"
+  },
+  "contact": {
+    "title": "Επικοινωνία",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Ολλανδία",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Δευ – Παρ",
+    "sat": "Σάββατο",
+    "byAppointment": "Κατά ραντεβού",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

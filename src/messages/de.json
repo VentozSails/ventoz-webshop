@@ -61,7 +61,11 @@
     "includes": "Inklusive",
     "details": "Details",
     "productInfo": "Produktinformationen",
-    "viewProduct": "Produkt ansehen"
+    "viewProduct": "Produkt ansehen",
+    "trustFreeShipping": "Kostenloser Versand (NL)",
+    "trustSecurePayment": "Sichere Zahlung",
+    "trustEasyReturns": "Einfache Rückgabe",
+    "trustSupport": "Persönliche Beratung"
   },
   "about": {
     "title": "Über Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Dieses Feld ist erforderlich",
     "invalidEmail": "Ungültige E-Mail-Adresse",
     "shippingTo": "Versand nach {country}",
-    "exclVat": "exkl. MwSt."
+    "exclVat": "exkl. MwSt.",
+    "createAccountCheckout": "Erstelle ein Konto für schnelleres Bezahlen",
+    "choosePassword": "Passwort wählen (mind. 6 Zeichen)",
+    "passwordMin": "Passwort muss mindestens 6 Zeichen haben",
+    "accountBenefits": "Verfolge deine Bestellungen und erhalte exklusive Angebote",
+    "resellerDiscount": "Dein Händlerrabatt von {pct}% wird automatisch angewendet"
   },
   "payment": {
     "processing": "Zahlung wird verarbeitet...",
@@ -194,5 +203,39 @@
     "backToShop": "Zurück zum Shop",
     "tryAgain": "Erneut versuchen",
     "retryPayment": "Zahlung wiederholen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir helfen Ihnen gerne. Kontaktieren Sie uns bei Fragen zu Segeln, Bestellungen oder Partnerschaften.",
+    "formTitle": "Senden Sie uns eine Nachricht",
+    "formSubtitle": "Wir antworten in der Regel innerhalb eines Werktages.",
+    "name": "Name",
+    "namePlaceholder": "Ihr Name",
+    "email": "E-Mail",
+    "emailPlaceholder": "ihre@email.de",
+    "phone": "Telefon",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Betreff",
+    "subjectDefault": "Wählen Sie ein Thema",
+    "subjectProduct": "Produktfrage",
+    "subjectOrder": "Bestellung / Versand",
+    "subjectReseller": "Händler werden",
+    "subjectSailschool": "Segelschule / Verein",
+    "subjectOther": "Sonstiges",
+    "message": "Nachricht",
+    "messagePlaceholder": "Wie können wir Ihnen helfen?",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "successTitle": "Nachricht gesendet!",
+    "successMessage": "Vielen Dank. Wir melden uns so schnell wie möglich.",
+    "directContact": "Rufen Sie uns an",
+    "address": "Adresse",
+    "netherlands": "Niederlande",
+    "visitNote": "Bitte rufen Sie vorher an, wenn Sie vorbeikommen möchten.",
+    "hours": "Öffnungszeiten",
+    "monFri": "Mo – Fr",
+    "sat": "Samstag",
+    "byAppointment": "Nach Vereinbarung",
+    "shippingNote": "Bestellungen werden freitagnachmittags versandt."
   }
 }

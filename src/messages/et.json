@@ -61,7 +61,11 @@
     "includes": "Sisaldab",
     "details": "Üksikasjad",
     "productInfo": "Tooteinfo",
-    "viewProduct": "Vaata toodet"
+    "viewProduct": "Vaata toodet",
+    "trustFreeShipping": "Tasuta saatmine (NL)",
+    "trustSecurePayment": "Turvaline makse",
+    "trustEasyReturns": "Lihtne tagastamine",
+    "trustSupport": "Isiklik tugi"
   },
   "about": {
     "title": "Ventoz Sailsist",
@@ -180,7 +184,12 @@
     "required": "See väli on kohustuslik",
     "invalidEmail": "Vigane e-posti aadress",
     "shippingTo": "Tarne asukohta {country}",
-    "exclVat": "ilma KM-ta"
+    "exclVat": "ilma KM-ta",
+    "createAccountCheckout": "Loo konto kiiremaks tellimiseks",
+    "choosePassword": "Vali parool (vähemalt 6 märki)",
+    "passwordMin": "Parool peab olema vähemalt 6 märki",
+    "accountBenefits": "Jälgi tellimusi ja saa eksklusiivpakkumisi",
+    "resellerDiscount": "Sinu edasimüüja soodustus {pct}% rakendatakse automaatselt"
   },
   "payment": {
     "processing": "Makse töötlemine...",
@@ -194,5 +203,39 @@
     "backToShop": "Tagasi poodi",
     "tryAgain": "Proovi uuesti",
     "retryPayment": "Korda makset"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Holland",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "E – R",
+    "sat": "Laupäev",
+    "byAppointment": "Vastavalt kokkuleppele",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }

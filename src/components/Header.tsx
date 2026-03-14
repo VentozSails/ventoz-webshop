@@ -36,7 +36,7 @@ export default async function Header({ locale }: { locale: string }) {
           <NavLink href="/catalogus">{t("products")}</NavLink>
           <NavLink href="/about">{t("about")}</NavLink>
           <NavLink href="/reviews">{t("reviews")}</NavLink>
-          <NavLink href="/about#contact">{t("contact")}</NavLink>
+          <NavLink href="/contact">{t("contact")}</NavLink>
         </nav>
 
         <div className="flex items-center gap-2">

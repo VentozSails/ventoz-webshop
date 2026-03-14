@@ -61,7 +61,11 @@
     "includes": "Įskaičiuota",
     "details": "Detalės",
     "productInfo": "Produkto informacija",
-    "viewProduct": "Žiūrėti produktą"
+    "viewProduct": "Žiūrėti produktą",
+    "trustFreeShipping": "Nemokamas pristatymas (NL)",
+    "trustSecurePayment": "Saugus mokėjimas",
+    "trustEasyReturns": "Lengvas grąžinimas",
+    "trustSupport": "Asmeninė pagalba"
   },
   "about": {
     "title": "Apie Ventoz Sails",
@@ -180,7 +184,12 @@
     "required": "Šis laukas yra privalomas",
     "invalidEmail": "Neteisingas el. pašto adresas",
     "shippingTo": "Pristatymas į {country}",
-    "exclVat": "be PVM"
+    "exclVat": "be PVM",
+    "createAccountCheckout": "Sukurkite paskyrą greitesniam apsipirkimui",
+    "choosePassword": "Pasirinkite slaptažodį (min. 6 simboliai)",
+    "passwordMin": "Slaptažodis turi būti ne trumpesnis nei 6 simboliai",
+    "accountBenefits": "Sekite užsakymus ir gaukite išskirtinius pasiūlymus",
+    "resellerDiscount": "Jūsų perpardavėjo nuolaida {pct}% taikoma automatiškai"
   },
   "payment": {
     "processing": "Apdorojamas mokėjimas...",
@@ -194,5 +203,39 @@
     "backToShop": "Grįžti į parduotuvę",
     "tryAgain": "Bandyti dar kartą",
     "retryPayment": "Pakartoti mokėjimą"
+  },
+  "contact": {
+    "title": "Kontaktai",
+    "subtitle": "We're happy to help. Reach out with any question about our sails, orders or partnerships.",
+    "formTitle": "Send us a message",
+    "formSubtitle": "We typically respond within one business day.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+31 6 ...",
+    "subject": "Subject",
+    "subjectDefault": "Select a subject",
+    "subjectProduct": "Product question",
+    "subjectOrder": "Order / shipping",
+    "subjectReseller": "Become a reseller",
+    "subjectSailschool": "Sailing school / club",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for your message. We'll get back to you as soon as possible.",
+    "directContact": "Call us directly",
+    "address": "Address",
+    "netherlands": "Nyderlandai",
+    "visitNote": "Please call ahead if you'd like to visit.",
+    "hours": "Business hours",
+    "monFri": "Pn – Pr",
+    "sat": "Šeštadienis",
+    "byAppointment": "Susitartus",
+    "shippingNote": "Orders are shipped weekly on Friday afternoon."
   }
 }
