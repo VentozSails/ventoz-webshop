@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { getFeaturedProducts, getAboutTexts, getWebshopHero, getWebshopUsp } from "@/lib/products";
+import { getFeaturedProducts, getAboutTexts, getWebshopHero, getWebshopUsp, getReviewPlatforms } from "@/lib/products";
 import {
   displayNaam,
   displayAfbeelding,
@@ -31,11 +31,12 @@ export default async function HomePage({
   const tHero = await getTranslations("hero");
   const tProduct = await getTranslations("product");
 
-  const [featured, aboutTexts, heroData, uspData] = await Promise.all([
+  const [featured, aboutTexts, heroData, uspData, reviewPlatforms] = await Promise.all([
     getFeaturedProducts(),
     getAboutTexts(),
     getWebshopHero(),
     getWebshopUsp(),
+    getReviewPlatforms(),
   ]);
 
   const fallback = ABOUT_FALLBACK[locale] || ABOUT_FALLBACK["en"] || ABOUT_FALLBACK["nl"];
@@ -152,7 +153,9 @@ export default async function HomePage({
               },
               {
                 title: "★★★★★",
-                sub: t("reviews"),
+                sub: reviewPlatforms.length > 0
+                  ? reviewPlatforms.map((p) => p.name).join(" & ")
+                  : t("reviews"),
                 stars: true,
                 href: "/reviews" as const,
               },
