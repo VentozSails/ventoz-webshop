@@ -1,9 +1,38 @@
+const SPEC_PATTERNS = [
+  /^\s*(voorlijk|luff|vorliek)\s*[:：]\s*/i,
+  /^\s*(achterlijk|leech|achterliek)\s*[:：]\s*/i,
+  /^\s*(onderlijk|foot|boom|unterliek)\s*[:：]\s*/i,
+  /^\s*(oppervlakte|sail\s*area|fläche|surface|superficie)\s*[:：]\s*/i,
+  /^\s*(materiaal|material|matériau)\s*[:：]\s*/i,
+  /^\s*(gewicht|weight|poids|gewicht\s*\(kg\))\s*[:：]\s*/i,
+  /^\s*(inclusief|includes?|inclus|inklusive|einschließlich)\s*[:：]\s*/i,
+  /^\s*(mast\s*(?:delen|sections?|teile)|mastdelen)\s*[:：]\s*/i,
+  /^\s*(zeillatten|battens?|lattes?|segellatten)\s*[:：]\s*/i,
+  /^\s*(mast(?:hoogte|lengte)|mast\s*(?:height|length))\s*[:：]\s*/i,
+];
+
+function isSpecLine(line: string): boolean {
+  return SPEC_PATTERNS.some((re) => re.test(line));
+}
+
+function stripSpecLines(text: string): string {
+  const lines = text.split("\n");
+  const cleaned = lines.filter((line) => !isSpecLine(line));
+
+  let result = cleaned.join("\n");
+  result = result.replace(/\n{3,}/g, "\n\n").trim();
+  return result;
+}
+
 interface FormattedDescriptionProps {
   text: string;
 }
 
 export default function FormattedDescription({ text }: FormattedDescriptionProps) {
-  const blocks = text.split(/\n\n+/);
+  const cleanedText = stripSpecLines(text);
+  if (!cleanedText) return null;
+
+  const blocks = cleanedText.split(/\n\n+/);
 
   return (
     <div className="space-y-4">
