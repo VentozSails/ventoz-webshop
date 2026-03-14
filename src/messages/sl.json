@@ -39,7 +39,8 @@
     "viewAll": "Ogled vseh izdelkov",
     "outOfStock": "Razprodano",
     "subtitle": "Odkrijte naš celoten izbor jader",
-    "allSails": "Vsa {category} jadra od Ventoz"
+    "allSails": "Vsa {category} jadra od Ventoz",
+    "productsCount": "izdelkov"
   },
   "product": {
     "inStock": "Na zalogi",

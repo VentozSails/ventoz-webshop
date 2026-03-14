@@ -39,7 +39,8 @@
     "viewAll": "View all products",
     "outOfStock": "Out of stock",
     "subtitle": "Discover our complete range of sails",
-    "allSails": "All {category} sails from Ventoz"
+    "allSails": "All {category} sails from Ventoz",
+    "productsCount": "products"
   },
   "product": {
     "inStock": "In stock",

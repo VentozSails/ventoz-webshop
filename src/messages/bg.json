@@ -39,7 +39,8 @@
     "viewAll": "Виж всички продукти",
     "outOfStock": "Изчерпано",
     "subtitle": "Открийте пълната ни гама от платна",
-    "allSails": "Всички {category} платна от Ventoz"
+    "allSails": "Всички {category} платна от Ventoz",
+    "productsCount": "продукта"
   },
   "product": {
     "inStock": "В наличност",

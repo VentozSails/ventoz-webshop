@@ -39,7 +39,8 @@
     "viewAll": "Vezi toate produsele",
     "outOfStock": "Epuizat",
     "subtitle": "Descoperiți gama noastră completă de vele",
-    "allSails": "Toate velele {category} de la Ventoz"
+    "allSails": "Toate velele {category} de la Ventoz",
+    "productsCount": "produse"
   },
   "product": {
     "inStock": "În stoc",

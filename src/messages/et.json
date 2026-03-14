@@ -39,7 +39,8 @@
     "viewAll": "Vaata kõiki tooteid",
     "outOfStock": "Otsas",
     "subtitle": "Avastage meie täielik purjedevalik",
-    "allSails": "Kõik {category} purjed Ventozilt"
+    "allSails": "Kõik {category} purjed Ventozilt",
+    "productsCount": "toodet"
   },
   "product": {
     "inStock": "Laos",

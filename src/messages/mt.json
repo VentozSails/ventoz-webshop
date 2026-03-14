@@ -39,7 +39,8 @@
     "viewAll": "Ara l-prodotti kollha",
     "outOfStock": "Mhux disponibbli",
     "subtitle": "Skopri l-firxa sħiħa ta' qlugħ tagħna",
-    "allSails": "Il-qlugħ kollha {category} minn Ventoz"
+    "allSails": "Il-qlugħ kollha {category} minn Ventoz",
+    "productsCount": "prodotti"
   },
   "product": {
     "inStock": "Disponibbli",

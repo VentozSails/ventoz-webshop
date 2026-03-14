@@ -39,7 +39,8 @@
     "viewAll": "Bekijk alle producten",
     "outOfStock": "Niet op voorraad",
     "subtitle": "Ontdek ons complete aanbod zeilen",
-    "allSails": "Alle {category} zeilen van Ventoz"
+    "allSails": "Alle {category} zeilen van Ventoz",
+    "productsCount": "producten"
   },
   "product": {
     "inStock": "Op voorraad",

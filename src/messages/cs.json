@@ -39,7 +39,8 @@
     "viewAll": "Zobrazit všechny produkty",
     "outOfStock": "Vyprodáno",
     "subtitle": "Objevte naši kompletní nabídku plachet",
-    "allSails": "Všechny {category} plachty od Ventoz"
+    "allSails": "Všechny {category} plachty od Ventoz",
+    "productsCount": "produktů"
   },
   "product": {
     "inStock": "Skladem",

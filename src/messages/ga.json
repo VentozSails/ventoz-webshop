@@ -39,7 +39,8 @@
     "viewAll": "Féach ar gach táirge",
     "outOfStock": "As stoc",
     "subtitle": "Aimsigh ár raon iomlán seolta",
-    "allSails": "Gach {category} seol ó Ventoz"
+    "allSails": "Gach {category} seol ó Ventoz",
+    "productsCount": "táirgí"
   },
   "product": {
     "inStock": "Ar fáil",

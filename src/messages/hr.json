@@ -39,7 +39,8 @@
     "viewAll": "Pogledaj sve proizvode",
     "outOfStock": "Nema na zalihi",
     "subtitle": "Otkrijte naš kompletan asortiman jedara",
-    "allSails": "Sva {category} jedra od Ventoz"
+    "allSails": "Sva {category} jedra od Ventoz",
+    "productsCount": "proizvoda"
   },
   "product": {
     "inStock": "Na zalihi",

@@ -39,7 +39,8 @@
     "viewAll": "Zobacz wszystkie produkty",
     "outOfStock": "Wyprzedane",
     "subtitle": "Odkryj nasz kompletny asortyment żagli",
-    "allSails": "Wszystkie żagle {category} od Ventoz"
+    "allSails": "Wszystkie żagle {category} od Ventoz",
+    "productsCount": "produktów"
   },
   "product": {
     "inStock": "W magazynie",

@@ -39,7 +39,8 @@
     "viewAll": "Összes termék megtekintése",
     "outOfStock": "Elfogyott",
     "subtitle": "Fedezze fel teljes vitorlakínálatunkat",
-    "allSails": "Minden {category} vitorla a Ventoztól"
+    "allSails": "Minden {category} vitorla a Ventoztól",
+    "productsCount": "termék"
   },
   "product": {
     "inStock": "Raktáron",

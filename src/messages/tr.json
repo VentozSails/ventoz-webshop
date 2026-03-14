@@ -39,7 +39,8 @@
     "viewAll": "Tüm ürünleri görüntüle",
     "outOfStock": "Tükendi",
     "subtitle": "Tam yelken yelpazemizi keşfedin",
-    "allSails": "Tüm {category} yelkenler Ventoz'dan"
+    "allSails": "Tüm {category} yelkenler Ventoz'dan",
+    "productsCount": "ürün"
   },
   "product": {
     "inStock": "Stokta",

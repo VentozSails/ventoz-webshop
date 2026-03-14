@@ -39,7 +39,8 @@
     "viewAll": "Ver todos los productos",
     "outOfStock": "Agotado",
     "subtitle": "Descubre nuestra gama completa de velas",
-    "allSails": "Todas las velas {category} de Ventoz"
+    "allSails": "Todas las velas {category} de Ventoz",
+    "productsCount": "productos"
   },
   "product": {
     "inStock": "En stock",

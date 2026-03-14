@@ -39,7 +39,8 @@
     "viewAll": "Vedi tutti i prodotti",
     "outOfStock": "Non disponibile",
     "subtitle": "Scopri la nostra gamma completa di vele",
-    "allSails": "Tutte le vele {category} di Ventoz"
+    "allSails": "Tutte le vele {category} di Ventoz",
+    "productsCount": "prodotti"
   },
   "product": {
     "inStock": "Disponibile",

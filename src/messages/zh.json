@@ -39,7 +39,8 @@
     "viewAll": "查看所有产品",
     "outOfStock": "缺货",
     "subtitle": "探索我们完整的帆具系列",
-    "allSails": "所有 {category} 帆来自 Ventoz"
+    "allSails": "所有 {category} 帆来自 Ventoz",
+    "productsCount": "个产品"
   },
   "product": {
     "inStock": "有库存",

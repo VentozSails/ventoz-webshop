@@ -39,7 +39,8 @@
     "viewAll": "Näytä kaikki tuotteet",
     "outOfStock": "Loppuunmyyty",
     "subtitle": "Tutustu täydelliseen purjevalikoimaamme",
-    "allSails": "Kaikki {category} purjeet Ventozilta"
+    "allSails": "Kaikki {category} purjeet Ventozilta",
+    "productsCount": "tuotetta"
   },
   "product": {
     "inStock": "Varastossa",

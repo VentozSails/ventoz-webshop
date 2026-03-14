@@ -39,7 +39,8 @@
     "viewAll": "Žiūrėti visus produktus",
     "outOfStock": "Išparduota",
     "subtitle": "Atraskite mūsų pilną burių asortimentą",
-    "allSails": "Visos {category} burės iš Ventoz"
+    "allSails": "Visos {category} burės iš Ventoz",
+    "productsCount": "produktų"
   },
   "product": {
     "inStock": "Yra sandėlyje",

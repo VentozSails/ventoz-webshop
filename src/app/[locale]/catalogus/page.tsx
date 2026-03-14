@@ -3,7 +3,8 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { getAllProducts, getCategories, getCategoryDescriptions } from "@/lib/products";
 import { categorieLabel } from "@/lib/types";
-import ProductCard from "@/components/ProductCard";
+import ProductGrid from "@/components/ProductGrid";
+import CatalogViewToggle, { ViewModeProvider } from "@/components/CatalogViewToggle";
 import { Link } from "@/i18n/navigation";
 
 export const revalidate = 300;
@@ -48,8 +49,12 @@ export default async function CatalogusPage({
 
   const catLabel = (slug: string | null) => categorieLabel(slug, (k) => tCat.has(k) ? tCat(k) : "");
 
+  const sortedCategories = [...categories].sort((a, b) =>
+    catLabel(a).localeCompare(catLabel(b), locale)
+  );
+
   return (
-    <>
+    <ViewModeProvider>
       <div className="bg-gradient-to-r from-navy-dark to-navy py-8">
         <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-4">
           <Image src="/emblem.png" alt="" width={52} height={52} className="w-13 h-13 opacity-80" />
@@ -105,7 +110,7 @@ export default async function CatalogusPage({
                   </span>
                 </Link>
               </li>
-              {categories.map((cat) => (
+              {sortedCategories.map((cat) => (
                 <li key={cat}>
                   <Link
                     href={`/catalogus?categorie=${encodeURIComponent(cat)}`}
@@ -136,7 +141,7 @@ export default async function CatalogusPage({
               >
                 {t("all")}
               </Link>
-              {categories.map((cat) => (
+              {sortedCategories.map((cat) => (
                 <Link
                   key={cat}
                   href={`/catalogus?categorie=${encodeURIComponent(cat)}`}
@@ -194,6 +199,14 @@ export default async function CatalogusPage({
               );
             })()}
 
+            {/* View toggle + count */}
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-xs text-slate-400">
+                {inStock.length + outOfStock.length} {t("productsCount")}
+              </p>
+              <CatalogViewToggle />
+            </div>
+
             {inStock.length === 0 && outOfStock.length === 0 ? (
               <div className="text-center py-16">
                 <div className="w-16 h-16 mx-auto mb-4 bg-card-placeholder rounded-2xl flex items-center justify-center">
@@ -208,22 +221,14 @@ export default async function CatalogusPage({
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
-                  {inStock.map((product) => (
-                    <ProductCard key={product.id} product={product} locale={locale} />
-                  ))}
-                </div>
+                <ProductGrid products={inStock} locale={locale} />
 
                 {outOfStock.length > 0 && (
                   <>
                     <h2 className="text-sm font-bold text-slate-400 mt-10 mb-3 uppercase tracking-wider">
                       {t("outOfStock")}
                     </h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 opacity-50">
-                      {outOfStock.map((product) => (
-                        <ProductCard key={product.id} product={product} locale={locale} />
-                      ))}
-                    </div>
+                    <ProductGrid products={outOfStock} locale={locale} dimmed />
                   </>
                 )}
               </>
@@ -231,6 +236,6 @@ export default async function CatalogusPage({
           </div>
         </div>
       </div>
-    </>
+    </ViewModeProvider>
   );
 }

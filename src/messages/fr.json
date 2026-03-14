@@ -39,7 +39,8 @@
     "viewAll": "Voir tous les produits",
     "outOfStock": "Rupture de stock",
     "subtitle": "Découvrez notre gamme complète de voiles",
-    "allSails": "Toutes les voiles {category} de Ventoz"
+    "allSails": "Toutes les voiles {category} de Ventoz",
+    "productsCount": "produits"
   },
   "product": {
     "inStock": "En stock",

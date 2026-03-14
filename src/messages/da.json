@@ -39,7 +39,8 @@
     "viewAll": "Se alle produkter",
     "outOfStock": "Udsolgt",
     "subtitle": "Opdag vores komplette udvalg af sejl",
-    "allSails": "Alle {category} sejl fra Ventoz"
+    "allSails": "Alle {category} sejl fra Ventoz",
+    "productsCount": "produkter"
   },
   "product": {
     "inStock": "På lager",

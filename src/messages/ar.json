@@ -39,7 +39,8 @@
     "viewAll": "عرض جميع المنتجات",
     "outOfStock": "نفد من المخزون",
     "subtitle": "اكتشف مجموعتنا الكاملة من الأشرعة",
-    "allSails": "جميع أشرعة {category} من Ventoz"
+    "allSails": "جميع أشرعة {category} من Ventoz",
+    "productsCount": "منتجات"
   },
   "product": {
     "inStock": "متوفر",

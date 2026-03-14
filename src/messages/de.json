@@ -39,7 +39,8 @@
     "viewAll": "Alle Produkte anzeigen",
     "outOfStock": "Nicht auf Lager",
     "subtitle": "Entdecken Sie unser komplettes Segelsortiment",
-    "allSails": "Alle {category} Segel von Ventoz"
+    "allSails": "Alle {category} Segel von Ventoz",
+    "productsCount": "Produkte"
   },
   "product": {
     "inStock": "Auf Lager",

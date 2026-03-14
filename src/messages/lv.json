@@ -39,7 +39,8 @@
     "viewAll": "Skatīt visus produktus",
     "outOfStock": "Nav pieejams",
     "subtitle": "Atklājiet mūsu pilno buru sortimentu",
-    "allSails": "Visas {category} buras no Ventoz"
+    "allSails": "Visas {category} buras no Ventoz",
+    "productsCount": "produkti"
   },
   "product": {
     "inStock": "Noliktavā",
