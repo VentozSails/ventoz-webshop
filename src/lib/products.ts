@@ -56,14 +56,33 @@ export async function getProductBySlug(
   if (!idMatch) return null;
 
   const id = parseInt(idMatch[1], 10);
-  const { data } = await supabase
-    .from("product_catalogus")
-    .select("*")
-    .eq("id", id)
-    .is("geblokkeerd", false)
-    .single();
+  try {
+    const { data } = await supabase
+      .from("product_catalogus")
+      .select("*")
+      .eq("id", id)
+      .is("geblokkeerd", false)
+      .single();
 
-  return data;
+    if (!data) return null;
+
+    return {
+      ...data,
+      extra_afbeeldingen: Array.isArray(data.extra_afbeeldingen)
+        ? data.extra_afbeeldingen
+        : [],
+      staffelprijzen:
+        data.staffelprijzen && typeof data.staffelprijzen === "object"
+          ? data.staffelprijzen
+          : null,
+      specs_tabel:
+        data.specs_tabel && typeof data.specs_tabel === "object"
+          ? data.specs_tabel
+          : null,
+    } as Product;
+  } catch {
+    return null;
+  }
 }
 
 export async function getCategories(): Promise<string[]> {
@@ -131,19 +150,23 @@ export async function getWebshopUsp(): Promise<Record<string, string>> {
 }
 
 export async function getAllProductSlugs(): Promise<string[]> {
-  const { data } = await supabase
-    .from("product_catalogus")
-    .select("id, naam, naam_override")
-    .is("geblokkeerd", false);
+  try {
+    const { data } = await supabase
+      .from("product_catalogus")
+      .select("id, naam, naam_override")
+      .is("geblokkeerd", false);
 
-  if (!data) return [];
-  return data.map((p) => {
-    const name = p.naam_override || p.naam;
-    return (
-      name
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "") + `-${p.id}`
-    );
-  });
+    if (!data) return [];
+    return data.map((p) => {
+      const name = p.naam_override || p.naam || `product`;
+      return (
+        name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "") + `-${p.id}`
+      );
+    });
+  } catch {
+    return [];
+  }
 }

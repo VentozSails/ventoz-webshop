@@ -66,9 +66,11 @@ export function displayAfbeelding(p: Product): string | null {
 export function alleAfbeeldingen(p: Product): string[] {
   const main = displayAfbeelding(p);
   const all: string[] = [];
-  if (main) all.push(main);
-  for (const url of p.extra_afbeeldingen || []) {
-    if (url !== main) all.push(url);
+  if (main && typeof main === "string") all.push(main);
+  if (Array.isArray(p.extra_afbeeldingen)) {
+    for (const url of p.extra_afbeeldingen) {
+      if (typeof url === "string" && url && url !== main) all.push(url);
+    }
   }
   return all;
 }

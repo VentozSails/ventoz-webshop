@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProductSlugs } from "@/lib/products";
 import {
+  type Product,
   displayNaam,
   displayBeschrijving,
   displayPrijs,
@@ -29,7 +30,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug, locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const product = await getProductBySlug(slug);
+
+  let product: Product | null = null;
+  try {
+    product = await getProductBySlug(slug);
+  } catch {
+    return { title: t("productNotFound") };
+  }
   if (!product) return { title: t("productNotFound") };
 
   const naam = displayNaam(product, locale);
@@ -58,7 +65,13 @@ export default async function ProductPage({
   params: Promise<{ slug: string; locale: string }>;
 }) {
   const { slug, locale } = await params;
-  const product = await getProductBySlug(slug);
+
+  let product: Product | null = null;
+  try {
+    product = await getProductBySlug(slug);
+  } catch {
+    notFound();
+  }
   if (!product) notFound();
 
   const t = await getTranslations("product");
@@ -70,7 +83,36 @@ export default async function ProductPage({
   const prijs = displayPrijs(product);
   const images = alleAfbeeldingen(product);
   const mainImage = displayAfbeelding(product);
-  const catLabel = (s: string | null) => categorieLabel(s, (k) => tCat.has(k) ? tCat(k) : "");
+  const catLabel = (s: string | null) => {
+    try {
+      return categorieLabel(s, (k) => tCat.has(k) ? tCat(k) : "");
+    } catch {
+      return s || "";
+    }
+  };
+
+  const staffelEntries = (() => {
+    try {
+      if (!product.staffelprijzen || typeof product.staffelprijzen !== "object") return [];
+      return Object.entries(product.staffelprijzen)
+        .map(([qty, price]) => [qty, Number(price)] as [string, number])
+        .filter(([, p]) => !isNaN(p))
+        .sort(([a], [b]) => parseInt(a) - parseInt(b));
+    } catch {
+      return [];
+    }
+  })();
+
+  const specEntries = (() => {
+    try {
+      if (!product.specs_tabel || typeof product.specs_tabel !== "object") return null;
+      const keys = Object.keys(product.specs_tabel);
+      if (keys.length === 0) return null;
+      return { keys, values: Object.values(product.specs_tabel) };
+    } catch {
+      return null;
+    }
+  })();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -161,15 +203,13 @@ export default async function ProductPage({
               {prijs && <span className="text-xs text-slate-400">{t("exclVat")}</span>}
             </div>
 
-            {product.staffelprijzen && Object.keys(product.staffelprijzen).length > 0 && (
+            {staffelEntries.length > 0 && (
               <div className="mt-4 bg-green-50 border border-green-200 rounded-xl p-4">
                 <h3 className="text-[10px] font-bold text-green-800 uppercase tracking-wider mb-2">
                   {t("volumePricing")}
                 </h3>
                 <div className="space-y-1">
-                  {Object.entries(product.staffelprijzen)
-                    .sort(([a], [b]) => parseInt(a) - parseInt(b))
-                    .map(([qty, price]) => (
+                  {staffelEntries.map(([qty, price]) => (
                       <div key={qty} className="flex justify-between text-sm">
                         <span className="text-green-700">{t("fromQty", { qty })}</span>
                         <span className="font-semibold text-green-900">
@@ -224,21 +264,21 @@ export default async function ProductPage({
               </div>
             )}
 
-            {product.specs_tabel && Object.keys(product.specs_tabel).length > 0 && (
+            {specEntries && (
               <div className="mt-6">
                 <h2 className="text-sm font-bold text-navy mb-3">{t("details")}</h2>
                 <div className="overflow-x-auto bg-white rounded-lg border border-border-default">
                   <table className="w-full text-[13px]">
                     <thead>
                       <tr className="bg-card-placeholder">
-                        {Object.keys(product.specs_tabel).map((key) => (
+                        {specEntries.keys.map((key) => (
                           <th key={key} className="px-3 py-2 text-left text-navy-dark font-bold text-[13px]">{key}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        {Object.values(product.specs_tabel).map((val, i) => (
+                        {specEntries.values.map((val, i) => (
                           <td key={i} className="px-3 py-2 text-slate-600">{String(val ?? "")}</td>
                         ))}
                       </tr>
