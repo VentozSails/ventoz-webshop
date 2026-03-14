@@ -9,7 +9,8 @@
   "nav": {
     "home": "Strona główna",
     "products": "Produkty",
-    "backToProducts": "Powrót do produktów"
+    "backToProducts": "Powrót do produktów",
+    "about": "O nas"
   },
   "hero": {
     "cta": "Przeglądaj produkty"
@@ -58,6 +59,18 @@
     "details": "Szczegóły",
     "productInfo": "Informacje o produkcie",
     "viewProduct": "Zobacz produkt"
+  },
+  "about": {
+    "title": "O Ventoz Sails",
+    "reviewsTitle": "Opinie klientów",
+    "reviewsSub": "Zobacz, co nasi klienci mówią o nas",
+    "viewReviews": "Zobacz wszystkie opinie",
+    "visitWebsite": "Odwiedź stronę",
+    "ctaCatalog": "Przeglądaj nasze produkty",
+    "contact": "Pytania? Skontaktuj się z nami",
+    "contactSub": "Chętnie pomożemy znaleźć odpowiedni żagiel.",
+    "email": "E-mail",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Kontakt",

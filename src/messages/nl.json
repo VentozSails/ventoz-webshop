@@ -9,7 +9,8 @@
   "nav": {
     "home": "Home",
     "products": "Assortiment",
-    "backToProducts": "Terug naar assortiment"
+    "backToProducts": "Terug naar assortiment",
+    "about": "Over ons"
   },
   "hero": {
     "cta": "Bekijk assortiment"
@@ -58,6 +59,18 @@
     "details": "Details",
     "productInfo": "Productinformatie",
     "viewProduct": "Bekijk product"
+  },
+  "about": {
+    "title": "Over Ventoz Sails",
+    "reviewsTitle": "Klantbeoordelingen",
+    "reviewsSub": "Bekijk wat onze klanten over ons zeggen",
+    "viewReviews": "Bekijk alle beoordelingen",
+    "visitWebsite": "Bezoek website",
+    "ctaCatalog": "Bekijk ons assortiment",
+    "contact": "Vragen? Neem contact op",
+    "contactSub": "Wij helpen je graag het juiste zeil te vinden.",
+    "email": "E-mail",
+    "phone": "Telefoon"
   },
   "footer": {
     "contact": "Contact",

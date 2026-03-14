@@ -9,7 +9,8 @@
   "nav": {
     "home": "Hjem",
     "products": "Produkter",
-    "backToProducts": "Tilbage til produkter"
+    "backToProducts": "Tilbage til produkter",
+    "about": "Om os"
   },
   "hero": {
     "cta": "Se produkter"
@@ -58,6 +59,18 @@
     "details": "Detaljer",
     "productInfo": "Produktinformation",
     "viewProduct": "Se produkt"
+  },
+  "about": {
+    "title": "Om Ventoz Sails",
+    "reviewsTitle": "Kundeanmeldelser",
+    "reviewsSub": "Se hvad vores kunder siger om os",
+    "viewReviews": "Se alle anmeldelser",
+    "visitWebsite": "Besøg hjemmeside",
+    "ctaCatalog": "Gennemse vores produkter",
+    "contact": "Spørgsmål? Kontakt os",
+    "contactSub": "Vi er glade for at hjælpe dig med at finde det rigtige sejl.",
+    "email": "E-mail",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Kontakt",

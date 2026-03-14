@@ -9,7 +9,8 @@
   "nav": {
     "home": "Főoldal",
     "products": "Termékek",
-    "backToProducts": "Vissza a termékekhez"
+    "backToProducts": "Vissza a termékekhez",
+    "about": "Rólunk"
   },
   "hero": {
     "cta": "Termékek böngészése"
@@ -58,6 +59,18 @@
     "details": "Részletek",
     "productInfo": "Termékinformáció",
     "viewProduct": "Termék megtekintése"
+  },
+  "about": {
+    "title": "A Ventoz Sailsról",
+    "reviewsTitle": "Vásárlói vélemények",
+    "reviewsSub": "Nézze meg, mit mondanak rólunk vásárlóink",
+    "viewReviews": "Összes vélemény megtekintése",
+    "visitWebsite": "Weboldal megtekintése",
+    "ctaCatalog": "Termékeink böngészése",
+    "contact": "Kérdése van? Vegye fel velünk a kapcsolatot",
+    "contactSub": "Szívesen segítünk megtalálni a megfelelő vitorlát.",
+    "email": "E-mail",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Kapcsolat",

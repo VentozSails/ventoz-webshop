@@ -9,7 +9,8 @@
   "nav": {
     "home": "Hem",
     "products": "Produkter",
-    "backToProducts": "Tillbaka till produkter"
+    "backToProducts": "Tillbaka till produkter",
+    "about": "Om oss"
   },
   "hero": {
     "cta": "Se produkter"
@@ -58,6 +59,18 @@
     "details": "Detaljer",
     "productInfo": "Produktinformation",
     "viewProduct": "Se produkt"
+  },
+  "about": {
+    "title": "Om Ventoz Sails",
+    "reviewsTitle": "Kundrecensioner",
+    "reviewsSub": "Se vad våra kunder säger om oss",
+    "viewReviews": "Se alla recensioner",
+    "visitWebsite": "Besök webbplats",
+    "ctaCatalog": "Bläddra bland våra produkter",
+    "contact": "Frågor? Kontakta oss",
+    "contactSub": "Vi hjälper dig gärna att hitta rätt segel.",
+    "email": "E-post",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Kontakt",

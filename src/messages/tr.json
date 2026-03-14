@@ -9,7 +9,8 @@
   "nav": {
     "home": "Ana Sayfa",
     "products": "Ürünler",
-    "backToProducts": "Ürünlere dön"
+    "backToProducts": "Ürünlere dön",
+    "about": "Hakkımızda"
   },
   "hero": {
     "cta": "Ürünleri görüntüle"
@@ -58,6 +59,18 @@
     "details": "Detaylar",
     "productInfo": "Ürün bilgisi",
     "viewProduct": "Ürünü görüntüle"
+  },
+  "about": {
+    "title": "Ventoz Sails Hakkında",
+    "reviewsTitle": "Müşteri Yorumları",
+    "reviewsSub": "Müşterilerimizin bizim hakkımızda neler söylediğini görün",
+    "viewReviews": "Tüm yorumları görüntüle",
+    "visitWebsite": "Web sitesini ziyaret et",
+    "ctaCatalog": "Ürünlerimizi inceleyin",
+    "contact": "Sorularınız mı var? Bize ulaşın",
+    "contactSub": "Size doğru yelkeni bulmanızda yardımcı olmaktan mutluluk duyarız.",
+    "email": "E-posta",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "İletişim",

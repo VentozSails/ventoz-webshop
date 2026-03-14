@@ -9,7 +9,8 @@
   "nav": {
     "home": "Paġna Ewlenija",
     "products": "Prodotti",
-    "backToProducts": "Lura għall-prodotti"
+    "backToProducts": "Lura għall-prodotti",
+    "about": "Dwarna"
   },
   "hero": {
     "cta": "Ara l-prodotti"
@@ -58,6 +59,18 @@
     "details": "Dettalji",
     "productInfo": "Informazzjoni dwar il-prodott",
     "viewProduct": "Ara l-prodott"
+  },
+  "about": {
+    "title": "Dwar Ventoz Sails",
+    "reviewsTitle": "Reviżjonijiet tal-klijenti",
+    "reviewsSub": "Ara x'jgħidu l-klijenti tagħna dwarna",
+    "viewReviews": "Ara r-reviżjonijiet kollha",
+    "visitWebsite": "Żur is-sit web",
+    "ctaCatalog": "Ibbrowsja l-prodotti tagħna",
+    "contact": "Mistoqsijiet? Ikkuntattjana",
+    "contactSub": "Ninsabu kuntenti li ngħinuk issib il-qlugħ it-tajjeb.",
+    "email": "Email",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Kuntatt",

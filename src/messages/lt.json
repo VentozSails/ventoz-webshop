@@ -9,7 +9,8 @@
   "nav": {
     "home": "Pradžia",
     "products": "Produktai",
-    "backToProducts": "Grįžti prie produktų"
+    "backToProducts": "Grįžti prie produktų",
+    "about": "Apie mus"
   },
   "hero": {
     "cta": "Peržiūrėti produktus"
@@ -58,6 +59,18 @@
     "details": "Detalės",
     "productInfo": "Produkto informacija",
     "viewProduct": "Žiūrėti produktą"
+  },
+  "about": {
+    "title": "Apie Ventoz Sails",
+    "reviewsTitle": "Klientų atsiliepimai",
+    "reviewsSub": "Sužinokite, ką mūsų klientai sako apie mus",
+    "viewReviews": "Peržiūrėti visus atsiliepimus",
+    "visitWebsite": "Apsilankyti svetainėje",
+    "ctaCatalog": "Naršyti mūsų produktus",
+    "contact": "Klausimai? Susisiekite su mumis",
+    "contactSub": "Mielai padėsime rasti tinkamą burą.",
+    "email": "El. paštas",
+    "phone": "Telefonas"
   },
   "footer": {
     "contact": "Kontaktai",

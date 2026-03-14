@@ -9,7 +9,8 @@
   "nav": {
     "home": "Domov",
     "products": "Izdelki",
-    "backToProducts": "Nazaj na izdelke"
+    "backToProducts": "Nazaj na izdelke",
+    "about": "O nas"
   },
   "hero": {
     "cta": "Oglejte si izdelke"
@@ -58,6 +59,18 @@
     "details": "Podrobnosti",
     "productInfo": "Informacije o izdelku",
     "viewProduct": "Ogled izdelka"
+  },
+  "about": {
+    "title": "O Ventoz Sails",
+    "reviewsTitle": "Mnenja strank",
+    "reviewsSub": "Oglejte si, kaj naše stranke pravijo o nas",
+    "viewReviews": "Ogled vseh mnenj",
+    "visitWebsite": "Obisk spletne strani",
+    "ctaCatalog": "Brskajte po naših izdelkih",
+    "contact": "Vprašanja? Obrnite se na nas",
+    "contactSub": "Z veseljem vam pomagamo najti pravo jadro.",
+    "email": "E-pošta",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Kontakt",

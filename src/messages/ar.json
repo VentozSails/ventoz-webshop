@@ -9,7 +9,8 @@
   "nav": {
     "home": "الرئيسية",
     "products": "المنتجات",
-    "backToProducts": "العودة إلى المنتجات"
+    "backToProducts": "العودة إلى المنتجات",
+    "about": "عنا"
   },
   "hero": {
     "cta": "تصفح المنتجات"
@@ -58,6 +59,18 @@
     "details": "التفاصيل",
     "productInfo": "معلومات المنتج",
     "viewProduct": "عرض المنتج"
+  },
+  "about": {
+    "title": "عن Ventoz Sails",
+    "reviewsTitle": "آراء العملاء",
+    "reviewsSub": "اطلع على ما يقوله عملاؤنا عنا",
+    "viewReviews": "عرض جميع الآراء",
+    "visitWebsite": "زيارة الموقع",
+    "ctaCatalog": "تصفح منتجاتنا",
+    "contact": "أسئلة؟ تواصل معنا",
+    "contactSub": "يسعدنا مساعدتك في العثور على الشراع المناسب.",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف"
   },
   "footer": {
     "contact": "اتصل بنا",

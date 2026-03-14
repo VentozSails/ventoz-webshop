@@ -9,7 +9,8 @@
   "nav": {
     "home": "Sākums",
     "products": "Produkti",
-    "backToProducts": "Atpakaļ pie produktiem"
+    "backToProducts": "Atpakaļ pie produktiem",
+    "about": "Par mums"
   },
   "hero": {
     "cta": "Apskatīt produktus"
@@ -58,6 +59,18 @@
     "details": "Detaļas",
     "productInfo": "Produkta informācija",
     "viewProduct": "Skatīt produktu"
+  },
+  "about": {
+    "title": "Par Ventoz Sails",
+    "reviewsTitle": "Klientu atsauksmes",
+    "reviewsSub": "Skatieties, ko mūsu klienti saka par mums",
+    "viewReviews": "Skatīt visas atsauksmes",
+    "visitWebsite": "Apmeklēt vietni",
+    "ctaCatalog": "Pārlūkot mūsu produktus",
+    "contact": "Jautājumi? Sazinieties ar mums",
+    "contactSub": "Mēs ar prieku palīdzēsim atrast piemērotās buras.",
+    "email": "E-pasts",
+    "phone": "Tālrunis"
   },
   "footer": {
     "contact": "Kontakti",

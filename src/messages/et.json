@@ -9,7 +9,8 @@
   "nav": {
     "home": "Avaleht",
     "products": "Tooted",
-    "backToProducts": "Tagasi toodete juurde"
+    "backToProducts": "Tagasi toodete juurde",
+    "about": "Meist"
   },
   "hero": {
     "cta": "Vaadake tooteid"
@@ -58,6 +59,18 @@
     "details": "Üksikasjad",
     "productInfo": "Tooteinfo",
     "viewProduct": "Vaata toodet"
+  },
+  "about": {
+    "title": "Ventoz Sailsist",
+    "reviewsTitle": "Kliendiarvustused",
+    "reviewsSub": "Vaata, mida meie kliendid meie kohta ütlevad",
+    "viewReviews": "Vaata kõiki arvustusi",
+    "visitWebsite": "Külasta veebisaiti",
+    "ctaCatalog": "Sirvige meie tooteid",
+    "contact": "Küsimusi? Võtke ühendust",
+    "contactSub": "Oleme rõõmsad aitama teil leida õige puri.",
+    "email": "E-post",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Kontakt",

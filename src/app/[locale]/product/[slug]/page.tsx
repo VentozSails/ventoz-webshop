@@ -102,16 +102,7 @@ export default async function ProductPage({
     }
   })();
 
-  const specEntries = (() => {
-    try {
-      if (!product.specs_tabel || typeof product.specs_tabel !== "object") return null;
-      const keys = Object.keys(product.specs_tabel);
-      if (keys.length === 0) return null;
-      return { keys, values: Object.values(product.specs_tabel) };
-    } catch {
-      return null;
-    }
-  })();
+  // specs_tabel data is already shown via the individual spec fields above
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -242,47 +233,25 @@ export default async function ProductPage({
 
             {(product.materiaal || product.luff || product.foot || product.sail_area || product.gewicht || product.inclusief) && (
               <div className="mt-8">
-                <h2 className="text-sm font-bold text-navy mb-3">{t("specs")}</h2>
-                <dl className="divide-y divide-border-default">
-                  {[
-                    { label: t("material"), value: product.materiaal },
-                    { label: t("luff"), value: product.luff },
-                    { label: t("foot"), value: product.foot },
-                    { label: t("sailArea"), value: product.sail_area },
-                    { label: t("weight"), value: product.gewicht ? `${product.gewicht} kg` : null },
-                    { label: t("includes"), value: product.inclusief },
-                  ]
-                    .filter((s) => s.value)
-                    .map((spec) => (
-                      <div key={spec.label} className="flex justify-between py-2.5 text-[13px]">
-                        <dt className="text-slate-500">{spec.label}</dt>
-                        <dd className="font-medium text-slate-800 text-right max-w-[60%]">{spec.value}</dd>
-                      </div>
-                    ))}
-                </dl>
-              </div>
-            )}
-
-            {specEntries && (
-              <div className="mt-6">
-                <h2 className="text-sm font-bold text-navy mb-3">{t("details")}</h2>
-                <div className="overflow-x-auto bg-white rounded-lg border border-border-default">
-                  <table className="w-full text-[13px]">
-                    <thead>
-                      <tr className="bg-card-placeholder">
-                        {specEntries.keys.map((key) => (
-                          <th key={key} className="px-3 py-2 text-left text-navy-dark font-bold text-[13px]">{key}</th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        {specEntries.values.map((val, i) => (
-                          <td key={i} className="px-3 py-2 text-slate-600">{String(val ?? "")}</td>
-                        ))}
-                      </tr>
-                    </tbody>
-                  </table>
+                <h2 className="font-[family-name:var(--font-display)] text-lg text-navy mb-4">{t("specs")}</h2>
+                <div className="bg-white rounded-xl border border-border-default overflow-hidden">
+                  <dl className="divide-y divide-border-default">
+                    {[
+                      { label: t("material"), value: product.materiaal },
+                      { label: t("luff"), value: product.luff },
+                      { label: t("foot"), value: product.foot },
+                      { label: t("sailArea"), value: product.sail_area },
+                      { label: t("weight"), value: product.gewicht ? `${product.gewicht} kg` : null },
+                      { label: t("includes"), value: product.inclusief },
+                    ]
+                      .filter((s) => s.value)
+                      .map((spec) => (
+                        <div key={spec.label} className="flex justify-between items-center px-5 py-3">
+                          <dt className="text-[13px] text-slate-500">{spec.label}</dt>
+                          <dd className="text-[13px] font-semibold text-navy text-right max-w-[60%]">{spec.value}</dd>
+                        </div>
+                      ))}
+                  </dl>
                 </div>
               </div>
             )}

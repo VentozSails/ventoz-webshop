@@ -9,7 +9,8 @@
   "nav": {
     "home": "首页",
     "products": "产品",
-    "backToProducts": "返回产品"
+    "backToProducts": "返回产品",
+    "about": "关于我们"
   },
   "hero": {
     "cta": "浏览产品"
@@ -58,6 +59,18 @@
     "details": "详情",
     "productInfo": "产品信息",
     "viewProduct": "查看产品"
+  },
+  "about": {
+    "title": "关于 Ventoz Sails",
+    "reviewsTitle": "客户评价",
+    "reviewsSub": "看看客户对我们的评价",
+    "viewReviews": "查看所有评价",
+    "visitWebsite": "访问网站",
+    "ctaCatalog": "浏览我们的产品",
+    "contact": "有问题？联系我们",
+    "contactSub": "我们很乐意帮您找到合适的帆。",
+    "email": "电子邮件",
+    "phone": "电话"
   },
   "footer": {
     "contact": "联系方式",

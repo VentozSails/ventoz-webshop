@@ -9,7 +9,8 @@
   "nav": {
     "home": "Etusivu",
     "products": "Tuotteet",
-    "backToProducts": "Takaisin tuotteisiin"
+    "backToProducts": "Takaisin tuotteisiin",
+    "about": "Tietoa meistä"
   },
   "hero": {
     "cta": "Selaa tuotteita"
@@ -58,6 +59,18 @@
     "details": "Yksityiskohdat",
     "productInfo": "Tuotetiedot",
     "viewProduct": "Näytä tuote"
+  },
+  "about": {
+    "title": "Tietoa Ventoz Sailsista",
+    "reviewsTitle": "Asiakasarvostelut",
+    "reviewsSub": "Lue mitä asiakkaamme sanovat meistä",
+    "viewReviews": "Näytä kaikki arvostelut",
+    "visitWebsite": "Vieraile verkkosivustolla",
+    "ctaCatalog": "Selaa tuotteitamme",
+    "contact": "Kysyttävää? Ota yhteyttä",
+    "contactSub": "Autamme mielellämme löytämään oikean purjeen.",
+    "email": "Sähköposti",
+    "phone": "Puhelin"
   },
   "footer": {
     "contact": "Yhteystiedot",

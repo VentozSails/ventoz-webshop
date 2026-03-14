@@ -1,5 +1,5 @@
 import createMiddleware from "next-intl/middleware";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 import type { Locale } from "./i18n/routing";
 
@@ -35,15 +35,36 @@ const COUNTRY_TO_LOCALE: Record<string, Locale> = {
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-  const country = request.headers.get("x-vercel-ip-country") || "";
+  const pathname = request.nextUrl.pathname;
 
-  const detectedLocale = COUNTRY_TO_LOCALE[country.toUpperCase()];
+  // If the URL already has an explicit locale prefix, let next-intl handle it
+  const hasExplicitLocale = routing.locales.some(
+    (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
+  );
 
-  if (detectedLocale) {
-    request.headers.set("Accept-Language", detectedLocale);
+  // Only apply geo-detection for first visits without an explicit locale in the URL
+  // and without a pre-existing locale cookie
+  const localeCookie = request.cookies.get("NEXT_LOCALE")?.value;
+
+  if (!hasExplicitLocale && !localeCookie) {
+    const country = request.headers.get("x-vercel-ip-country") || "";
+    const detectedLocale = COUNTRY_TO_LOCALE[country.toUpperCase()];
+
+    if (detectedLocale) {
+      // Override Accept-Language so next-intl picks this locale
+      request.headers.set("Accept-Language", detectedLocale);
+    }
   }
 
-  return intlMiddleware(request);
+  const response = intlMiddleware(request);
+
+  // Forward the country header downstream for debugging/analytics
+  const country = request.headers.get("x-vercel-ip-country");
+  if (country) {
+    response.headers.set("x-detected-country", country);
+  }
+
+  return response;
 }
 
 export const config = {

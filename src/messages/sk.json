@@ -9,7 +9,8 @@
   "nav": {
     "home": "Domov",
     "products": "Produkty",
-    "backToProducts": "Späť na produkty"
+    "backToProducts": "Späť na produkty",
+    "about": "O nás"
   },
   "hero": {
     "cta": "Prezrieť produkty"
@@ -58,6 +59,18 @@
     "details": "Detaily",
     "productInfo": "Informácie o produkte",
     "viewProduct": "Zobraziť produkt"
+  },
+  "about": {
+    "title": "O Ventoz Sails",
+    "reviewsTitle": "Recenzie zákazníkov",
+    "reviewsSub": "Pozrite sa, čo o nás hovoria naši zákazníci",
+    "viewReviews": "Zobraziť všetky recenzie",
+    "visitWebsite": "Navštíviť web",
+    "ctaCatalog": "Prehliadať naše produkty",
+    "contact": "Máte otázky? Ozvite sa nám",
+    "contactSub": "Radi vám pomôžeme nájsť tú správnu plachtu.",
+    "email": "E-mail",
+    "phone": "Telefón"
   },
   "footer": {
     "contact": "Kontakt",

@@ -41,6 +41,12 @@ export default async function Header({ locale }: { locale: string }) {
           >
             {t("products")}
           </Link>
+          <Link
+            href="/about"
+            className="px-2 py-1.5 text-sm font-medium text-slate-500 hover:text-navy transition-colors"
+          >
+            {t("about")}
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">

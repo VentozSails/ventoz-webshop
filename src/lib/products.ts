@@ -154,6 +154,37 @@ export async function getWebshopUsp(): Promise<Record<string, string>> {
   return {};
 }
 
+export interface ReviewPlatform {
+  name: string;
+  url: string;
+  score: string;
+  description: string;
+  icon: string;
+  embed_url: string;
+}
+
+export async function getReviewPlatforms(): Promise<ReviewPlatform[]> {
+  try {
+    const { data, error } = await supabase
+      .from("app_settings")
+      .select("value")
+      .eq("key", "review_platforms")
+      .maybeSingle();
+
+    if (error) {
+      console.error("getReviewPlatforms error:", error.message);
+      return [];
+    }
+
+    if (data?.value && Array.isArray(data.value)) {
+      return data.value as ReviewPlatform[];
+    }
+  } catch (err) {
+    console.error("getReviewPlatforms exception:", err);
+  }
+  return [];
+}
+
 export async function getAllProductSlugs(): Promise<string[]> {
   try {
     const { data } = await supabase

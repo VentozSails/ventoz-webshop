@@ -9,7 +9,8 @@
   "nav": {
     "home": "Início",
     "products": "Produtos",
-    "backToProducts": "Voltar aos produtos"
+    "backToProducts": "Voltar aos produtos",
+    "about": "Sobre nós"
   },
   "hero": {
     "cta": "Ver produtos"
@@ -58,6 +59,18 @@
     "details": "Detalhes",
     "productInfo": "Informação do produto",
     "viewProduct": "Ver produto"
+  },
+  "about": {
+    "title": "Sobre Ventoz Sails",
+    "reviewsTitle": "Avaliações de clientes",
+    "reviewsSub": "Veja o que os nossos clientes dizem sobre nós",
+    "viewReviews": "Ver todas as avaliações",
+    "visitWebsite": "Visitar site",
+    "ctaCatalog": "Explorar os nossos produtos",
+    "contact": "Perguntas? Entre em contacto",
+    "contactSub": "Temos todo o gosto em ajudá-lo a encontrar a vela certa.",
+    "email": "E-mail",
+    "phone": "Telefone"
   },
   "footer": {
     "contact": "Contacto",

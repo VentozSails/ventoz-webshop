@@ -132,30 +132,38 @@ export default async function HomePage({
                 title: "★★★★★",
                 sub: t("reviews"),
                 stars: true,
+                href: "/about" as const,
               },
-            ].map((usp, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-2">
-                {"stars" in usp && usp.stars ? (
-                  <div className="flex items-center gap-0.5 h-11">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <svg key={j} className="w-[18px] h-[18px] text-gold" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            ].map((usp, i) => {
+              const content = (
+                <div className={`flex flex-col items-center text-center gap-2 ${"href" in usp ? "cursor-pointer group" : ""}`}>
+                  {"stars" in usp && usp.stars ? (
+                    <div className="flex items-center gap-0.5 h-11 group-hover:scale-110 transition-transform">
+                      {Array.from({ length: 5 }).map((_, j) => (
+                        <svg key={j} className="w-[18px] h-[18px] text-gold" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center">
+                      <svg className="w-[22px] h-[22px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={usp.icon} />
                       </svg>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center">
-                    <svg className="w-[22px] h-[22px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={usp.icon} />
-                    </svg>
-                  </div>
-                )}
-                {"stars" in usp && usp.stars ? null : (
-                  <h3 className="text-[13px] font-bold text-navy">{usp.title}</h3>
-                )}
-                <p className="text-[11px] text-slate-500">{usp.sub}</p>
-              </div>
-            ))}
+                    </div>
+                  )}
+                  {"stars" in usp && usp.stars ? null : (
+                    <h3 className="text-[13px] font-bold text-navy">{usp.title}</h3>
+                  )}
+                  <p className="text-[11px] text-slate-500">{usp.sub}</p>
+                </div>
+              );
+
+              if ("href" in usp && usp.href) {
+                return <Link key={i} href={usp.href}>{content}</Link>;
+              }
+              return <div key={i}>{content}</div>;
+            })}
           </div>
         </div>
       </section>

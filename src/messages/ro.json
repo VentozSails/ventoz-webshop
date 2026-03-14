@@ -9,7 +9,8 @@
   "nav": {
     "home": "Acasă",
     "products": "Produse",
-    "backToProducts": "Înapoi la produse"
+    "backToProducts": "Înapoi la produse",
+    "about": "Despre noi"
   },
   "hero": {
     "cta": "Vezi produsele"
@@ -58,6 +59,18 @@
     "details": "Detalii",
     "productInfo": "Informații produs",
     "viewProduct": "Vezi produsul"
+  },
+  "about": {
+    "title": "Despre Ventoz Sails",
+    "reviewsTitle": "Recenzii clienți",
+    "reviewsSub": "Aflați ce spun clienții noștri despre noi",
+    "viewReviews": "Vezi toate recenziile",
+    "visitWebsite": "Vizitează site-ul",
+    "ctaCatalog": "Răsfoiește produsele noastre",
+    "contact": "Întrebări? Contactează-ne",
+    "contactSub": "Suntem bucuroși să te ajutăm să găsești vela potrivită.",
+    "email": "E-mail",
+    "phone": "Telefon"
   },
   "footer": {
     "contact": "Contact",

@@ -9,7 +9,8 @@
   "nav": {
     "home": "Baile",
     "products": "Táirgí",
-    "backToProducts": "Ar ais go táirgí"
+    "backToProducts": "Ar ais go táirgí",
+    "about": "Fúinn"
   },
   "hero": {
     "cta": "Féach ar tháirgí"
@@ -58,6 +59,18 @@
     "details": "Sonraí",
     "productInfo": "Eolas táirge",
     "viewProduct": "Féach ar an táirge"
+  },
+  "about": {
+    "title": "Faoi Ventoz Sails",
+    "reviewsTitle": "Léirmheasanna custaiméirí",
+    "reviewsSub": "Féach cad a deir ár gcustaiméirí fúinn",
+    "viewReviews": "Féach ar gach léirmheas",
+    "visitWebsite": "Cuairt ar an láithreán gréasáin",
+    "ctaCatalog": "Brabhsáil ár dtáirgí",
+    "contact": "Ceisteanna? Déan teagmháil linn",
+    "contactSub": "Táimid sásta cabhrú leat an seol ceart a aimsiú.",
+    "email": "Ríomhphost",
+    "phone": "Guthán"
   },
   "footer": {
     "contact": "Teagmháil",
