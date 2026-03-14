@@ -4,14 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { ImapFlow } from "imapflow";
 import { supabaseAdmin, decryptFields } from "@/lib/supabase-admin";
 
-const ALLOWED_ORIGINS = ["https://app.ventoz.com", "http://localhost:8080", "http://127.0.0.1:8080"];
-
-function corsHeaders(origin: string | null) {
-  const allow = origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+function corsHeaders(_origin: string | null) {
   return {
-    "Access-Control-Allow-Origin": allow,
+    "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Max-Age": "86400",
   };
 }
 
@@ -167,9 +165,8 @@ async function handleFetch(config: ImapConfig, lastUid: number, origin: string |
   }
 }
 
-export async function OPTIONS(request: NextRequest) {
-  const headers = corsHeaders(request.headers.get("origin"));
-  return new NextResponse(null, { status: 204, headers });
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: corsHeaders(null) });
 }
 
 export async function POST(request: NextRequest) {
