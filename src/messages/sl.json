@@ -72,12 +72,44 @@
     "email": "E-pošta",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Pogoji dostave",
+    "privacy": "Izjava o zasebnosti",
+    "warranty": "Garancija",
+    "complaints": "Pritožbe",
+    "returns": "Vračila",
+    "backHome": "Nazaj na začetno stran",
+    "placeholder": "Vsebina te strani je trenutno v pripravi. Obiščite nas, če imate vprašanja.",
+    "contactNote": "Vprašanja o tej temi? Kontaktirajte nas na"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Navigacija",
     "paymentMethods": "Načini plačila",
     "copyright": "Vse pravice pridržane.",
     "tagline": "Premium jadra One Design"
+  },
+  "account": {
+    "signIn": "Prijava",
+    "createAccount": "Ustvari račun",
+    "email": "E-pošta",
+    "password": "Geslo",
+    "noAccount": "Še nimate računa?",
+    "hasAccount": "Imate že račun?",
+    "createOne": "Ustvarite ga",
+    "signInLink": "Prijava",
+    "myAccount": "Moj račun",
+    "reseller": "Preprodajalec",
+    "discount": "Popust: {pct}%",
+    "signOut": "Odjava",
+    "orderHistory": "Zgodovina naročil",
+    "noOrders": "Še ni naročil.",
+    "loading": "Nalaganje..."
+  },
+  "error": {
+    "title": "Nekaj je šlo narobe",
+    "productNotLoaded": "Tega izdelka ni bilo mogoče naložiti.",
+    "backToProducts": "Nazaj k izdelkom"
   },
   "categories": {
     "optimist": "Optimist",

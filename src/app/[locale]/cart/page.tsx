@@ -3,12 +3,17 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useCart } from "@/lib/cart";
+import { useVat } from "@/lib/vat";
+import { useAuth } from "@/lib/auth";
 import { Link } from "@/i18n/navigation";
 
 export default function CartPage() {
   const t = useTranslations("cart");
   const tProduct = useTranslations("product");
   const { items, removeItem, updateQty, subtotal } = useCart();
+  const { applyDiscountAndVat, vatLabel } = useVat();
+  const { profile } = useAuth();
+  const discount = profile?.korting ?? 0;
 
   if (items.length === 0) {
     return (
@@ -52,7 +57,22 @@ export default function CartPage() {
             <div className="flex-1 min-w-0">
               <h3 className="text-sm font-semibold text-navy truncate">{item.naam}</h3>
               <p className="text-sm text-slate-500 mt-0.5">
-                &euro; {item.prijs.toFixed(2).replace(".", ",")} {tProduct("exclVat")}
+                {(() => {
+                  const { original, discounted, hasDiscount } = applyDiscountAndVat(item.prijs, discount);
+                  return (
+                    <>
+                      {hasDiscount && (
+                        <span className="line-through text-slate-400 mr-1.5">
+                          &euro; {original.toFixed(2).replace(".", ",")}
+                        </span>
+                      )}
+                      <span className={hasDiscount ? "font-semibold text-navy" : ""}>
+                        &euro; {discounted.toFixed(2).replace(".", ",")}
+                      </span>
+                      <span className="text-slate-400 ml-1 text-xs">{vatLabel}</span>
+                    </>
+                  );
+                })()}
               </p>
             </div>
 
@@ -79,7 +99,10 @@ export default function CartPage() {
 
             <div className="text-right min-w-[80px]">
               <p className="text-sm font-bold text-navy">
-                &euro; {(item.prijs * item.qty).toFixed(2).replace(".", ",")}
+                {(() => {
+                  const { discounted } = applyDiscountAndVat(item.prijs, discount);
+                  return <>&euro; {(discounted * item.qty).toFixed(2).replace(".", ",")}</>;
+                })()}
               </p>
             </div>
 
@@ -98,10 +121,31 @@ export default function CartPage() {
       </div>
 
       <div className="mt-6 bg-white border border-border-default rounded-xl p-6">
-        <div className="flex justify-between text-sm mb-2">
-          <span className="text-slate-500">{t("subtotal")} ({tProduct("exclVat")})</span>
-          <span className="font-bold text-navy">&euro; {subtotal.toFixed(2).replace(".", ",")}</span>
-        </div>
+        {(() => {
+          const displaySubtotal = items.reduce((sum, item) => {
+            const { discounted } = applyDiscountAndVat(item.prijs, discount);
+            return sum + discounted * item.qty;
+          }, 0);
+          return (
+            <>
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-slate-500">{t("subtotal")} ({vatLabel})</span>
+                <span className="font-bold text-navy">&euro; {displaySubtotal.toFixed(2).replace(".", ",")}</span>
+              </div>
+              {discount > 0 && (
+                <div className="flex justify-between text-xs mb-2">
+                  <span className="text-green-600">Wederverkoper-korting ({discount}%)</span>
+                  <span className="text-green-600 font-semibold">
+                    -&euro; {(items.reduce((sum, item) => {
+                      const { original, discounted: d } = applyDiscountAndVat(item.prijs, discount);
+                      return sum + (original - d) * item.qty;
+                    }, 0)).toFixed(2).replace(".", ",")}
+                  </span>
+                </div>
+              )}
+            </>
+          );
+        })()}
         <p className="text-xs text-slate-400 mb-4">
           {t("shipping")} &amp; {t("vat")} calculated at checkout
         </p>

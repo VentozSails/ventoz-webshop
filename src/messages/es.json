@@ -72,12 +72,44 @@
     "email": "Correo electrónico",
     "phone": "Teléfono"
   },
+  "legal": {
+    "termsOfDelivery": "Condiciones de entrega",
+    "privacy": "Declaración de privacidad",
+    "warranty": "Garantía",
+    "complaints": "Reclamaciones",
+    "returns": "Devoluciones",
+    "backHome": "Volver al inicio",
+    "placeholder": "El contenido de esta página se está preparando actualmente. Por favor, contáctenos si tiene alguna pregunta.",
+    "contactNote": "¿Preguntas sobre este tema? Contáctenos en"
+  },
   "footer": {
     "contact": "Contacto",
     "navigation": "Navegación",
     "paymentMethods": "Métodos de pago",
     "copyright": "Todos los derechos reservados.",
     "tagline": "Velas Premium One Design"
+  },
+  "account": {
+    "signIn": "Iniciar sesión",
+    "createAccount": "Crear cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "noAccount": "¿Aún no tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "createOne": "Crear una",
+    "signInLink": "Iniciar sesión",
+    "myAccount": "Mi cuenta",
+    "reseller": "Revendedor",
+    "discount": "Descuento: {pct}%",
+    "signOut": "Cerrar sesión",
+    "orderHistory": "Historial de pedidos",
+    "noOrders": "Aún no hay pedidos.",
+    "loading": "Cargando..."
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "productNotLoaded": "Este producto no pudo cargarse.",
+    "backToProducts": "Volver a productos"
   },
   "categories": {
     "optimist": "Optimist",

@@ -185,6 +185,39 @@ export async function getReviewPlatforms(): Promise<ReviewPlatform[]> {
   return [];
 }
 
+const LEGAL_KEY_MAP: Record<string, string> = {
+  "terms-of-delivery": "legal_terms",
+  privacy: "legal_privacy",
+  warranty: "legal_warranty",
+  complaints: "legal_complaints",
+  returns: "legal_returns",
+};
+
+export async function getLegalContent(slug: string): Promise<Record<string, string>> {
+  const dbKey = LEGAL_KEY_MAP[slug];
+  if (!dbKey) return {};
+
+  try {
+    const { data, error } = await supabase
+      .from("app_settings")
+      .select("value")
+      .eq("key", dbKey)
+      .maybeSingle();
+
+    if (error) {
+      console.error("getLegalContent error:", error.message);
+      return {};
+    }
+
+    if (data?.value && typeof data.value === "object") {
+      return data.value as Record<string, string>;
+    }
+  } catch (err) {
+    console.error("getLegalContent exception:", err);
+  }
+  return {};
+}
+
 export async function getAllProductSlugs(): Promise<string[]> {
   try {
     const { data } = await supabase

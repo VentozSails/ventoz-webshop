@@ -72,12 +72,44 @@
     "email": "E-posta",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Teslimat koşulları",
+    "privacy": "Gizlilik bildirimi",
+    "warranty": "Garanti",
+    "complaints": "Şikayetler",
+    "returns": "İadeler",
+    "backHome": "Ana sayfaya dön",
+    "placeholder": "Bu sayfanın içeriği şu anda hazırlanıyor. Sorularınız varsa lütfen bizimle iletişime geçin.",
+    "contactNote": "Bu konu hakkında sorularınız mı var? Bize şu adresten ulaşın"
+  },
   "footer": {
     "contact": "İletişim",
     "navigation": "Gezinme",
     "paymentMethods": "Ödeme yöntemleri",
     "copyright": "Tüm hakları saklıdır.",
     "tagline": "Premium One Design Yelkenler"
+  },
+  "account": {
+    "signIn": "Giriş yap",
+    "createAccount": "Hesap oluştur",
+    "email": "E-posta",
+    "password": "Şifre",
+    "noAccount": "Henüz hesabınız yok mu?",
+    "hasAccount": "Zaten hesabınız var mı?",
+    "createOne": "Oluştur",
+    "signInLink": "Giriş yap",
+    "myAccount": "Hesabım",
+    "reseller": "Bayi",
+    "discount": "İndirim: {pct}%",
+    "signOut": "Çıkış yap",
+    "orderHistory": "Sipariş geçmişi",
+    "noOrders": "Henüz sipariş yok.",
+    "loading": "Yükleniyor..."
+  },
+  "error": {
+    "title": "Bir şeyler yanlış gitti",
+    "productNotLoaded": "Bu ürün yüklenemedi.",
+    "backToProducts": "Ürünlere dön"
   },
   "categories": {
     "optimist": "Optimist",

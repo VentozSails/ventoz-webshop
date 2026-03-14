@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { useAuth } from "@/lib/auth";
 import { supabase } from "@/lib/supabase";
 
@@ -13,6 +14,7 @@ interface Order {
 }
 
 export default function AccountPage() {
+  const t = useTranslations("account");
   const { user, profile, loading, signIn, signUp, signOut, isReseller } = useAuth();
   const [mode, setMode] = useState<"login" | "register">("login");
   const [email, setEmail] = useState("");
@@ -62,6 +64,7 @@ export default function AccountPage() {
     return (
       <div className="max-w-[600px] mx-auto px-6 py-16 text-center">
         <div className="animate-spin w-8 h-8 border-4 border-gold border-t-transparent rounded-full mx-auto" />
+        <p className="text-sm text-slate-400 mt-4">{t("loading")}</p>
       </div>
     );
   }
@@ -70,13 +73,13 @@ export default function AccountPage() {
     return (
       <div className="max-w-[400px] mx-auto px-6 py-16">
         <h1 className="font-[family-name:var(--font-display)] text-2xl text-navy mb-6 text-center">
-          {mode === "login" ? "Sign In" : "Create Account"}
+          {mode === "login" ? t("signIn") : t("createAccount")}
         </h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email"
-            placeholder="Email"
+            placeholder={t("email")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -84,7 +87,7 @@ export default function AccountPage() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder={t("password")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -101,18 +104,18 @@ export default function AccountPage() {
             disabled={submitting}
             className="w-full bg-gold text-navy font-bold text-sm px-7 py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50 cursor-pointer"
           >
-            {submitting ? "..." : mode === "login" ? "Sign In" : "Create Account"}
+            {submitting ? "..." : mode === "login" ? t("signIn") : t("createAccount")}
           </button>
         </form>
 
         <p className="text-center text-sm text-slate-500 mt-4">
-          {mode === "login" ? "No account yet?" : "Already have an account?"}{" "}
+          {mode === "login" ? t("noAccount") : t("hasAccount")}{" "}
           <button
             type="button"
             onClick={() => setMode(mode === "login" ? "register" : "login")}
             className="text-navy font-semibold hover:underline cursor-pointer"
           >
-            {mode === "login" ? "Create one" : "Sign in"}
+            {mode === "login" ? t("createOne") : t("signInLink")}
           </button>
         </p>
       </div>
@@ -123,29 +126,29 @@ export default function AccountPage() {
     <div className="max-w-[800px] mx-auto px-6 py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="font-[family-name:var(--font-display)] text-2xl text-navy">My Account</h1>
+          <h1 className="font-[family-name:var(--font-display)] text-2xl text-navy">{t("myAccount")}</h1>
           <p className="text-sm text-slate-500 mt-1">{user.email}</p>
           {isReseller && (
             <span className="inline-block mt-1 text-[10px] font-bold text-gold bg-gold/10 px-2 py-0.5 rounded uppercase">
-              Reseller
+              {t("reseller")}
             </span>
           )}
           {profile?.korting ? (
-            <p className="text-xs text-green-600 mt-1">Discount: {profile.korting}%</p>
+            <p className="text-xs text-green-600 mt-1">{t("discount", { pct: profile.korting })}</p>
           ) : null}
         </div>
         <button
           onClick={signOut}
           className="text-sm text-slate-500 hover:text-navy font-medium cursor-pointer"
         >
-          Sign Out
+          {t("signOut")}
         </button>
       </div>
 
-      <h2 className="text-sm font-bold text-navy mb-3">Order History</h2>
+      <h2 className="text-sm font-bold text-navy mb-3">{t("orderHistory")}</h2>
 
       {orders.length === 0 ? (
-        <p className="text-sm text-slate-400">No orders yet.</p>
+        <p className="text-sm text-slate-400">{t("noOrders")}</p>
       ) : (
         <div className="space-y-3">
           {orders.map((order) => (

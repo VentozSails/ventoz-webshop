@@ -72,12 +72,44 @@
     "email": "E-mail",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Leveringsbetingelser",
+    "privacy": "Privatlivspolitik",
+    "warranty": "Garanti",
+    "complaints": "Klager",
+    "returns": "Returneringer",
+    "backHome": "Tilbage til forsiden",
+    "placeholder": "Indholdet på denne side er under forberedelse. Kontakt os venligst, hvis du har spørgsmål.",
+    "contactNote": "Spørgsmål om dette emne? Kontakt os på"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Navigation",
     "paymentMethods": "Betalingsmetoder",
     "copyright": "Alle rettigheder forbeholdes.",
     "tagline": "Premium One Design Sejl"
+  },
+  "account": {
+    "signIn": "Log ind",
+    "createAccount": "Opret konto",
+    "email": "E-mail",
+    "password": "Adgangskode",
+    "noAccount": "Har du ikke en konto endnu?",
+    "hasAccount": "Har du allerede en konto?",
+    "createOne": "Opret en",
+    "signInLink": "Log ind",
+    "myAccount": "Min konto",
+    "reseller": "Forhandler",
+    "discount": "Rabat: {pct}%",
+    "signOut": "Log ud",
+    "orderHistory": "Ordrehistorik",
+    "noOrders": "Ingen ordrer endnu.",
+    "loading": "Indlæser..."
+  },
+  "error": {
+    "title": "Noget gik galt",
+    "productNotLoaded": "Dette produkt kunne ikke indlæses.",
+    "backToProducts": "Tilbage til produkter"
   },
   "categories": {
     "optimist": "Optimist",

@@ -72,12 +72,44 @@
     "email": "E-mail",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Uvjeti dostave",
+    "privacy": "Izjava o privatnosti",
+    "warranty": "Garancija",
+    "complaints": "Pritužbe",
+    "returns": "Povrati",
+    "backHome": "Natrag na početnu stranicu",
+    "placeholder": "Sadržaj ove stranice trenutno se priprema. Molimo kontaktirajte nas ako imate pitanja.",
+    "contactNote": "Pitanja o ovoj temi? Kontaktirajte nas na"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Navigacija",
     "paymentMethods": "Načini plaćanja",
     "copyright": "Sva prava pridržana.",
     "tagline": "Premium One Design Jedra"
+  },
+  "account": {
+    "signIn": "Prijava",
+    "createAccount": "Stvori račun",
+    "email": "E-mail",
+    "password": "Lozinka",
+    "noAccount": "Još nemate račun?",
+    "hasAccount": "Već imate račun?",
+    "createOne": "Stvorite ga",
+    "signInLink": "Prijava",
+    "myAccount": "Moj račun",
+    "reseller": "Preprodavač",
+    "discount": "Popust: {pct}%",
+    "signOut": "Odjava",
+    "orderHistory": "Povijest narudžbi",
+    "noOrders": "Još nema narudžbi.",
+    "loading": "Učitavanje..."
+  },
+  "error": {
+    "title": "Nešto je pošlo po krivu",
+    "productNotLoaded": "Ovaj proizvod nije mogao biti učitan.",
+    "backToProducts": "Natrag na proizvode"
   },
   "categories": {
     "optimist": "Optimist",

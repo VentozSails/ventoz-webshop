@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { getFeaturedProducts, getAboutTexts } from "@/lib/products";
+import { getFeaturedProducts, getAboutTexts, getWebshopHero, getWebshopUsp } from "@/lib/products";
 import {
   displayNaam,
   displayAfbeelding,
@@ -31,9 +31,11 @@ export default async function HomePage({
   const tHero = await getTranslations("hero");
   const tProduct = await getTranslations("product");
 
-  const [featured, aboutTexts] = await Promise.all([
+  const [featured, aboutTexts, heroData, uspData] = await Promise.all([
     getFeaturedProducts(),
     getAboutTexts(),
+    getWebshopHero(),
+    getWebshopUsp(),
   ]);
 
   const fallback = ABOUT_FALLBACK[locale] || ABOUT_FALLBACK["en"] || ABOUT_FALLBACK["nl"];
@@ -90,6 +92,12 @@ export default async function HomePage({
               </div>
 
               {/* About text — left-aligned within logo width */}
+              {heroData.title && (
+                <h1 className="text-lg font-bold text-white text-center mb-2">{heroData.title}</h1>
+              )}
+              {heroData.subtitle && (
+                <p className="text-xs text-white/70 text-center mb-3">{heroData.subtitle}</p>
+              )}
               <p className="text-[14px] text-white/90 leading-[1.85] whitespace-pre-line max-w-[340px] mx-auto text-left flex-1">
                 {aboutText}
               </p>
@@ -124,23 +132,23 @@ export default async function HomePage({
             {[
               {
                 icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-                title: t("freeShipping"),
-                sub: t("freeShippingSub"),
+                title: uspData.freeShipping || t("freeShipping"),
+                sub: uspData.freeShippingSub || t("freeShippingSub"),
               },
               {
                 icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
-                title: t("euShipping"),
-                sub: t("euShippingSub"),
+                title: uspData.euShipping || t("euShipping"),
+                sub: uspData.euShippingSub || t("euShippingSub"),
               },
               {
                 icon: "M20 7l-8-4-8 4m16 0v10l-8 4M4 7v10l8 4m0-10V7",
-                title: t("inStock"),
-                sub: t("inStockSub"),
+                title: uspData.inStock || t("inStock"),
+                sub: uspData.inStockSub || t("inStockSub"),
               },
               {
                 icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-                title: t("quality"),
-                sub: t("qualitySub"),
+                title: uspData.quality || t("quality"),
+                sub: uspData.qualitySub || t("qualitySub"),
               },
               {
                 title: "★★★★★",

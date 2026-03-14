@@ -72,6 +72,16 @@
     "email": "E-mail",
     "phone": "Telefoon"
   },
+  "legal": {
+    "termsOfDelivery": "Leveringsvoorwaarden",
+    "privacy": "Privacy Statement",
+    "warranty": "Garantie",
+    "complaints": "Klachten",
+    "returns": "Retourneren",
+    "backHome": "Terug naar home",
+    "placeholder": "De inhoud van deze pagina wordt momenteel voorbereid. Neem contact met ons op als u vragen heeft.",
+    "contactNote": "Vragen over dit onderwerp? Neem contact op via"
+  },
   "footer": {
     "contact": "Contact",
     "navigation": "Navigatie",
@@ -136,6 +146,28 @@
     "backToShop": "Terug naar winkel",
     "tryAgain": "Opnieuw proberen",
     "retryPayment": "Betaling opnieuw proberen"
+  },
+  "account": {
+    "signIn": "Inloggen",
+    "createAccount": "Account aanmaken",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "noAccount": "Nog geen account?",
+    "hasAccount": "Al een account?",
+    "createOne": "Maak er een aan",
+    "signInLink": "Inloggen",
+    "myAccount": "Mijn Account",
+    "reseller": "Wederverkoper",
+    "discount": "Korting: {pct}%",
+    "signOut": "Uitloggen",
+    "orderHistory": "Bestelgeschiedenis",
+    "noOrders": "Nog geen bestellingen.",
+    "loading": "Laden..."
+  },
+  "error": {
+    "title": "Er ging iets mis",
+    "productNotLoaded": "Dit product kon niet worden geladen.",
+    "backToProducts": "Terug naar assortiment"
   },
   "categories": {
     "optimist": "Optimist",

@@ -14,6 +14,7 @@ import {
 } from "@/lib/types";
 import ImageGallery from "@/components/ImageGallery";
 import AddToCartButton from "@/components/AddToCartButton";
+import PriceDisplay from "@/components/PriceDisplay";
 import { Link } from "@/i18n/navigation";
 
 export const dynamic = "force-dynamic";
@@ -186,11 +187,8 @@ export default async function ProductPage({
               </p>
             )}
 
-            <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-[28px] font-bold text-navy">
-                {prijsFormatted(product, locale)}
-              </span>
-              {prijs && <span className="text-xs text-slate-400">{t("exclVat")}</span>}
+            <div className="mt-4">
+              <PriceDisplay prijs={prijs} locale={locale} size="lg" />
             </div>
 
             {staffelEntries.length > 0 && (

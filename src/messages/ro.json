@@ -72,12 +72,44 @@
     "email": "E-mail",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Condiții de livrare",
+    "privacy": "Declarație de confidențialitate",
+    "warranty": "Garanție",
+    "complaints": "Plângeri",
+    "returns": "Returnări",
+    "backHome": "Înapoi la pagina principală",
+    "placeholder": "Conținutul acestei pagini este în curs de pregătire. Vă rugăm să ne contactați dacă aveți întrebări.",
+    "contactNote": "Întrebări despre acest subiect? Contactați-ne la"
+  },
   "footer": {
     "contact": "Contact",
     "navigation": "Navigare",
     "paymentMethods": "Metode de plată",
     "copyright": "Toate drepturile rezervate.",
     "tagline": "Vele Premium One Design"
+  },
+  "account": {
+    "signIn": "Autentificare",
+    "createAccount": "Creează cont",
+    "email": "E-mail",
+    "password": "Parolă",
+    "noAccount": "Nu ai încă cont?",
+    "hasAccount": "Ai deja cont?",
+    "createOne": "Creează unul",
+    "signInLink": "Autentificare",
+    "myAccount": "Contul meu",
+    "reseller": "Revânzător",
+    "discount": "Reducere: {pct}%",
+    "signOut": "Deconectare",
+    "orderHistory": "Istoric comenzi",
+    "noOrders": "Încă nu există comenzi.",
+    "loading": "Se încarcă..."
+  },
+  "error": {
+    "title": "Ceva nu a mers bine",
+    "productNotLoaded": "Acest produs nu a putut fi încărcat.",
+    "backToProducts": "Înapoi la produse"
   },
   "categories": {
     "optimist": "Optimist",

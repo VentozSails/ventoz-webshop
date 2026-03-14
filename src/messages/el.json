@@ -72,12 +72,44 @@
     "email": "Email",
     "phone": "Τηλέφωνο"
   },
+  "legal": {
+    "termsOfDelivery": "Όροι παράδοσης",
+    "privacy": "Δήλωση απορρήτου",
+    "warranty": "Εγγύηση",
+    "complaints": "Παραπόνια",
+    "returns": "Επιστροφές",
+    "backHome": "Επιστροφή στην αρχική",
+    "placeholder": "Το περιεχόμενο αυτής της σελίδας προετοιμάζεται αυτή τη στιγμή. Επικοινωνήστε μαζί μας αν έχετε ερωτήσεις.",
+    "contactNote": "Ερωτήσεις για αυτό το θέμα; Επικοινωνήστε μαζί μας στο"
+  },
   "footer": {
     "contact": "Επικοινωνία",
     "navigation": "Πλοήγηση",
     "paymentMethods": "Μέθοδοι πληρωμής",
     "copyright": "Με επιφύλαξη παντός δικαιώματος.",
     "tagline": "Κορυφαία Πανιά One Design"
+  },
+  "account": {
+    "signIn": "Σύνδεση",
+    "createAccount": "Δημιουργία λογαριασμού",
+    "email": "Email",
+    "password": "Κωδικός",
+    "noAccount": "Δεν έχετε ακόμα λογαριασμό;",
+    "hasAccount": "Έχετε ήδη λογαριασμό;",
+    "createOne": "Δημιουργήστε έναν",
+    "signInLink": "Σύνδεση",
+    "myAccount": "Ο λογαριασμός μου",
+    "reseller": "Μεταπωλητής",
+    "discount": "Έκπτωση: {pct}%",
+    "signOut": "Αποσύνδεση",
+    "orderHistory": "Ιστορικό παραγγελιών",
+    "noOrders": "Δεν υπάρχουν ακόμα παραγγελίες.",
+    "loading": "Φόρτωση..."
+  },
+  "error": {
+    "title": "Κάτι πήγε στραβά",
+    "productNotLoaded": "Αυτό το προϊόν δεν μπόρεσε να φορτωθεί.",
+    "backToProducts": "Επιστροφή στα προϊόντα"
   },
   "categories": {
     "optimist": "Optimist",

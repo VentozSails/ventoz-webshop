@@ -28,6 +28,19 @@ export async function POST(request: NextRequest) {
     if (!body.payment_method) return NextResponse.json({ error: "Payment method is required" }, { status: 400 });
     if (!Array.isArray(body.items) || body.items.length === 0) return NextResponse.json({ error: "Cart is empty" }, { status: 400 });
 
+    // Check for reseller discount
+    let kortingPercentage = 0;
+    if (body.user_id) {
+      const { data: customer } = await supabaseAdmin
+        .from("customers")
+        .select("korting_percentage")
+        .eq("user_id", body.user_id)
+        .maybeSingle();
+      if (customer?.korting_percentage && customer.korting_percentage > 0) {
+        kortingPercentage = customer.korting_percentage;
+      }
+    }
+
     // Server-side price calculation from database
     const productIds = body.items.map((i: { product_id: number }) => i.product_id);
     const { data: products } = await supabaseAdmin
@@ -45,11 +58,15 @@ export async function POST(request: NextRequest) {
     const validatedItems = body.items.map((item: { product_id: number; product_naam: string; product_afbeelding: string | null; aantal: number }) => {
       const dbPrice = priceMap.get(item.product_id);
       if (dbPrice == null || dbPrice <= 0) throw new Error(`Invalid price for product ${item.product_id}`);
-      const lineTotal = dbPrice * item.aantal;
+      const discountedPrice = kortingPercentage > 0
+        ? dbPrice * (1 - kortingPercentage / 100)
+        : dbPrice;
+      const lineTotal = discountedPrice * item.aantal;
       serverSubtotal += lineTotal;
       return {
         ...item,
         stukprijs: dbPrice,
+        korting_percentage: kortingPercentage,
         regel_totaal: lineTotal,
       };
     });
@@ -107,7 +124,7 @@ export async function POST(request: NextRequest) {
       product_afbeelding: item.product_afbeelding,
       aantal: item.aantal,
       stukprijs: item.stukprijs,
-      korting_percentage: 0,
+      korting_percentage: item.korting_percentage,
       regel_totaal: item.regel_totaal,
     }));
 

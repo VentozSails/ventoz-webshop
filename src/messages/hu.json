@@ -72,12 +72,44 @@
     "email": "E-mail",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Szállítási feltételek",
+    "privacy": "Adatvédelmi nyilatkozat",
+    "warranty": "Garancia",
+    "complaints": "Panaszok",
+    "returns": "Visszáruk",
+    "backHome": "Vissza a főoldalra",
+    "placeholder": "Az oldal tartalma jelenleg elkészül. Kérjük, vegye fel velünk a kapcsolatot, ha kérdése van.",
+    "contactNote": "Kérdése van ezzel kapcsolatban? Lépjen velünk kapcsolatba a következő címen"
+  },
   "footer": {
     "contact": "Kapcsolat",
     "navigation": "Navigáció",
     "paymentMethods": "Fizetési módok",
     "copyright": "Minden jog fenntartva.",
     "tagline": "Prémium One Design Vitorlák"
+  },
+  "account": {
+    "signIn": "Bejelentkezés",
+    "createAccount": "Fiók létrehozása",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "noAccount": "Még nincs fiókja?",
+    "hasAccount": "Már van fiókja?",
+    "createOne": "Hozzon létre egyet",
+    "signInLink": "Bejelentkezés",
+    "myAccount": "Fiókom",
+    "reseller": "Viszonteladó",
+    "discount": "Kedvezmény: {pct}%",
+    "signOut": "Kijelentkezés",
+    "orderHistory": "Rendelési előzmények",
+    "noOrders": "Még nincsenek rendelések.",
+    "loading": "Betöltés..."
+  },
+  "error": {
+    "title": "Valami hiba történt",
+    "productNotLoaded": "Ez a termék nem tölthető be.",
+    "backToProducts": "Vissza a termékekhez"
   },
   "categories": {
     "optimist": "Optimist",

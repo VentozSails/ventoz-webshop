@@ -72,12 +72,44 @@
     "email": "电子邮件",
     "phone": "电话"
   },
+  "legal": {
+    "termsOfDelivery": "交付条款",
+    "privacy": "隐私声明",
+    "warranty": "保修",
+    "complaints": "投诉",
+    "returns": "退货",
+    "backHome": "返回首页",
+    "placeholder": "此页面的内容正在准备中。如有任何问题，请联系我们。",
+    "contactNote": "有关此主题的问题？请通过以下方式联系我们"
+  },
   "footer": {
     "contact": "联系方式",
     "navigation": "导航",
     "paymentMethods": "支付方式",
     "copyright": "版权所有。",
     "tagline": "优质 One Design 帆"
+  },
+  "account": {
+    "signIn": "登录",
+    "createAccount": "创建账户",
+    "email": "电子邮件",
+    "password": "密码",
+    "noAccount": "还没有账户？",
+    "hasAccount": "已有账户？",
+    "createOne": "创建一个",
+    "signInLink": "登录",
+    "myAccount": "我的账户",
+    "reseller": "经销商",
+    "discount": "折扣：{pct}%",
+    "signOut": "退出登录",
+    "orderHistory": "订单历史",
+    "noOrders": "暂无订单。",
+    "loading": "加载中..."
+  },
+  "error": {
+    "title": "出了点问题",
+    "productNotLoaded": "无法加载此产品。",
+    "backToProducts": "返回产品"
   },
   "categories": {
     "optimist": "Optimist",

@@ -72,12 +72,44 @@
     "email": "Email",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Termini ta' kunsinna",
+    "privacy": "Dikjarazzjoni tal-privatezza",
+    "warranty": "Garanzija",
+    "complaints": "Ilmenti",
+    "returns": "Ritorni",
+    "backHome": "Lura għad-dar",
+    "placeholder": "Il-kontenut ta' din il-paġna qed jiġi ppreparat bħalissa. Jekk jogħġbok ikkuntattjana jekk għandek xi mistoqsijiet.",
+    "contactNote": "Mistoqsijiet dwar dan is-suġġett? Ikkuntattjana fuq"
+  },
   "footer": {
     "contact": "Kuntatt",
     "navigation": "Navigazzjoni",
     "paymentMethods": "Metodi ta' ħlas",
     "copyright": "Id-drittijiet kollha riżervati.",
     "tagline": "Qlugħ Premium One Design"
+  },
+  "account": {
+    "signIn": "Idħol",
+    "createAccount": "Oħloq kont",
+    "email": "Email",
+    "password": "Password",
+    "noAccount": "M'għandekx kont għadu?",
+    "hasAccount": "Diġà għandek kont?",
+    "createOne": "Oħloq wieħed",
+    "signInLink": "Idħol",
+    "myAccount": "Il-kont tiegħi",
+    "reseller": "Bejjieħ",
+    "discount": "Skont: {pct}%",
+    "signOut": "Oħroġ",
+    "orderHistory": "Storja tal-ordnijiet",
+    "noOrders": "L-ebda ordni għadu.",
+    "loading": "Qed jitgħabbi..."
+  },
+  "error": {
+    "title": "Xi ħaġa marret ħażin",
+    "productNotLoaded": "Dan il-prodott ma setax jitgħabbi.",
+    "backToProducts": "Lura għall-prodotti"
   },
   "categories": {
     "optimist": "Optimist",

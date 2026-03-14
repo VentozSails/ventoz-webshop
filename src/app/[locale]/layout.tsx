@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/lib/cart";
 import { AuthProvider } from "@/lib/auth";
+import { VatProvider } from "@/lib/vat";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -71,11 +72,13 @@ export default async function LocaleLayout({
       <body className="font-[family-name:var(--font-sans)] bg-surface text-slate-900 antialiased min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <AuthProvider>
-            <CartProvider>
-              <Header locale={locale} />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </CartProvider>
+            <VatProvider>
+              <CartProvider>
+                <Header locale={locale} />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </CartProvider>
+            </VatProvider>
           </AuthProvider>
         </NextIntlClientProvider>
       </body>

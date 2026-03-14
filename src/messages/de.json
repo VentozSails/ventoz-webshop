@@ -72,12 +72,44 @@
     "email": "E-Mail",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Lieferbedingungen",
+    "privacy": "Datenschutzerklärung",
+    "warranty": "Garantie",
+    "complaints": "Beschwerden",
+    "returns": "Rückgabe",
+    "backHome": "Zurück zur Startseite",
+    "placeholder": "Der Inhalt dieser Seite wird derzeit vorbereitet. Bitte kontaktieren Sie uns bei Fragen.",
+    "contactNote": "Fragen zu diesem Thema? Kontaktieren Sie uns unter"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Navigation",
     "paymentMethods": "Zahlungsmöglichkeiten",
     "copyright": "Alle Rechte vorbehalten.",
     "tagline": "Premium One Design Segel"
+  },
+  "account": {
+    "signIn": "Anmelden",
+    "createAccount": "Konto erstellen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "createOne": "Konto erstellen",
+    "signInLink": "Anmelden",
+    "myAccount": "Mein Konto",
+    "reseller": "Wiederverkäufer",
+    "discount": "Rabatt: {pct}%",
+    "signOut": "Abmelden",
+    "orderHistory": "Bestellverlauf",
+    "noOrders": "Noch keine Bestellungen.",
+    "loading": "Laden..."
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen",
+    "productNotLoaded": "Dieses Produkt konnte nicht geladen werden.",
+    "backToProducts": "Zurück zu den Produkten"
   },
   "categories": {
     "optimist": "Optimist",

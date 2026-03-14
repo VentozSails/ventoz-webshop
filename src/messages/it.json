@@ -72,12 +72,44 @@
     "email": "Email",
     "phone": "Telefono"
   },
+  "legal": {
+    "termsOfDelivery": "Condizioni di consegna",
+    "privacy": "Informativa sulla privacy",
+    "warranty": "Garanzia",
+    "complaints": "Reclami",
+    "returns": "Resi",
+    "backHome": "Torna alla home",
+    "placeholder": "Il contenuto di questa pagina è attualmente in fase di preparazione. Contattaci se hai domande.",
+    "contactNote": "Domande su questo argomento? Contattaci a"
+  },
   "footer": {
     "contact": "Contatto",
     "navigation": "Navigazione",
     "paymentMethods": "Metodi di pagamento",
     "copyright": "Tutti i diritti riservati.",
     "tagline": "Vele Premium One Design"
+  },
+  "account": {
+    "signIn": "Accedi",
+    "createAccount": "Crea account",
+    "email": "Email",
+    "password": "Password",
+    "noAccount": "Non hai ancora un account?",
+    "hasAccount": "Hai già un account?",
+    "createOne": "Creane uno",
+    "signInLink": "Accedi",
+    "myAccount": "Il mio account",
+    "reseller": "Rivenditore",
+    "discount": "Sconto: {pct}%",
+    "signOut": "Esci",
+    "orderHistory": "Cronologia ordini",
+    "noOrders": "Nessun ordine ancora.",
+    "loading": "Caricamento..."
+  },
+  "error": {
+    "title": "Qualcosa è andato storto",
+    "productNotLoaded": "Questo prodotto non è stato caricato.",
+    "backToProducts": "Torna ai prodotti"
   },
   "categories": {
     "optimist": "Optimist",

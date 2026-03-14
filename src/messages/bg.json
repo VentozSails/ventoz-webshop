@@ -72,12 +72,44 @@
     "email": "Имейл",
     "phone": "Телефон"
   },
+  "legal": {
+    "termsOfDelivery": "Условия за доставка",
+    "privacy": "Декларация за поверителност",
+    "warranty": "Гаранция",
+    "complaints": "Жалби",
+    "returns": "Връщания",
+    "backHome": "Обратно към началната страница",
+    "placeholder": "Съдържанието на тази страница в момента се подготвя. Моля, свържете се с нас, ако имате въпроси.",
+    "contactNote": "Въпроси по тази тема? Свържете се с нас на"
+  },
   "footer": {
     "contact": "Контакт",
     "navigation": "Навигация",
     "paymentMethods": "Начини на плащане",
     "copyright": "Всички права запазени.",
     "tagline": "Премиум платна One Design"
+  },
+  "account": {
+    "signIn": "Вход",
+    "createAccount": "Създаване на акаунт",
+    "email": "Имейл",
+    "password": "Парола",
+    "noAccount": "Нямате още акаунт?",
+    "hasAccount": "Вече имате акаунт?",
+    "createOne": "Създайте такъв",
+    "signInLink": "Вход",
+    "myAccount": "Моят акаунт",
+    "reseller": "Препродавач",
+    "discount": "Отстъпка: {pct}%",
+    "signOut": "Изход",
+    "orderHistory": "История на поръчките",
+    "noOrders": "Все още няма поръчки.",
+    "loading": "Зареждане..."
+  },
+  "error": {
+    "title": "Нещо се обърка",
+    "productNotLoaded": "Този продукт не може да се зареди.",
+    "backToProducts": "Обратно към продуктите"
   },
   "categories": {
     "optimist": "Optimist",

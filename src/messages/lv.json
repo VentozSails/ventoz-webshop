@@ -72,12 +72,44 @@
     "email": "E-pasts",
     "phone": "Tālrunis"
   },
+  "legal": {
+    "termsOfDelivery": "Piegādes noteikumi",
+    "privacy": "Privātuma paziņojums",
+    "warranty": "Garantija",
+    "complaints": "Sūdzības",
+    "returns": "Atgriešana",
+    "backHome": "Atpakaļ uz sākumlapu",
+    "placeholder": "Šīs lapas saturs pašlaik tiek sagatavots. Lūdzu, sazinieties ar mums, ja jums ir jautājumi.",
+    "contactNote": "Jautājumi par šo tēmu? Sazinieties ar mums"
+  },
   "footer": {
     "contact": "Kontakti",
     "navigation": "Navigācija",
     "paymentMethods": "Maksājumu metodes",
     "copyright": "Visas tiesības aizsargātas.",
     "tagline": "Premium One Design Buras"
+  },
+  "account": {
+    "signIn": "Pieslēgties",
+    "createAccount": "Izveidot kontu",
+    "email": "E-pasts",
+    "password": "Parole",
+    "noAccount": "Vēl nav konta?",
+    "hasAccount": "Jau ir konts?",
+    "createOne": "Izveidot",
+    "signInLink": "Pieslēgties",
+    "myAccount": "Mans konts",
+    "reseller": "Pārdevējs",
+    "discount": "Atlaide: {pct}%",
+    "signOut": "Iziet",
+    "orderHistory": "Pasūtījumu vēsture",
+    "noOrders": "Vēl nav pasūtījumu.",
+    "loading": "Ielādē..."
+  },
+  "error": {
+    "title": "Kaut kas nogāja greizi",
+    "productNotLoaded": "Šo produktu nevarēja ielādēt.",
+    "backToProducts": "Atpakaļ pie produktiem"
   },
   "categories": {
     "optimist": "Optimist",

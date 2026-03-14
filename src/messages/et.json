@@ -72,12 +72,44 @@
     "email": "E-post",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Tarne tingimused",
+    "privacy": "Privaatsusavaldus",
+    "warranty": "Garantii",
+    "complaints": "Kaebused",
+    "returns": "Tagastused",
+    "backHome": "Tagasi avalehele",
+    "placeholder": "Selle lehe sisu on praegu ettevalmistamisel. Võtke meiega ühendust, kui teil on küsimusi.",
+    "contactNote": "Küsimusi selle teema kohta? Võtke meiega ühendust aadressil"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Navigeerimine",
     "paymentMethods": "Makseviisid",
     "copyright": "Kõik õigused kaitstud.",
     "tagline": "Premium One Design Purjed"
+  },
+  "account": {
+    "signIn": "Logi sisse",
+    "createAccount": "Loo konto",
+    "email": "E-post",
+    "password": "Parool",
+    "noAccount": "Pole veel kontot?",
+    "hasAccount": "On juba konto?",
+    "createOne": "Loo konto",
+    "signInLink": "Logi sisse",
+    "myAccount": "Minu konto",
+    "reseller": "Edasimüüja",
+    "discount": "Allahindlus: {pct}%",
+    "signOut": "Logi välja",
+    "orderHistory": "Tellimuste ajalugu",
+    "noOrders": "Tellimusi pole veel.",
+    "loading": "Laadimine..."
+  },
+  "error": {
+    "title": "Midagi läks valesti",
+    "productNotLoaded": "Seda toodet ei saanud laadida.",
+    "backToProducts": "Tagasi toodete juurde"
   },
   "categories": {
     "optimist": "Optimist",

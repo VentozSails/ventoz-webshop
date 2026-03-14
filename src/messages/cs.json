@@ -72,12 +72,44 @@
     "email": "E-mail",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Podmínky dodání",
+    "privacy": "Prohlášení o ochraně osobních údajů",
+    "warranty": "Záruka",
+    "complaints": "Reklamace",
+    "returns": "Vrácení zboží",
+    "backHome": "Zpět na úvodní stránku",
+    "placeholder": "Obsah této stránky je momentálně připravován. V případě dotazů nás prosím kontaktujte.",
+    "contactNote": "Máte dotazy k tomuto tématu? Kontaktujte nás na"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Navigace",
     "paymentMethods": "Platební metody",
     "copyright": "Všechna práva vyhrazena.",
     "tagline": "Prémiové plachty One Design"
+  },
+  "account": {
+    "signIn": "Přihlásit se",
+    "createAccount": "Vytvořit účet",
+    "email": "E-mail",
+    "password": "Heslo",
+    "noAccount": "Ještě nemáte účet?",
+    "hasAccount": "Už máte účet?",
+    "createOne": "Vytvořte si ho",
+    "signInLink": "Přihlásit se",
+    "myAccount": "Můj účet",
+    "reseller": "Prodejce",
+    "discount": "Sleva: {pct}%",
+    "signOut": "Odhlásit se",
+    "orderHistory": "Historie objednávek",
+    "noOrders": "Zatím žádné objednávky.",
+    "loading": "Načítání..."
+  },
+  "error": {
+    "title": "Něco se pokazilo",
+    "productNotLoaded": "Tento produkt se nepodařilo načíst.",
+    "backToProducts": "Zpět k produktům"
   },
   "categories": {
     "optimist": "Optimist",

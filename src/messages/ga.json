@@ -72,12 +72,44 @@
     "email": "Ríomhphost",
     "phone": "Guthán"
   },
+  "legal": {
+    "termsOfDelivery": "Téarmaí seachadta",
+    "privacy": "Ráiteas príobháideachais",
+    "warranty": "Bharántas",
+    "complaints": "Gearáin",
+    "returns": "Fillteanna",
+    "backHome": "Ar ais go dtí an bhaile",
+    "placeholder": "Tá ábhar na leathanaigh seo á ullmhú faoi láthair. Déan teagmháil linn má tá ceisteanna agat.",
+    "contactNote": "Ceisteanna faoin ábhar seo? Déan teagmháil linn ag"
+  },
   "footer": {
     "contact": "Teagmháil",
     "navigation": "Nascleanúint",
     "paymentMethods": "Modhanna íocaíochta",
     "copyright": "Gach ceart ar cosaint.",
     "tagline": "Seolta Préimhe One Design"
+  },
+  "account": {
+    "signIn": "Logáil isteach",
+    "createAccount": "Cuntas a chruthú",
+    "email": "Ríomhphost",
+    "password": "Pasfhocal",
+    "noAccount": "Níl cuntas agat fós?",
+    "hasAccount": "Tá cuntas agat cheana?",
+    "createOne": "Cruthaigh ceann",
+    "signInLink": "Logáil isteach",
+    "myAccount": "Mo chuntas",
+    "reseller": "Athdhíoltóir",
+    "discount": "Lacáiste: {pct}%",
+    "signOut": "Logáil amach",
+    "orderHistory": "Stair orduithe",
+    "noOrders": "Níl orduithe fós.",
+    "loading": "Ag lódáil..."
+  },
+  "error": {
+    "title": "Tharla rud éigin mícheart",
+    "productNotLoaded": "Níorbh fhéidir an táirge seo a lódáil.",
+    "backToProducts": "Ar ais go dtí na táirgí"
   },
   "categories": {
     "optimist": "Optimist",

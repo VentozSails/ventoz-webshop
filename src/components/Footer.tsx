@@ -35,16 +35,17 @@ const PAYMENT_METHODS = [
   { name: "Overschrijving", color: "#546E7A" },
 ] as const;
 
-const LEGAL_LINKS = [
-  "Leveringsvoorwaarden / Terms of Delivery",
-  "Privacy Statement / Datenschutzrichtlinie",
-  "Garantie / Warranty",
-  "Klachten / Complaints",
-  "Retourneren / Returns",
+const LEGAL_SLUGS = [
+  "terms-of-delivery",
+  "privacy",
+  "warranty",
+  "complaints",
+  "returns",
 ] as const;
 
 export default async function Footer() {
   const t = await getTranslations("footer");
+  const tLegal = await getTranslations("legal");
 
   return (
     <footer>
@@ -77,9 +78,25 @@ export default async function Footer() {
               <li className="mt-3 text-slate-400 text-[11px]">KvK: 64140814 &middot; BTW: NL855539203B01</li>
             </ul>
             <div className="mt-4 space-y-0.5">
-              {LEGAL_LINKS.map((text) => (
-                <p key={text} className="text-[11px] text-slate-400">{text}</p>
-              ))}
+              {LEGAL_SLUGS.map((slug) => {
+                const titleKeyMap: Record<string, string> = {
+                  "terms-of-delivery": "termsOfDelivery",
+                  privacy: "privacy",
+                  warranty: "warranty",
+                  complaints: "complaints",
+                  returns: "returns",
+                };
+                return (
+                  <p key={slug}>
+                    <a
+                      href={`/legal/${slug}`}
+                      className="text-[11px] text-slate-400 hover:text-slate-600 hover:underline transition-colors"
+                    >
+                      {tLegal(titleKeyMap[slug])}
+                    </a>
+                  </p>
+                );
+              })}
             </div>
           </div>
 

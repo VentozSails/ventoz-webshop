@@ -72,12 +72,44 @@
     "email": "Sähköposti",
     "phone": "Puhelin"
   },
+  "legal": {
+    "termsOfDelivery": "Toimitus ehdot",
+    "privacy": "Tietosuojalausunto",
+    "warranty": "Takuu",
+    "complaints": "Valitukset",
+    "returns": "Palautukset",
+    "backHome": "Takaisin etusivulle",
+    "placeholder": "Tämän sivun sisältö on tällä hetkellä valmistelussa. Ota yhteyttä, jos sinulla on kysyttävää.",
+    "contactNote": "Kysyttävää tästä aiheesta? Ota yhteyttä osoitteeseen"
+  },
   "footer": {
     "contact": "Yhteystiedot",
     "navigation": "Navigointi",
     "paymentMethods": "Maksutavat",
     "copyright": "Kaikki oikeudet pidätetään.",
     "tagline": "Premium One Design Purjeet"
+  },
+  "account": {
+    "signIn": "Kirjaudu sisään",
+    "createAccount": "Luo tili",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "noAccount": "Eikö sinulla ole vielä tiliä?",
+    "hasAccount": "Onko sinulla jo tili?",
+    "createOne": "Luo tili",
+    "signInLink": "Kirjaudu sisään",
+    "myAccount": "Oma tili",
+    "reseller": "Jälleenmyyjä",
+    "discount": "Alennus: {pct}%",
+    "signOut": "Kirjaudu ulos",
+    "orderHistory": "Tilaushistoria",
+    "noOrders": "Ei tilauksia vielä.",
+    "loading": "Ladataan..."
+  },
+  "error": {
+    "title": "Jotain meni pieleen",
+    "productNotLoaded": "Tätä tuotetta ei voitu ladata.",
+    "backToProducts": "Takaisin tuotteisiin"
   },
   "categories": {
     "optimist": "Optimist",

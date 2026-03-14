@@ -72,12 +72,44 @@
     "email": "E-mail",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Warunki dostawy",
+    "privacy": "Polityka prywatności",
+    "warranty": "Gwarancja",
+    "complaints": "Reklamacje",
+    "returns": "Zwroty",
+    "backHome": "Powrót do strony głównej",
+    "placeholder": "Treść tej strony jest obecnie przygotowywana. Skontaktuj się z nami, jeśli masz pytania.",
+    "contactNote": "Pytania na ten temat? Skontaktuj się z nami pod adresem"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Nawigacja",
     "paymentMethods": "Metody płatności",
     "copyright": "Wszelkie prawa zastrzeżone.",
     "tagline": "Żagle Premium One Design"
+  },
+  "account": {
+    "signIn": "Zaloguj się",
+    "createAccount": "Utwórz konto",
+    "email": "E-mail",
+    "password": "Hasło",
+    "noAccount": "Nie masz jeszcze konta?",
+    "hasAccount": "Masz już konto?",
+    "createOne": "Utwórz konto",
+    "signInLink": "Zaloguj się",
+    "myAccount": "Moje konto",
+    "reseller": "Sprzedawca",
+    "discount": "Rabat: {pct}%",
+    "signOut": "Wyloguj się",
+    "orderHistory": "Historia zamówień",
+    "noOrders": "Brak zamówień.",
+    "loading": "Ładowanie..."
+  },
+  "error": {
+    "title": "Coś poszło nie tak",
+    "productNotLoaded": "Nie można załadować tego produktu.",
+    "backToProducts": "Powrót do produktów"
   },
   "categories": {
     "optimist": "Optimist",

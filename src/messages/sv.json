@@ -72,12 +72,44 @@
     "email": "E-post",
     "phone": "Telefon"
   },
+  "legal": {
+    "termsOfDelivery": "Leveransvillkor",
+    "privacy": "Integritetspolicy",
+    "warranty": "Garanti",
+    "complaints": "Klagomål",
+    "returns": "Returer",
+    "backHome": "Tillbaka till startsidan",
+    "placeholder": "Innehållet på denna sida förbereds för närvarande. Kontakta oss om du har frågor.",
+    "contactNote": "Frågor om detta ämne? Kontakta oss på"
+  },
   "footer": {
     "contact": "Kontakt",
     "navigation": "Navigation",
     "paymentMethods": "Betalningsmetoder",
     "copyright": "Alla rättigheter förbehållna.",
     "tagline": "Premium One Design Segel"
+  },
+  "account": {
+    "signIn": "Logga in",
+    "createAccount": "Skapa konto",
+    "email": "E-post",
+    "password": "Lösenord",
+    "noAccount": "Har du inget konto än?",
+    "hasAccount": "Har du redan ett konto?",
+    "createOne": "Skapa ett",
+    "signInLink": "Logga in",
+    "myAccount": "Mitt konto",
+    "reseller": "Återförsäljare",
+    "discount": "Rabatt: {pct}%",
+    "signOut": "Logga ut",
+    "orderHistory": "Orderhistorik",
+    "noOrders": "Inga beställningar än.",
+    "loading": "Laddar..."
+  },
+  "error": {
+    "title": "Något gick fel",
+    "productNotLoaded": "Denna produkt kunde inte laddas.",
+    "backToProducts": "Tillbaka till produkter"
   },
   "categories": {
     "optimist": "Optimist",

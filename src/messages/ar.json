@@ -72,12 +72,44 @@
     "email": "البريد الإلكتروني",
     "phone": "الهاتف"
   },
+  "legal": {
+    "termsOfDelivery": "شروط التسليم",
+    "privacy": "بيان الخصوصية",
+    "warranty": "الضمان",
+    "complaints": "الشكاوى",
+    "returns": "المرتجعات",
+    "backHome": "العودة إلى الصفحة الرئيسية",
+    "placeholder": "محتوى هذه الصفحة قيد الإعداد حالياً. يرجى الاتصال بنا إذا كان لديك أي أسئلة.",
+    "contactNote": "أسئلة حول هذا الموضوع؟ تواصل معنا على"
+  },
   "footer": {
     "contact": "اتصل بنا",
     "navigation": "التنقل",
     "paymentMethods": "طرق الدفع",
     "copyright": "جميع الحقوق محفوظة.",
     "tagline": "أشرعة One Design الفاخرة"
+  },
+  "account": {
+    "signIn": "تسجيل الدخول",
+    "createAccount": "إنشاء حساب",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "noAccount": "ليس لديك حساب بعد؟",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "createOne": "إنشاء حساب",
+    "signInLink": "تسجيل الدخول",
+    "myAccount": "حسابي",
+    "reseller": "موزع",
+    "discount": "خصم: {pct}%",
+    "signOut": "تسجيل الخروج",
+    "orderHistory": "سجل الطلبات",
+    "noOrders": "لا توجد طلبات بعد.",
+    "loading": "جاري التحميل..."
+  },
+  "error": {
+    "title": "حدث خطأ ما",
+    "productNotLoaded": "تعذر تحميل هذا المنتج.",
+    "backToProducts": "العودة إلى المنتجات"
   },
   "categories": {
     "optimist": "Optimist",

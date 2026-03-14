@@ -72,12 +72,44 @@
     "email": "E-mail",
     "phone": "Téléphone"
   },
+  "legal": {
+    "termsOfDelivery": "Conditions de livraison",
+    "privacy": "Déclaration de confidentialité",
+    "warranty": "Garantie",
+    "complaints": "Réclamations",
+    "returns": "Retours",
+    "backHome": "Retour à l'accueil",
+    "placeholder": "Le contenu de cette page est en cours de préparation. Veuillez nous contacter si vous avez des questions.",
+    "contactNote": "Des questions sur ce sujet ? Contactez-nous à"
+  },
   "footer": {
     "contact": "Contact",
     "navigation": "Navigation",
     "paymentMethods": "Moyens de paiement",
     "copyright": "Tous droits réservés.",
     "tagline": "Voiles One Design Premium"
+  },
+  "account": {
+    "signIn": "Se connecter",
+    "createAccount": "Créer un compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Déjà un compte ?",
+    "createOne": "Créer un compte",
+    "signInLink": "Se connecter",
+    "myAccount": "Mon compte",
+    "reseller": "Revendeur",
+    "discount": "Réduction : {pct}%",
+    "signOut": "Se déconnecter",
+    "orderHistory": "Historique des commandes",
+    "noOrders": "Aucune commande pour le moment.",
+    "loading": "Chargement..."
+  },
+  "error": {
+    "title": "Une erreur s'est produite",
+    "productNotLoaded": "Ce produit n'a pas pu être chargé.",
+    "backToProducts": "Retour aux produits"
   },
   "categories": {
     "optimist": "Optimist",

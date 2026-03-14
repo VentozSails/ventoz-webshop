@@ -72,6 +72,16 @@
     "email": "Email",
     "phone": "Phone"
   },
+  "legal": {
+    "termsOfDelivery": "Terms of Delivery",
+    "privacy": "Privacy Statement",
+    "warranty": "Warranty",
+    "complaints": "Complaints",
+    "returns": "Returns",
+    "backHome": "Back to home",
+    "placeholder": "The content for this page is currently being prepared. Please contact us if you have any questions.",
+    "contactNote": "Questions about this topic? Contact us at"
+  },
   "footer": {
     "contact": "Contact",
     "navigation": "Navigation",
@@ -136,6 +146,28 @@
     "backToShop": "Back to shop",
     "tryAgain": "Try again",
     "retryPayment": "Retry payment"
+  },
+  "account": {
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "noAccount": "No account yet?",
+    "hasAccount": "Already have an account?",
+    "createOne": "Create one",
+    "signInLink": "Sign in",
+    "myAccount": "My Account",
+    "reseller": "Reseller",
+    "discount": "Discount: {pct}%",
+    "signOut": "Sign Out",
+    "orderHistory": "Order History",
+    "noOrders": "No orders yet.",
+    "loading": "Loading..."
+  },
+  "error": {
+    "title": "Something went wrong",
+    "productNotLoaded": "This product could not be loaded.",
+    "backToProducts": "Back to products"
   },
   "categories": {
     "optimist": "Optimist",

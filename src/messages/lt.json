@@ -72,12 +72,44 @@
     "email": "El. paštas",
     "phone": "Telefonas"
   },
+  "legal": {
+    "termsOfDelivery": "Pristatymo sąlygos",
+    "privacy": "Privatumo pareiškimas",
+    "warranty": "Garantija",
+    "complaints": "Skundai",
+    "returns": "Grąžinimai",
+    "backHome": "Atgal į pradžią",
+    "placeholder": "Šio puslapio turinys šiuo metu ruošiamas. Susisiekite su mumis, jei turite klausimų.",
+    "contactNote": "Klausimai šia tema? Susisiekite su mumis"
+  },
   "footer": {
     "contact": "Kontaktai",
     "navigation": "Navigacija",
     "paymentMethods": "Mokėjimo būdai",
     "copyright": "Visos teisės saugomos.",
     "tagline": "Aukščiausios kokybės One Design Burės"
+  },
+  "account": {
+    "signIn": "Prisijungti",
+    "createAccount": "Sukurti paskyrą",
+    "email": "El. paštas",
+    "password": "Slaptažodis",
+    "noAccount": "Dar neturite paskyros?",
+    "hasAccount": "Jau turite paskyrą?",
+    "createOne": "Sukurti",
+    "signInLink": "Prisijungti",
+    "myAccount": "Mano paskyra",
+    "reseller": "Perpardavėjas",
+    "discount": "Nuolaida: {pct}%",
+    "signOut": "Atsijungti",
+    "orderHistory": "Užsakymų istorija",
+    "noOrders": "Dar nėra užsakymų.",
+    "loading": "Kraunama..."
+  },
+  "error": {
+    "title": "Kažkas nutiko",
+    "productNotLoaded": "Šio produkto nepavyko įkelti.",
+    "backToProducts": "Atgal į produktus"
   },
   "categories": {
     "optimist": "Optimist",
