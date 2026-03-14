@@ -72,14 +72,19 @@ async function loadImapConfig(): Promise<ImapConfig | null> {
   };
 }
 
-async function handleTest(config: ImapConfig, origin: string | null) {
-  const client = new ImapFlow({
+function createImapClient(config: ImapConfig) {
+  return new ImapFlow({
     host: config.host,
     port: config.port,
     secure: config.port === 993,
     auth: { user: config.username, pass: config.password },
     logger: false,
+    tls: { servername: config.host, rejectUnauthorized: false },
   });
+}
+
+async function handleTest(config: ImapConfig, origin: string | null) {
+  const client = createImapClient(config);
 
   try {
     await client.connect();
@@ -103,13 +108,7 @@ async function handleTest(config: ImapConfig, origin: string | null) {
 }
 
 async function handleFetch(config: ImapConfig, lastUid: number, origin: string | null) {
-  const client = new ImapFlow({
-    host: config.host,
-    port: config.port,
-    secure: config.port === 993,
-    auth: { user: config.username, pass: config.password },
-    logger: false,
-  });
+  const client = createImapClient(config);
 
   try {
     await client.connect();
