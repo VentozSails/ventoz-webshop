@@ -28,16 +28,23 @@ export async function POST(request: NextRequest) {
     if (!body.payment_method) return NextResponse.json({ error: "Payment method is required" }, { status: 400 });
     if (!Array.isArray(body.items) || body.items.length === 0) return NextResponse.json({ error: "Cart is empty" }, { status: 400 });
 
-    // Check for reseller discount
+    // Check for reseller discount from ventoz_users
     let kortingPercentage = 0;
     if (body.user_id) {
-      const { data: customer } = await supabaseAdmin
-        .from("customers")
-        .select("korting_percentage")
-        .eq("user_id", body.user_id)
+      const { data: vu } = await supabaseAdmin
+        .from("ventoz_users")
+        .select("korting_permanent, korting_tijdelijk, korting_geldig_tot")
+        .eq("auth_user_id", body.user_id)
         .maybeSingle();
-      if (customer?.korting_percentage && customer.korting_percentage > 0) {
-        kortingPercentage = customer.korting_percentage;
+      if (vu) {
+        const perm = Number(vu.korting_permanent) || 0;
+        const temp = Number(vu.korting_tijdelijk) || 0;
+        let effective = perm;
+        if (temp > 0 && vu.korting_geldig_tot) {
+          const expiry = new Date(vu.korting_geldig_tot);
+          if (expiry > new Date()) effective = Math.max(perm, temp);
+        }
+        if (effective > 0) kortingPercentage = effective;
       }
     }
 

@@ -127,15 +127,31 @@ export default function AccountPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="font-[family-name:var(--font-display)] text-2xl text-navy">{t("myAccount")}</h1>
-          <p className="text-sm text-slate-500 mt-1">{user.email}</p>
-          {isReseller && (
-            <span className="inline-block mt-1 text-[10px] font-bold text-gold bg-gold/10 px-2 py-0.5 rounded uppercase">
-              {t("reseller")}
-            </span>
-          )}
+          {profile?.voornaam || profile?.achternaam ? (
+            <p className="text-sm font-medium text-slate-700 mt-1">
+              {[profile.voornaam, profile.achternaam].filter(Boolean).join(" ")}
+            </p>
+          ) : null}
+          <p className="text-sm text-slate-500 mt-0.5">{user.email}</p>
+          <div className="flex flex-wrap gap-1.5 mt-1.5">
+            {profile?.isOwner && (
+              <span className="text-[10px] font-bold text-white bg-navy px-2 py-0.5 rounded uppercase">Owner</span>
+            )}
+            {profile?.isAdmin && !profile?.isOwner && (
+              <span className="text-[10px] font-bold text-white bg-blue-600 px-2 py-0.5 rounded uppercase">Admin</span>
+            )}
+            {isReseller && (
+              <span className="text-[10px] font-bold text-gold bg-gold/10 px-2 py-0.5 rounded uppercase">
+                {t("reseller")}
+              </span>
+            )}
+          </div>
           {profile?.korting ? (
             <p className="text-xs text-green-600 mt-1">{t("discount", { pct: profile.korting })}</p>
           ) : null}
+          {profile?.bedrijfsnaam && (
+            <p className="text-xs text-slate-400 mt-0.5">{profile.bedrijfsnaam}</p>
+          )}
         </div>
         <button
           onClick={signOut}
