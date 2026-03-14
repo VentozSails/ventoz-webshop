@@ -27,14 +27,14 @@ export default function ProductCard({ product, locale = "nl" }: { product: Produ
   return (
     <Link href={`/product/${slug}`} className="group block">
       <div className="bg-white rounded-xl border border-border-default overflow-hidden hover:shadow-md transition-all duration-200">
-        <div className="relative bg-white" style={{ paddingBottom: "55.5%" }}>
+        <div className="relative bg-white" style={{ paddingBottom: "90%" }}>
           {img ? (
             <Image
               src={img}
               alt={naam}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
+              className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
             />
           ) : (
             <div className="absolute inset-0 bg-card-placeholder flex items-center justify-center">
