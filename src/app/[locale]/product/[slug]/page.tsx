@@ -283,22 +283,22 @@ export default async function ProductPage({
                     </div>
                     <dl className="divide-y divide-[#E2E8F0]">
                       {[
-                        { label: t("material"), value: specs.materiaal },
-                        { label: t("luff"), value: specs.luff },
-                        { label: "Leech", value: specs.leech },
-                        { label: t("foot"), value: specs.foot },
-                        { label: t("sailArea"), value: specs.sail_area },
-                        { label: t("weight"), value: specs.gewicht },
-                        { label: t("includes"), value: specs.inclusief },
-                        { label: "Mast", value: specs.mastdelen },
-                        { label: "Masthoogte", value: specs.masthoogte },
-                        { label: "Zeillatten", value: specs.zeillatten },
+                        { label: t("material"), value: specs.materiaal, measurement: false },
+                        { label: t("luff"), value: specs.luff, measurement: true },
+                        { label: "Leech", value: specs.leech, measurement: true },
+                        { label: t("foot"), value: specs.foot, measurement: true },
+                        { label: t("sailArea"), value: specs.sail_area, measurement: true },
+                        { label: t("weight"), value: specs.gewicht, measurement: true },
+                        { label: t("includes"), value: specs.inclusief, measurement: false },
+                        { label: "Mast", value: specs.mastdelen, measurement: false },
+                        { label: "Masthoogte", value: specs.masthoogte, measurement: true },
+                        { label: "Zeillatten", value: specs.zeillatten, measurement: false },
                       ]
                         .filter((s) => s.value)
                         .map((spec) => (
                           <div key={spec.label} className="flex justify-between items-start py-2.5">
                             <dt className="text-[13px] text-slate-500 shrink-0">{spec.label}</dt>
-                            <dd className="text-[13px] font-semibold text-navy text-right max-w-[60%]">{spec.value}</dd>
+                            <dd className={`text-[13px] text-navy text-right max-w-[60%] ${spec.measurement ? "font-semibold" : ""}`}>{spec.value}</dd>
                           </div>
                         ))}
                     </dl>
