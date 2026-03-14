@@ -50,8 +50,8 @@ export default async function HomePage({
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: 480 }}>
+      {/* Hero — fills viewport below header */}
+      <section className="relative overflow-hidden min-h-[calc(100svh-108px)]">
         <div className="absolute inset-0">
           <Image
             src="/hero-bg.png"
@@ -63,31 +63,34 @@ export default async function HomePage({
           <div className="absolute inset-0 bg-gradient-to-r from-[#37474F]/65 via-[#37474F]/45 to-[#37474F]/25" />
         </div>
 
-        <div className="relative max-w-[1100px] mx-auto px-6 lg:px-16 py-16 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[5fr_4fr] gap-10 items-stretch">
-            <div className="relative bg-white/[0.12] backdrop-blur-sm border border-white/[0.15] rounded-2xl px-7 pt-7 pb-14 flex flex-col">
-              {/* Logo — centered with triple-layer glow */}
+        <div className="relative max-w-[1100px] mx-auto px-6 lg:px-16 py-10 lg:py-14 min-h-[calc(100svh-108px)] flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_4fr] gap-10 items-stretch w-full">
+            <div className="relative bg-white/[0.12] backdrop-blur-sm border border-white/[0.15] rounded-2xl px-7 pt-8 pb-14 flex flex-col">
+              {/* Logo — centered with radial glow */}
               <div className="flex justify-center mb-8">
-                <div
-                  className="relative inline-block px-4 py-2 rounded-xl"
-                  style={{
-                    boxShadow:
-                      "0 0 28px 6px rgba(255,255,255,0.6), 0 0 50px 10px rgba(255,255,255,0.35), 0 0 80px 16px rgba(255,255,255,0.15)",
-                  }}
-                >
+                <div className="relative inline-flex items-center justify-center px-6 py-3">
+                  <div
+                    className="absolute inset-0 rounded-2xl"
+                    style={{
+                      background: "radial-gradient(ellipse at center, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.25) 35%, rgba(255,255,255,0.08) 60%, transparent 80%)",
+                    }}
+                  />
                   <Image
                     src="/logo-hero.png"
                     alt="Ventoz Sails"
-                    width={220}
-                    height={48}
-                    className="h-12 w-auto"
+                    width={240}
+                    height={52}
+                    className="h-[52px] w-auto relative"
+                    style={{
+                      filter: "drop-shadow(0 0 12px rgba(255,255,255,0.7)) drop-shadow(0 0 30px rgba(255,255,255,0.4))",
+                    }}
                     priority
                   />
                 </div>
               </div>
 
-              {/* About text — left-aligned, constrained to logo width */}
-              <p className="text-sm text-white/90 leading-7 whitespace-pre-line max-w-[320px] mx-auto text-left flex-1">
+              {/* About text — left-aligned within logo width */}
+              <p className="text-[14px] text-white/90 leading-[1.85] whitespace-pre-line max-w-[340px] mx-auto text-left flex-1">
                 {aboutText}
               </p>
 
