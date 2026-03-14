@@ -38,7 +38,7 @@ function decryptValue(encrypted: string, keyBase64: string): string {
   return Buffer.concat([decipher.update(data), decipher.final()]).toString("utf8");
 }
 
-async function decryptFields(
+export async function decryptFields(
   config: Record<string, unknown>,
   secretFields: string[]
 ): Promise<Record<string, unknown>> {
