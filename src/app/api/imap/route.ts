@@ -4,6 +4,23 @@ import { NextRequest, NextResponse } from "next/server";
 import { ImapFlow } from "imapflow";
 import { supabaseAdmin, decryptFields } from "@/lib/supabase-admin";
 
+const ALLOWED_ORIGINS = ["https://app.ventoz.com", "http://localhost:8080", "http://127.0.0.1:8080"];
+
+function corsHeaders(origin: string | null) {
+  const allow = origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    "Access-Control-Allow-Origin": allow,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  };
+}
+
+function withCors(res: NextResponse, origin: string | null) {
+  const headers = corsHeaders(origin);
+  Object.entries(headers).forEach(([k, v]) => res.headers.set(k, v));
+  return res;
+}
+
 interface ImapConfig {
   host: string;
   port: number;
@@ -57,7 +74,7 @@ async function loadImapConfig(): Promise<ImapConfig | null> {
   };
 }
 
-async function handleTest(config: ImapConfig) {
+async function handleTest(config: ImapConfig, origin: string | null) {
   const client = new ImapFlow({
     host: config.host,
     port: config.port,
@@ -72,22 +89,22 @@ async function handleTest(config: ImapConfig) {
     try {
       const mb = client.mailbox;
       const count = mb && typeof mb === "object" && "exists" in mb ? (mb as { exists: number }).exists : 0;
-      return NextResponse.json({
+      return withCors(NextResponse.json({
         success: true,
         message: `Verbinding geslaagd! INBOX bevat ${count} berichten.`,
-      });
+      }), origin);
     } finally {
       lock.release();
     }
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
-    return NextResponse.json({ error: `Verbindingsfout: ${msg}` }, { status: 500 });
+    return withCors(NextResponse.json({ error: `Verbindingsfout: ${msg}` }, { status: 500 }), origin);
   } finally {
     try { await client.logout(); } catch { /* ignore */ }
   }
 }
 
-async function handleFetch(config: ImapConfig, lastUid: number) {
+async function handleFetch(config: ImapConfig, lastUid: number, origin: string | null) {
   const client = new ImapFlow({
     host: config.host,
     port: config.port,
@@ -120,7 +137,7 @@ async function handleFetch(config: ImapConfig, lastUid: number) {
       uids.sort((a, b) => a - b);
 
       if (uids.length === 0) {
-        return NextResponse.json({ emails: [], uids: [] });
+        return withCors(NextResponse.json({ emails: [], uids: [] }), origin);
       }
 
       const emails: Array<{ uid: number; raw: string }> = [];
@@ -138,23 +155,29 @@ async function handleFetch(config: ImapConfig, lastUid: number) {
         }
       }
 
-      return NextResponse.json({ emails, uids });
+      return withCors(NextResponse.json({ emails, uids }), origin);
     } finally {
       lock.release();
     }
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
-    return NextResponse.json({ error: `IMAP-fout: ${msg}` }, { status: 500 });
+    return withCors(NextResponse.json({ error: `IMAP-fout: ${msg}` }, { status: 500 }), origin);
   } finally {
     try { await client.logout(); } catch { /* ignore */ }
   }
 }
 
+export async function OPTIONS(request: NextRequest) {
+  const headers = corsHeaders(request.headers.get("origin"));
+  return new NextResponse(null, { status: 204, headers });
+}
+
 export async function POST(request: NextRequest) {
+  const origin = request.headers.get("origin");
   try {
     const userId = await verifyStaffUser(request);
     if (!userId) {
-      return NextResponse.json({ error: "Not authorized" }, { status: 401 });
+      return withCors(NextResponse.json({ error: "Not authorized" }, { status: 401 }), origin);
     }
 
     // Verify user is staff
@@ -170,7 +193,7 @@ export async function POST(request: NextRequest) {
       ["owner", "admin", "medewerker"].includes(userRow?.user_type || "");
 
     if (!isStaff) {
-      return NextResponse.json({ error: "Insufficient permissions" }, { status: 403 });
+      return withCors(NextResponse.json({ error: "Insufficient permissions" }, { status: 403 }), origin);
     }
 
     const body = await request.json();
@@ -178,22 +201,22 @@ export async function POST(request: NextRequest) {
 
     const config = await loadImapConfig();
     if (!config) {
-      return NextResponse.json({ error: "IMAP not configured" }, { status: 500 });
+      return withCors(NextResponse.json({ error: "IMAP not configured" }, { status: 500 }), origin);
     }
 
     if (mode === "test") {
-      return await handleTest(config);
+      return await handleTest(config, origin);
     }
 
     if (mode === "fetch") {
       const lastUid = (body.last_fetched_uid as number) ?? config.last_fetched_uid ?? 0;
-      return await handleFetch(config, lastUid);
+      return await handleFetch(config, lastUid, origin);
     }
 
-    return NextResponse.json({ error: "Invalid mode" }, { status: 400 });
+    return withCors(NextResponse.json({ error: "Invalid mode" }, { status: 400 }), origin);
   } catch (e) {
     console.error("IMAP API error:", e);
     const msg = e instanceof Error ? e.message : String(e);
-    return NextResponse.json({ error: msg }, { status: 500 });
+    return withCors(NextResponse.json({ error: msg }, { status: 500 }), origin);
   }
 }
