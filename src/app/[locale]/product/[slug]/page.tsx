@@ -11,6 +11,7 @@ import {
   alleAfbeeldingen,
   prijsFormatted,
   categorieLabel,
+  specForLang,
 } from "@/lib/types";
 import ImageGallery from "@/components/ImageGallery";
 import AddToCartButton from "@/components/AddToCartButton";
@@ -89,12 +90,12 @@ export default async function ProductPage({
 
   const textSpecs = beschrijving ? extractSpecsFromText(beschrijving) : {};
   const specs = {
-    materiaal: product.materiaal || textSpecs.materiaal || null,
+    materiaal: specForLang(product, "materiaal", locale) || textSpecs.materiaal || null,
     luff: product.luff || textSpecs.luff || null,
     foot: product.foot || textSpecs.foot || null,
     sail_area: product.sail_area || textSpecs.sail_area || null,
     gewicht: product.gewicht ? `${product.gewicht} kg` : textSpecs.gewicht || null,
-    inclusief: product.inclusief || textSpecs.inclusief || null,
+    inclusief: specForLang(product, "inclusief", locale) || textSpecs.inclusief || null,
     leech: textSpecs.leech || null,
     mastdelen: textSpecs.mastdelen || null,
     zeillatten: textSpecs.zeillatten || null,

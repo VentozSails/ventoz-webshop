@@ -27,6 +27,7 @@ export interface Product {
   beschrijving_override: string | null;
   prijs_override: number | null;
   afbeelding_url_override: string | null;
+  translated_specs: Record<string, Record<string, string>> | null;
   [key: `naam_${string}`]: string | null;
   [key: `beschrijving_${string}`]: string | null;
 }
@@ -73,6 +74,20 @@ export function alleAfbeeldingen(p: Product): string[] {
     }
   }
   return all;
+}
+
+export function specForLang(p: Product, field: string, locale = "en"): string | null {
+  if (locale !== "nl" && p.translated_specs) {
+    const langSpecs = p.translated_specs[locale];
+    if (langSpecs && langSpecs[field]) return langSpecs[field];
+    if (locale !== "en") {
+      const enSpecs = p.translated_specs["en"];
+      if (enSpecs && enSpecs[field]) return enSpecs[field];
+    }
+  }
+  if (field === "materiaal") return p.materiaal || null;
+  if (field === "inclusief") return p.inclusief || null;
+  return null;
 }
 
 export function productSlug(p: Product): string {
