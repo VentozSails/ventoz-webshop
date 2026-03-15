@@ -170,6 +170,8 @@ export async function POST(request: NextRequest) {
         amount: serverTotal,
         returnUrl,
         methodId: body.payment_method,
+        customerName: body.naam?.trim(),
+        customerEmail: body.email?.trim(),
       });
     } else {
       const payNlConfig = config.pay_nl as { service_id: string; at_code: string; api_token: string; test_mode: boolean };

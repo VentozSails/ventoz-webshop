@@ -151,6 +151,8 @@ export async function createBuckarooTransaction(
     amount: number;
     returnUrl: string;
     methodId: string;
+    customerName?: string;
+    customerEmail?: string;
   }
 ): Promise<PaymentResult> {
   const baseUrl = config.test_mode
@@ -158,6 +160,15 @@ export async function createBuckarooTransaction(
     : "https://checkout.buckaroo.nl/json/Transaction";
 
   const serviceName = BUCKAROO_SERVICE_MAP[order.methodId] || order.methodId;
+
+  const nameParts = (order.customerName || "").trim().split(/\s+/);
+  const firstName = nameParts[0] || "";
+  const lastName = nameParts.slice(1).join(" ") || firstName;
+
+  const customParameters: Record<string, string> = {};
+  if (firstName) customParameters.CustomerFirstName = firstName;
+  if (lastName && lastName !== firstName) customParameters.CustomerLastName = lastName;
+  if (order.customerEmail) customParameters.CustomerEmail = order.customerEmail;
 
   const body = JSON.stringify({
     Currency: "EUR",
@@ -168,6 +179,7 @@ export async function createBuckarooTransaction(
     ReturnURLCancel: `${order.returnUrl}?status=cancel`,
     ReturnURLError: `${order.returnUrl}?status=error`,
     ReturnURLReject: `${order.returnUrl}?status=reject`,
+    ...(Object.keys(customParameters).length > 0 ? { CustomParameters: customParameters } : {}),
     Services: {
       ServiceList: [{ Name: serviceName, Action: "Pay" }],
     },

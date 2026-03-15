@@ -25,7 +25,7 @@ function verifyBuckarooSignature(
 
   const rawSignature = `${websiteKey}POST${contentHash}${timestamp}${nonce}`;
   const expectedHash = crypto
-    .createHmac("sha256", Buffer.from(secretKey, "base64"))
+    .createHmac("sha256", secretKey)
     .update(rawSignature)
     .digest("base64");
 
