@@ -48,15 +48,14 @@ export async function createPayNlTransaction(
 ): Promise<PaymentResult> {
   const auth = Buffer.from(`${config.at_code}:${config.api_token}`).toString("base64");
 
-  const paymentOptionId = PAYNL_METHOD_MAP[order.methodId] || 10;
+  const paymentOptionId = PAYNL_METHOD_MAP[order.methodId];
 
-  const body = {
+  const body: Record<string, unknown> = {
     serviceId: config.service_id,
     amount: { value: order.amountCents, currency: "EUR" },
     returnUrl: order.returnUrl,
     reference: order.orderNumber,
     description: `Ventoz order ${order.orderNumber}`,
-    paymentMethod: { id: paymentOptionId },
     optimize: { flow: "fastCheckout", shippingAddress: false, billingAddress: false },
     order: {
       countryCode: order.address.countryCode,
@@ -76,6 +75,10 @@ export async function createPayNlTransaction(
     },
     ...(config.test_mode ? { integration: { test: true } } : {}),
   };
+
+  if (paymentOptionId) {
+    body.paymentMethod = { id: paymentOptionId };
+  }
 
   const res = await fetch("https://connect.pay.nl/v1/orders", {
     method: "POST",
