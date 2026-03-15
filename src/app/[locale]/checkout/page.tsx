@@ -154,11 +154,19 @@ export default function CheckoutPage() {
 
       const data = await res.json();
 
+      if (!res.ok) {
+        const errMsg = data.error || `Server error (${res.status})`;
+        console.error("Checkout API error:", res.status, errMsg);
+        setErrors({ submit: errMsg });
+        setSubmitting(false);
+        return;
+      }
+
       if (data.paymentUrl) {
         clearCart();
         window.location.href = data.paymentUrl;
       } else {
-        setErrors({ submit: data.error || "Something went wrong" });
+        setErrors({ submit: data.error || "No payment URL received — please try again" });
         setSubmitting(false);
       }
     } catch {

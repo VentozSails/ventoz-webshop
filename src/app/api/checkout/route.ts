@@ -120,8 +120,12 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (orderError || !order) {
-      console.error("Order creation failed:", orderError);
-      return NextResponse.json({ error: "Failed to create order" }, { status: 500 });
+      console.error("Order creation failed:", JSON.stringify(orderError, null, 2));
+      const detail = orderError?.message || "Unknown database error";
+      return NextResponse.json(
+        { error: `Failed to create order: ${detail}` },
+        { status: 500 }
+      );
     }
 
     const lines = validatedItems.map((item: { product_id: number; product_naam: string; product_afbeelding: string | null; aantal: number; stukprijs: number; korting_percentage: number; regel_totaal: number }) => ({
@@ -137,9 +141,15 @@ export async function POST(request: NextRequest) {
 
     await supabaseAdmin.from("order_regels").insert(lines);
 
-    const config = await getPaymentConfig();
+    let config;
+    try {
+      config = await getPaymentConfig();
+    } catch (cfgErr) {
+      console.error("Payment config fetch failed:", cfgErr);
+      config = null;
+    }
     if (!config) {
-      return NextResponse.json({ error: "Payment not configured" }, { status: 500 });
+      return NextResponse.json({ error: "Payment not configured — please contact support" }, { status: 500 });
     }
 
     const returnUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://ventoz.com"}/${body.locale || "en"}/checkout/payment?orderId=${order.id}`;
@@ -195,7 +205,11 @@ export async function POST(request: NextRequest) {
       paymentUrl: paymentResult.paymentUrl,
     });
   } catch (err) {
-    console.error("Checkout error:", err);
-    return NextResponse.json({ error: "Checkout failed" }, { status: 500 });
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Checkout error:", message);
+    return NextResponse.json(
+      { error: `Checkout failed: ${message}` },
+      { status: 500 }
+    );
   }
 }
