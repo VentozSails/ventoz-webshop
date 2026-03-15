@@ -19,12 +19,8 @@ export interface PaymentResult {
   gateway: string;
 }
 
-const PAYNL_METHOD_MAP: Record<string, number> = {
-  ideal: 10,
-  bancontact: 436,
-  sofort: 559,
-  banktransfer: 136,
-};
+// Pay.nl method IDs are resolved dynamically from the service config.
+// Do NOT hardcode them — only use paymentOptionId from the payment-methods API.
 
 const BUCKAROO_SERVICE_MAP: Record<string, string> = {
   creditcard: "creditcard",
@@ -54,7 +50,7 @@ export async function createPayNlTransaction(
 ): Promise<PaymentResult> {
   const auth = Buffer.from(`${config.at_code}:${config.api_token}`).toString("base64");
 
-  const paymentOptionId = order.paymentOptionId || PAYNL_METHOD_MAP[order.methodId];
+  const paymentOptionId = order.paymentOptionId;
 
   const body: Record<string, unknown> = {
     serviceId: config.service_id,
