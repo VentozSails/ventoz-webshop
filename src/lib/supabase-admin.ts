@@ -82,12 +82,24 @@ export async function getPaymentConfig(): Promise<Record<string, unknown> | null
       raw.pay_nl as Record<string, unknown>,
       ["service_secret", "api_token"]
     );
+    const pn = raw.pay_nl as Record<string, unknown>;
+    for (const f of ["service_secret", "api_token"]) {
+      if (typeof pn[f] === "string" && (pn[f] as string).startsWith("ENC:")) {
+        console.error(`pay_nl.${f} is still encrypted after decryption attempt — credentials need to be re-saved as plain text`);
+        pn[f] = "";
+      }
+    }
   }
   if (raw.buckaroo && typeof raw.buckaroo === "object") {
     raw.buckaroo = await decryptFields(
       raw.buckaroo as Record<string, unknown>,
       ["secret_key"]
     );
+    const bc = raw.buckaroo as Record<string, unknown>;
+    if (typeof bc.secret_key === "string" && (bc.secret_key as string).startsWith("ENC:")) {
+      console.error("buckaroo.secret_key is still encrypted after decryption attempt — credentials need to be re-saved as plain text");
+      bc.secret_key = "";
+    }
   }
 
   return raw;
