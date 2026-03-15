@@ -29,6 +29,18 @@ let _providerCache: {
 
 const CACHE_TTL_MS = 5 * 60 * 1000;
 
+const PAYNL_NAME_NORMALIZE: Record<string, string> = {
+  "overboeking (sct)": "banktransfer",
+  "eps uberweisung": "eps",
+  "bancontact online": "bancontact",
+  "visa mastercard": "creditcard",
+  "mobilepay": "mobilepay",
+  "wero payment": "wero",
+  "vipps payment": "vipps",
+  "pay by bank": "paybybank",
+  "mb way": "mbway",
+};
+
 async function getPayNlAvailable(
   config: Record<string, unknown>
 ): Promise<{ methods: Set<string>; optionIds: Record<string, number> }> {
@@ -44,7 +56,7 @@ async function getPayNlAvailable(
   const auth = Buffer.from(`${payNl.at_code}:${payNl.api_token}`).toString("base64");
   try {
     const res = await fetch(
-      `https://rest.pay.nl/v2/services/${payNl.service_id}`,
+      `https://rest.pay.nl/v2/services/${payNl.service_id}/paymentmethods`,
       {
         headers: { Authorization: `Basic ${auth}`, Accept: "application/json" },
         signal: AbortSignal.timeout(10_000),
@@ -53,25 +65,19 @@ async function getPayNlAvailable(
     if (!res.ok) return { methods: new Set(), optionIds: {} };
 
     const data = await res.json();
-    const options = data?.checkoutOptions;
-    if (!Array.isArray(options)) return { methods: new Set(), optionIds: {} };
+    const list = data?.paymentMethods;
+    if (!Array.isArray(list)) return { methods: new Set(), optionIds: {} };
 
     const methods = new Set<string>();
     const optionIds: Record<string, number> = {};
 
-    for (const opt of options) {
-      const tag = (opt.tag as string || "").toLowerCase();
-      if (tag) {
-        methods.add(tag);
-        optionIds[tag] = opt.id as number;
-      }
-      const subs = opt.paymentMethods;
-      if (Array.isArray(subs)) {
-        for (const pm of subs) {
-          const name = ((pm.name as string) || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-          if (name) methods.add(name);
-        }
-      }
+    for (const pm of list) {
+      if (!pm.active) continue;
+      const id = pm.id as number;
+      const rawName = ((pm.name as string) || "").toLowerCase();
+      const normalized = PAYNL_NAME_NORMALIZE[rawName] || rawName.replace(/[^a-z0-9]/g, "");
+      methods.add(normalized);
+      optionIds[normalized] = id;
     }
     return { methods, optionIds };
   } catch {
