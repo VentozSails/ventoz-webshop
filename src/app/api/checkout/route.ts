@@ -158,9 +158,6 @@ export async function POST(request: NextRequest) {
     let paymentResult;
 
     const gateway = body.payment_gateway || "pay_nl";
-    const paymentOptionId = body.payment_option_id
-      ? Number(body.payment_option_id)
-      : undefined;
 
     if (gateway === "buckaroo") {
       const buckarooConfig = config.buckaroo as { website_key: string; secret_key: string; test_mode: boolean };
@@ -181,7 +178,6 @@ export async function POST(request: NextRequest) {
         amountCents,
         returnUrl,
         methodId: body.payment_method,
-        paymentOptionId,
         customerName: body.naam.trim(),
         customerEmail: body.email.trim(),
         address: {

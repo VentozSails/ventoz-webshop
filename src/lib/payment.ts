@@ -41,7 +41,6 @@ export async function createPayNlTransaction(
     amountCents: number;
     returnUrl: string;
     methodId: string;
-    paymentOptionId?: number;
     customerName: string;
     customerEmail: string;
     address: { street: string; postcode: string; city: string; countryCode: string };
@@ -49,8 +48,6 @@ export async function createPayNlTransaction(
   }
 ): Promise<PaymentResult> {
   const auth = Buffer.from(`${config.at_code}:${config.api_token}`).toString("base64");
-
-  const paymentOptionId = order.paymentOptionId;
 
   const body: Record<string, unknown> = {
     serviceId: config.service_id,
@@ -77,10 +74,6 @@ export async function createPayNlTransaction(
     },
     ...(config.test_mode ? { integration: { test: true } } : {}),
   };
-
-  if (paymentOptionId) {
-    body.paymentMethod = { id: paymentOptionId };
-  }
 
   const res = await fetch("https://connect.pay.nl/v1/orders", {
     method: "POST",
@@ -161,6 +154,9 @@ export async function createBuckarooTransaction(
 
   const serviceName = BUCKAROO_SERVICE_MAP[order.methodId] || order.methodId;
 
+  const REDIRECT_SERVICES = new Set(["ideal", "paypal", "bancontactmrcash"]);
+  const useDirectService = REDIRECT_SERVICES.has(serviceName);
+
   const nameParts = (order.customerName || "").trim().split(/\s+/);
   const firstName = nameParts[0] || "";
   const lastName = nameParts.slice(1).join(" ") || firstName;
@@ -170,7 +166,7 @@ export async function createBuckarooTransaction(
   if (lastName && lastName !== firstName) customParameters.CustomerLastName = lastName;
   if (order.customerEmail) customParameters.CustomerEmail = order.customerEmail;
 
-  const body = JSON.stringify({
+  const txBody: Record<string, unknown> = {
     Currency: "EUR",
     AmountDebit: order.amount,
     Invoice: order.orderNumber,
@@ -180,10 +176,15 @@ export async function createBuckarooTransaction(
     ReturnURLError: `${order.returnUrl}?status=error`,
     ReturnURLReject: `${order.returnUrl}?status=reject`,
     ...(Object.keys(customParameters).length > 0 ? { CustomParameters: customParameters } : {}),
-    Services: {
-      ServiceList: [{ Name: serviceName, Action: "Pay" }],
-    },
-  });
+  };
+
+  if (useDirectService) {
+    txBody.Services = { ServiceList: [{ Name: serviceName, Action: "Pay" }] };
+  } else {
+    txBody.ContinueOnIncomplete = 1;
+  }
+
+  const body = JSON.stringify(txBody);
 
   const authHeader = buckarooHmac(config, "POST", baseUrl, body);
 
