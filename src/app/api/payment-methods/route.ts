@@ -93,7 +93,7 @@ function buckarooHmac(
   const contentHash = body ? crypto.createHash("md5").update(body).digest("base64") : "";
   const rawString = `${websiteKey}${method}${encodedUri}${timestamp}${nonce}${contentHash}`;
   const hmacHash = crypto
-    .createHmac("sha256", Buffer.from(secretKey, "base64"))
+    .createHmac("sha256", secretKey)
     .update(rawString)
     .digest("base64");
   return `hmac ${websiteKey}:${hmacHash}:${nonce}:${timestamp}`;
@@ -106,6 +106,7 @@ const BUCKAROO_SERVICES = [
 
 const BUCKAROO_ID_MAP: Record<string, string> = {
   bancontactmrcash: "bancontact",
+  transfer: "banktransfer",
 };
 
 async function getBuckarooAvailable(
@@ -187,26 +188,29 @@ export async function GET(request: NextRequest) {
         continue;
       }
 
-      const gw = pref.preferred_gateway;
       const methodKey = pref.method_id.toLowerCase();
+      const methodKeyClean = methodKey.replace(/[^a-z0-9]/g, "");
 
-      let available = false;
-      let paymentOptionId: number | undefined;
+      const payNlHas = providers.payNlMethods.has(methodKey) ||
+        providers.payNlMethods.has(methodKeyClean);
+      const buckarooHas = providers.buckarooMethods.has(methodKey) ||
+        providers.buckarooMethods.has(methodKeyClean);
 
-      if (gw === "pay_nl") {
-        available = providers.payNlMethods.has(methodKey) ||
-          providers.payNlMethods.has(methodKey.replace(/[^a-z0-9]/g, ""));
-        paymentOptionId = providers.payNlOptionIds[methodKey];
-      } else if (gw === "buckaroo") {
-        available = providers.buckarooMethods.has(methodKey);
-      }
+      let chosenGw = pref.preferred_gateway;
+      if (chosenGw === "pay_nl" && !payNlHas && buckarooHas) chosenGw = "buckaroo";
+      if (chosenGw === "buckaroo" && !buckarooHas && payNlHas) chosenGw = "pay_nl";
 
+      const available = chosenGw === "pay_nl" ? payNlHas : buckarooHas;
       if (!available) continue;
+
+      const paymentOptionId = chosenGw === "pay_nl"
+        ? (providers.payNlOptionIds[methodKey] || providers.payNlOptionIds[methodKeyClean])
+        : undefined;
 
       methods.push({
         id: pref.method_id,
         name: pref.display_name,
-        gateway: gw,
+        gateway: chosenGw,
         ...(paymentOptionId ? { paymentOptionId } : {}),
       });
     }

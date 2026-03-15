@@ -31,6 +31,11 @@ const BUCKAROO_SERVICE_MAP: Record<string, string> = {
   paypal: "paypal",
   ideal: "ideal",
   bancontact: "bancontactmrcash",
+  sofort: "sofort",
+  banktransfer: "transfer",
+  eps: "eps",
+  giropay: "giropay",
+  applepay: "applepay",
 };
 
 export async function createPayNlTransaction(
@@ -136,7 +141,7 @@ function buckarooHmac(
 
   const rawString = `${config.website_key}${method}${encodedUri}${timestamp}${nonce}${contentHash}`;
   const hmacHash = crypto
-    .createHmac("sha256", Buffer.from(config.secret_key, "base64"))
+    .createHmac("sha256", config.secret_key)
     .update(rawString)
     .digest("base64");
 
