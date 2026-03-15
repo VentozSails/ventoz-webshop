@@ -40,6 +40,7 @@ export async function createPayNlTransaction(
     amountCents: number;
     returnUrl: string;
     methodId: string;
+    paymentOptionId?: number;
     customerName: string;
     customerEmail: string;
     address: { street: string; postcode: string; city: string; countryCode: string };
@@ -48,7 +49,7 @@ export async function createPayNlTransaction(
 ): Promise<PaymentResult> {
   const auth = Buffer.from(`${config.at_code}:${config.api_token}`).toString("base64");
 
-  const paymentOptionId = PAYNL_METHOD_MAP[order.methodId];
+  const paymentOptionId = order.paymentOptionId || PAYNL_METHOD_MAP[order.methodId];
 
   const body: Record<string, unknown> = {
     serviceId: config.service_id,

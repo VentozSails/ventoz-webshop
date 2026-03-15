@@ -20,6 +20,7 @@ interface PaymentMethod {
   id: string;
   name: string;
   gateway: string;
+  paymentOptionId?: number;
 }
 
 export default function CheckoutPage() {
@@ -57,16 +58,23 @@ export default function CheckoutPage() {
     }
   }, [user, profile]);
 
+  const [methodsLoading, setMethodsLoading] = useState(true);
+
   useEffect(() => {
+    setMethodsLoading(true);
     fetch(`/api/payment-methods?country=${country}`)
       .then((r) => r.json())
       .then((data) => {
-        setMethods(data.methods || []);
-        if (data.methods?.length > 0 && !selectedMethod) {
-          setSelectedMethod(data.methods[0].id);
+        const m = data.methods || [];
+        setMethods(m);
+        if (m.length > 0) {
+          if (!m.find((pm: PaymentMethod) => pm.id === selectedMethod)) {
+            setSelectedMethod(m[0].id);
+          }
         }
       })
-      .catch(() => setMethods([]));
+      .catch(() => setMethods([]))
+      .finally(() => setMethodsLoading(false));
   }, [country]);
 
   if (items.length === 0) {
@@ -142,6 +150,7 @@ export default function CheckoutPage() {
           same_address: sameAddress,
           payment_method: selectedMethod,
           payment_gateway: methods.find((m) => m.id === selectedMethod)?.gateway || "pay_nl",
+          payment_option_id: methods.find((m) => m.id === selectedMethod)?.paymentOptionId,
           subtotaal: subtotal,
           btw_bedrag: vatInfo.vatAmount,
           btw_percentage: vatInfo.vatRate,
@@ -311,13 +320,18 @@ export default function CheckoutPage() {
           {/* Payment Method */}
           <section className="bg-white border border-border-default rounded-xl p-6">
             <h2 className="text-sm font-bold text-navy mb-4">{t("paymentMethod")}</h2>
-            {methods.length === 0 ? (
-              <p className="text-sm text-slate-400">{t("selectPayment")}</p>
+            {methodsLoading ? (
+              <div className="flex items-center gap-2 py-4">
+                <div className="w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+                <span className="text-sm text-slate-400">{t("loadingPaymentMethods") || "Loading payment methods..."}</span>
+              </div>
+            ) : methods.length === 0 ? (
+              <p className="text-sm text-slate-400">{t("noPaymentMethods") || t("selectPayment")}</p>
             ) : (
               <div className="space-y-2">
                 {methods.map((m) => (
                   <label
-                    key={m.id}
+                    key={`${m.gateway}-${m.id}`}
                     className={`flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition-colors ${
                       selectedMethod === m.id ? "border-gold bg-gold/5" : "border-slate-200 hover:border-slate-300"
                     }`}
@@ -331,6 +345,7 @@ export default function CheckoutPage() {
                       className="accent-gold"
                     />
                     <span className="text-sm text-navy font-medium">{m.name}</span>
+                    <span className="text-[10px] text-slate-300 ml-auto">{m.gateway === "pay_nl" ? "Pay.nl" : "Buckaroo"}</span>
                   </label>
                 ))}
               </div>

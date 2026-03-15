@@ -157,8 +157,14 @@ export async function POST(request: NextRequest) {
     const amountCents = Math.round(serverTotal * 100);
     let paymentResult;
 
-    if (body.payment_gateway === "buckaroo") {
+    const gateway = body.payment_gateway || "pay_nl";
+    const paymentOptionId = body.payment_option_id
+      ? Number(body.payment_option_id)
+      : undefined;
+
+    if (gateway === "buckaroo") {
       const buckarooConfig = config.buckaroo as { website_key: string; secret_key: string; test_mode: boolean };
+      if (!buckarooConfig?.website_key) throw new Error("Buckaroo not configured");
       paymentResult = await createBuckarooTransaction(buckarooConfig, {
         orderNumber,
         amount: serverTotal,
@@ -167,11 +173,13 @@ export async function POST(request: NextRequest) {
       });
     } else {
       const payNlConfig = config.pay_nl as { service_id: string; at_code: string; api_token: string; test_mode: boolean };
+      if (!payNlConfig?.service_id) throw new Error("Pay.nl not configured");
       paymentResult = await createPayNlTransaction(payNlConfig, {
         orderNumber,
         amountCents,
         returnUrl,
         methodId: body.payment_method,
+        paymentOptionId,
         customerName: body.naam.trim(),
         customerEmail: body.email.trim(),
         address: {
