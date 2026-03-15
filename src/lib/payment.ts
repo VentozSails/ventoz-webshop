@@ -161,10 +161,10 @@ export async function createBuckarooTransaction(
   const firstName = nameParts[0] || "";
   const lastName = nameParts.slice(1).join(" ") || firstName;
 
-  const customParameters: Record<string, string> = {};
-  if (firstName) customParameters.CustomerFirstName = firstName;
-  if (lastName && lastName !== firstName) customParameters.CustomerLastName = lastName;
-  if (order.customerEmail) customParameters.CustomerEmail = order.customerEmail;
+  const additionalParams: Array<{ Name: string; Value: string }> = [];
+  if (firstName) additionalParams.push({ Name: "CustomerFirstName", Value: firstName });
+  if (lastName) additionalParams.push({ Name: "CustomerLastName", Value: lastName });
+  if (order.customerEmail) additionalParams.push({ Name: "CustomerEmail", Value: order.customerEmail });
 
   const txBody: Record<string, unknown> = {
     Currency: "EUR",
@@ -175,7 +175,7 @@ export async function createBuckarooTransaction(
     ReturnURLCancel: `${order.returnUrl}?status=cancel`,
     ReturnURLError: `${order.returnUrl}?status=error`,
     ReturnURLReject: `${order.returnUrl}?status=reject`,
-    ...(Object.keys(customParameters).length > 0 ? { CustomParameters: customParameters } : {}),
+    ...(additionalParams.length > 0 ? { AdditionalParameters: { AdditionalParameter: additionalParams } } : {}),
   };
 
   if (useDirectService) {
